@@ -37,6 +37,5 @@ type: commit message
       <td align="center"><a href="https://github.com/eundeok9"><img src="https://avatars.githubusercontent.com/u/100702397?v=4" width="100px;" alt=""/><br /><sub><b>eundeok9<br/>(Eunseo Cho)</b></sub></a></td>
       <td align="center"><a href="https://github.com/MinChanLee"><img src="https://avatars.githubusercontent.com/u/103028602?v=4" width="100px;" alt=""/><br /><sub><b>MinChanLee<br/>(MinChan Lee)</b></sub></a></td>
       <td align="center"><a href="https://github.com/pakxe"><img src="https://avatars.githubusercontent.com/u/64801796?v=4" width="100px;" alt=""/><br /><sub><b>Pakxe<br/>(SeHyun Park)</b></sub></a></td>
-     <td align="center"><a href="https://github.com/devHudi"><img src="https://avatars.githubusercontent.com/u/11745691?v=4" width="100px;" alt=""/><br /><sub>
    </tr>
 </table>
