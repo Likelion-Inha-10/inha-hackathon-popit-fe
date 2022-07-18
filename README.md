@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# POPIT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+본 프로젝트는 멋쟁이 사자처럼 인하대학교 10기에서 멋쟁이 사자처럼 인하대학교 해커톤에 출품하기 위한 프로젝트입니다.
 
-## Available Scripts
+## Project Stack
 
-In the project directory, you can run:
+**Front-end**
 
-### `yarn start`
+- React
+- Styled Components
+- React Router
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Branch Strategy
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Github flow 전략을 사용합니다.
 
-### `yarn test`
+## Commit Message Convention
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+type: commit message
+```
 
-### `yarn build`
+모든 커밋 메세지는 명령문 (현재시제) 를 사용하여 작성합니다. 모든 커밋 메세지 앞에는 다음의 `type` 을 작성합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `feat`: 새로운 기능 추가
+- `fix`: 버그수정
+- `docs`: 문서수정
+- `style`: 코드 포매팅 등
+- `refactor`: 코드 리팩토링
+- `chore`: 기타 작업
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<table>
+   <tr>
+      <td align="center"><a href="https://github.com/emotion615"><img src="https://avatars.githubusercontent.com/u/102964287?v=4" width="100px;" alt=""/><br /><sub><b>emotion615<br/>(SeoJung Park)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/eundeok9"><img src="https://avatars.githubusercontent.com/u/100702397?v=4" width="100px;" alt=""/><br /><sub><b>eundeok9<br/>(Eunseo Cho)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/MinChanLee"><img src="https://avatars.githubusercontent.com/u/103028602?v=4" width="100px;" alt=""/><br /><sub><b>MinChanLee<br/>(MinChan Lee)</b></sub></a></td>
+      <td align="center"><a href="https://github.com/pakxe"><img src="https://avatars.githubusercontent.com/u/64801796?v=4" width="100px;" alt=""/><br /><sub><b>Pakxe<br/>(SeHyun Park)</b></sub></a></td>
+   </tr>
+</table>
