@@ -5,7 +5,7 @@ const Button = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 52px;
-  heigth: 48px;
+  height: 48px;
   width: 324px;
   border: ${(props) => (props.border ? props.border : "none")};
   color: white;
