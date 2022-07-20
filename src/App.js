@@ -1,5 +1,11 @@
+import Button from "./popit-ui/Button";
+
 function App() {
-  return <div>안녕!</div>;
+  return (
+    <>
+      <Button>안녕</Button>
+    </>
+  );
 }
 
 export default App;
