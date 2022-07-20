@@ -1,9 +1,14 @@
+import GlobalStyle from "./GlobalStyle";
 import Button from "./popit-ui/Button";
+import Layout from "./popit-ui/Layout";
 
 function App() {
   return (
     <>
-      <Button>hihihihi</Button>
+      <GlobalStyle />
+      <Layout>
+        <Button>ff</Button>
+      </Layout>
     </>
   );
 }
