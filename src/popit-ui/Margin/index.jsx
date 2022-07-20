@@ -5,4 +5,8 @@ const Margin = styled.div`
   width: ${(props) => props.width};
 `;
 
+/*사용법: 
+<Margin height="50px" width="100px" />
+*/
+
 export default Margin;
