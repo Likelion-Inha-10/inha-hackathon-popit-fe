@@ -1,6 +1,6 @@
 export default {
   colors: {
-    backgroundcolor: "000000",
+    backgroundColor: "000000",
     main: "#FFC74A",
     orange: "#FFA751",
     yellow: "#FFE259",
