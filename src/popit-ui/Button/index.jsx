@@ -1,11 +1,10 @@
 import styled, { css } from "styled-components";
-
 //노란색버튼 (칠해져 있는 것)& 겉만 노랑(아이디 ,비번 적는 곳)
 const Button = styled.div`
   position: relative;
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 52px;
-  heigth: 48px;
+  height: 48px;
   width: 324px;
   border: ${(props) => (props.border ? props.border : "none")};
   color: white;
@@ -20,14 +19,14 @@ const Button = styled.div`
     props.medium &&
     css`
       width: 160px;
-    `};
+    `}
 
   ${(props) =>
     props.small &&
     css`
       width: 70px;
       height: 30px;
-    `};
+    `}
 `;
 export default Button;
 //props.medium은 로그인 버튼, props.small은 main에서 완료버튼입니다
