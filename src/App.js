@@ -1,5 +1,6 @@
 import GlobalStyle from "./GlobalStyle";
 import Button from "./popit-ui/Button";
+import Intro from "./pages/Intro";
 import Layout from "./popit-ui/Layout";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <GlobalStyle />
       <Layout>
-        <Button>ff</Button>
+        <Intro />
       </Layout>
     </>
   );
