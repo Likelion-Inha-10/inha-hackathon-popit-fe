@@ -11,7 +11,9 @@ const PhoneContainer = styled.div`
   height: 844px;
   width: 390px;
   background-color: yellowgreen;
+  overflow: hidden;
 `;
+
 const Layout = ({ children }) => {
   return (
     <Wrapper justify="center" align="center">
