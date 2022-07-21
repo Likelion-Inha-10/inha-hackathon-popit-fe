@@ -31,7 +31,8 @@ const Button = styled.button`
 `;
 
 export default Button;
-//props.medium은 로그인 버튼, props.small은 main에서 완료버튼입니다
-//figma 형식 그대로 만들긴 했는데 height부분은 수정해야 할 것 같습니다.
-//hover  background color 일단 gray로 해놨어요
-//수정사항 있으면 고쳐주세요 !
+/* 사용법
+1. color="" 를 통해 버튼의 배경색을 바꿀 수 있음
+2. border="" 를 통해 버튼의 테두리 색을 바꿀 수 있음
+3. medium 전달시 중간 크기의 버튼 생성(기본은 대형)
+4. small 전달시 소형 크기의 버튼 생성 */

@@ -18,7 +18,9 @@ function App() {
           <CircleButton />
           <Button>hi</Button>
           <Button></Button>
-          <Input type="text" placeholder="하이"></Input>
+          <Input type="text" placeholder="하이" />
+          <Input type="text" placeholder="천재" />
+          <Input type="text" placeholder="이몸등장" />
         </RoundBox>
       </Layout>
     </>

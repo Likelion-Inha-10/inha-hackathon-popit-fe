@@ -46,6 +46,6 @@ const FirstHeader = (props) => {
 export default FirstHeader;
 
 /* 사용법
-props중 back입력시 뒤로가기버튼 활성화
-popit입력시 popit이라는 중앙 로고 활성화
+1. back 전달시 뒤로가기 버튼 활성화
+2. popit 전달시 popit이라는 중앙 로고 활성화
 */
