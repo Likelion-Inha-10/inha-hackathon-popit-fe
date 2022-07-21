@@ -1,21 +1,34 @@
-//나중에 pages 폴더에 옮길 예정
-import React from "react";
-import styled from "styled-components";
+import { React, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+
+const slideOut = keyframes`
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(-760px);
+  }
+`;
 
 const Container = styled.div`
   position: relative;
-  top: -230px;
   width: 100%;
-  min-height: 750px;
-  background: linear-gradient(240deg, #ff6073 -20%, #ffc74a 100%);
-  border-bottom-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+  min-height: 760px;
+  background: linear-gradient(270deg, #ff7c69 -30%, #ffc84b 100%);
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
   box-shadow: 0 4px 10px -4px rgb(0, 0, 0, 0.3);
+  animation-name: ${slideOut};
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  transform: translateY(0px);
 `;
 
 const LogoContainer = styled.div`
   position: relative;
-  top: 250px;
+  top: 100px;
   width: 300px;
   height: 100px;
   border: 0;
@@ -40,12 +53,12 @@ const SubTitle = styled.p`
   margin-top: 5px;
   color: white;
   position: relative;
+  top: -30px;
 `;
 
 const Circle = styled.div`
   position: relative;
-  z-index: 100;
-  top: 70px;
+  top: -25px;
   left: 215px;
   width: 40px;
   height: 40px;
@@ -54,11 +67,19 @@ const Circle = styled.div`
 `;
 
 const Intro = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate(`/tutorial`);
+    }, 3000);
+  });
+
   return (
     <Container>
       <LogoContainer>
-        <Circle />
         <Title>POP IT!</Title>
+        <Circle />
         <SubTitle>내 손 안의 포스트잇, 팝잇!</SubTitle>
       </LogoContainer>
     </Container>
