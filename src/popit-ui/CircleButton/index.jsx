@@ -28,3 +28,9 @@ const CircleButton = (props) => {
   );
 };
 export default CircleButton;
+
+/*사용법
+plus 추가시 plus모양으로 바뀜. 
+아무것도 입력하지 않으면 -> (화살표) 모양임.
+color=""로 색을 지정해줄 수 있음
+*/
