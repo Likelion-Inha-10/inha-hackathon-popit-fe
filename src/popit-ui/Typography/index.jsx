@@ -13,6 +13,7 @@ const Typography = styled.div`
     props.underline &&
     `
       text-decoration: underline;
+      text-underline-position: under;
     `}
 
   ${(props) =>
