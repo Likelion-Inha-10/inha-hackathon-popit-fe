@@ -33,7 +33,7 @@ const PhoneContainer = styled.div`
         ${(props) =>
     props.down &&
     `
-          justify-content: flex-end;
+          justify-content: space-between;
       `}
   overflow: hidden;
 `;

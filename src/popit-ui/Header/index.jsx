@@ -1,19 +1,26 @@
 import styled from "styled-components";
+import Flex from "../Flex";
 
-const Text = styled.div`
-  color: ${(props) => props.theme.colors.black};
-  text-align: ${(props) => (props.textalign ? props.textalign : "center")};
-  font-size: 24px;
-  font-family: "GmarketSans";
-  font-weight: 700;
-  font-style: normal;
-  src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff2)
-      format("woff2"),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff)
-      format("woff");
+const Wrapper = styled(Flex)`
+  width: 100%;
+  height: 59px;
+  border: 1px solid black;
 `;
 
 const Header = (props) => {
-  return <Text color={props.color}></Text>;
+  return (
+    <Wrapper
+      firstComponent={props.firstComponent}
+      secondComponent={props.secondComponent}
+      thirdComponent={props.thirdComponent}
+      justify="space-between"
+      align="center"
+    >
+      {props.firstComponent}
+      {props.secondComponent}
+      {props.thirdComponent}
+    </Wrapper>
+  );
 };
+
 export default Header;
