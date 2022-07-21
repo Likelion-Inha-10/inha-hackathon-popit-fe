@@ -17,7 +17,7 @@ const FirstChoice = () => {
             팝 보관 카테고리 3개 선택
           </Typography>
           <Margin height="8px" />
-          <Typography center color="darkgray" size="12px">
+          <Typography small center color="darkgray">
             보관하고 싶은 공부 분야를 선택하여
             <br />
             나에게 맞는 팝들을 받아보세요.

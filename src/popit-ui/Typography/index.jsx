@@ -67,6 +67,13 @@ const Typography = styled.div`
     `
       display : inline-block;
     `}
+  
+    ${(props) =>
+    props.small &&
+    `
+      font-size: 14px;
+      font-family: "NanumSquareL";
+     `}
 `;
 
 export default Typography;
