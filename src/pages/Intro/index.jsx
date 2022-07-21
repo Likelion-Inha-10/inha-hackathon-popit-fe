@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import Layout from "../../popit-ui/Layout";
 
 const slideOut = keyframes`
   0%{
@@ -76,13 +77,15 @@ const Intro = () => {
   });
 
   return (
-    <Container>
-      <LogoContainer>
-        <Title>POP IT!</Title>
-        <Circle />
-        <SubTitle>내 손 안의 포스트잇, 팝잇!</SubTitle>
-      </LogoContainer>
-    </Container>
+    <Layout white>
+      <Container>
+        <LogoContainer>
+          <Title>POP IT!</Title>
+          <Circle />
+          <SubTitle>내 손 안의 포스트잇, 팝잇!</SubTitle>
+        </LogoContainer>
+      </Container>
+    </Layout>
   );
 };
 
