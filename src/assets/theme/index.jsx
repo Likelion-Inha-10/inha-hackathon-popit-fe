@@ -8,6 +8,7 @@ export default {
     green: "#34BA05",
     white: "#FFFFFF",
     gray: "#DDDDDD",
+    darkgray: "#7b7b7b",
   },
 };
 //carrier/src/assets/theme/index.jsx 참고!!
