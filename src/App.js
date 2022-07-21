@@ -1,4 +1,5 @@
 import Button from "./popit-ui/Button";
+import Intro from "./pages/Intro";
 import Layout from "./popit-ui/Layout";
 import Typography from "./popit-ui/Typography";
 import Margin from "./popit-ui/Margin";
