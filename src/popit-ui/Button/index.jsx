@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 //노란색버튼 (칠해져 있는 것)& 겉만 노랑(아이디 ,비번 적는 곳)
 const Button = styled.button`
   position: relative;
@@ -11,20 +11,21 @@ const Button = styled.button`
   font-size: 16px;
   text-align: center;
 
-  &:hover {
-    background-color: gray;
+  :hover {
+    background-color: ${(props) =>
+      props.hoverColor || props.theme.colors.orange};
   }
 
   ${(props) =>
     props.medium &&
-    css`
+    `
       width: 160px;
     `}
 
   ${(props) =>
     props.small &&
-    css`
-      font-size: 16px;
+    `
+      font-size: 12px;
       width: 70px;
       height: 30px;
     `}

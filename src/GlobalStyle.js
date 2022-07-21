@@ -9,20 +9,20 @@ const GlobalStyle = createGlobalStyle`
 }
 
 @font-face {
-  font-family: "MaruBuri";
+  font-family: "NanumSquareB";
   src: url(${han}) format('woff');
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MaruBuri";
+  font-family: "NanumSquareB";
   src: url(${eng}) format('woff'); 
   font-style: normal;
   unicode-range: U+0041-005A, U+0061-007A;
 }
 
-body {
-  font-family: "MaruBuri";
+* {
+  font-family: "NanumSquareB";
 }
 `;
 
