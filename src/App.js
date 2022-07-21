@@ -12,7 +12,9 @@ function App() {
       <Layout gradation down>
         <FirstHeader back popit></FirstHeader>
 
-        <RoundBox white down height="785px"></RoundBox>
+        <RoundBox white down height="785px">
+          <Button small>완료</Button>
+        </RoundBox>
       </Layout>
     </>
   );

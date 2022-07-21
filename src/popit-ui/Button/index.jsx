@@ -2,11 +2,11 @@ import styled, { css } from "styled-components";
 //노란색버튼 (칠해져 있는 것)& 겉만 노랑(아이디 ,비번 적는 곳)
 const Button = styled.button`
   position: relative;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: ${(props) => props.color || props.theme.colors.main};
   border-radius: 52px;
   height: 48px;
   width: 324px;
-  border: ${(props) => (props.border ? props.border : "none")};
+  border: ${(props) => props.border || "none"};
   color: white;
   font-size: 16px;
   text-align: center;
@@ -24,6 +24,7 @@ const Button = styled.button`
   ${(props) =>
     props.small &&
     css`
+      font-size: 16px;
       width: 70px;
       height: 30px;
     `}
