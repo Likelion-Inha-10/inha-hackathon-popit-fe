@@ -11,7 +11,7 @@ import _ from "lodash";
 import cat from "./babo-cat.png";
 import CircleButton from "../../../popit-ui/CircleButton";
 import { useNavigate } from "react-router-dom";
-import toast from "react-simple-toasts";
+import Alert from "../../../popit-ui/Alert";
 
 const Wrapper = styled.div`
   position: relative;
@@ -94,7 +94,7 @@ const CategoryList = (props) => {
       }
     });
     if (numberOfSelected < 3) {
-      toast("3개 이상 선택해주세요.", 1300);
+      Alert("3개 이상 선택해주세요.");
     } else {
       navigate("/main");
     }
