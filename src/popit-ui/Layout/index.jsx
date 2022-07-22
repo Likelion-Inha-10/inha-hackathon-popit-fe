@@ -21,7 +21,7 @@ const PhoneContainer = styled.div`
   ${(props) =>
     props.gradation &&
     `
-      background: linear-gradient(270deg, #ff7c69 -30%, #ffc84b 100%);
+      background: linear-gradient(269deg, #ff7c69 0%, #ffc84b 100%);
     `}
   
     ${(props) =>

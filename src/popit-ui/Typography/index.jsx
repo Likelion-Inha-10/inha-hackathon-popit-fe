@@ -73,7 +73,7 @@ const Typography = styled.div`
     `
       font-size: 14px;
       font-family: "NanumSquareL";
-     `}
+    `}
 `;
 
 export default Typography;
