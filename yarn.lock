@@ -1978,6 +1978,13 @@
   "resolved" "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
   "version" "1.2.4"
 
+"@types/react-dom@^16.8.2":
+  "integrity" "sha512-Oqc0RY4fggGA3ltEgyPLc3IV9T73IGoWjkONbsyJ3ZBn+UPPCYpU2ec0i3cEbJuEdZtkqcCF2l1zf2pBdgUGSg=="
+  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-16.9.16.tgz"
+  "version" "16.9.16"
+  dependencies:
+    "@types/react" "^16"
+
 "@types/react-dom@^18.0.0":
   "integrity" "sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA=="
   "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.6.tgz"
@@ -1985,10 +1992,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
-  "integrity" "sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow=="
-  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.15.tgz"
-  "version" "18.0.15"
+"@types/react@*", "@types/react@^16", "@types/react@^16.8.2":
+  "integrity" "sha512-83zBE6+XUVXsdL3iFzOyUewdauaU+KviKCHEGOgSW52coAuqW7tEKQM0E9+ZC0Zk6TELQ2/JgogPvp7FavzFwg=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-16.14.28.tgz"
+  "version" "16.14.28"
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7328,7 +7335,7 @@
     "strip-ansi" "^6.0.1"
     "text-table" "^0.2.0"
 
-"react-dom@^18.0.0", "react-dom@^18.2.0", "react-dom@>= 16.8.0", "react-dom@>=16.8":
+"react-dom@^18.0.0", "react-dom@^18.2.0", "react-dom@>= 16.8.0", "react-dom@>=16.8", "react-dom@>=16.8.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -7441,7 +7448,19 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react@*", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0", "react@>=16.8":
+"react-simple-toasts@^2.2.3":
+  "integrity" "sha512-z6FX3CC0bSQ9eEDN8c/R8yb+eUyJwa8osb6vDMN1JS5fOl5+7fI7Eu/aN0Rxr7+RtoSgNfwFuVaz9AAju1JqYw=="
+  "resolved" "https://registry.npmjs.org/react-simple-toasts/-/react-simple-toasts-2.2.3.tgz"
+  "version" "2.2.3"
+
+"react-toasts@^3.0.6":
+  "integrity" "sha512-SgtyyytTG6wcjI4rgv4OZmHHLiETYfiHfyz1qLv8Cxu6h9I3p+asUgY3L5DSEorOBSS4Dtv87xwXhi0KsCgLvQ=="
+  "resolved" "https://registry.npmjs.org/react-toasts/-/react-toasts-3.0.6.tgz"
+  "version" "3.0.6"
+  dependencies:
+    "watchable-stores" "^2.0.2"
+
+"react@*", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0", "react@>=16.8", "react@>=16.8.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -8718,6 +8737,11 @@
   "version" "1.0.8"
   dependencies:
     "makeerror" "1.0.12"
+
+"watchable-stores@^2.0.2":
+  "integrity" "sha512-xKzypK+hG6gaZFcmiEvdazbD9Z8+hIlr+frC7Ne4N4LI0zvuPaT5uPrhn2RMxhiwaLVw70rctes+rPUTvwhPNg=="
+  "resolved" "https://registry.npmjs.org/watchable-stores/-/watchable-stores-2.0.2.tgz"
+  "version" "2.0.2"
 
 "watchpack@^2.3.1":
   "integrity" "sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg=="
