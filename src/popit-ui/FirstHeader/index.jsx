@@ -5,7 +5,7 @@ import Margin from "../Margin";
 
 const Wrapper = styled(Flex)`
   width: 100%;
-  height: 59px;
+  height: 68px;
 `;
 
 const Title = styled.div`

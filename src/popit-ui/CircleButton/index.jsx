@@ -4,16 +4,24 @@ import Flex from "../Flex";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const Circle = styled(Flex)`
+  position: fixed;
+  margin-left: 265px;
+  margin-top: 515px;
   height: 64px;
   width: 64px;
   background-color: ${(props) => props.color || props.theme.colors.main};
   border-radius: 50%;
   box-shadow: 0px 4px 10px 2px rgb(0, 0, 0, 0.15);
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.orange};
+  }
 `;
 
 const CircleButton = (props) => {
   return (
     <Circle
+      onClick={props.onClick}
       color={props.color}
       plus={props.plus}
       justify="center"
