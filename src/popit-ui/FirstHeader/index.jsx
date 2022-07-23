@@ -34,7 +34,7 @@ const Back = styled.div`
 const FirstHeader = (props) => {
   return (
     <Wrapper align="center" justify="space-between">
-      <Back back={props.back}>
+      <Back onClick={props.onClick} back={props.back}>
         <IoChevronBackSharp size="30" color="#ffffff" />
       </Back>
       <Title popit={props.popit}>POP IT</Title>
