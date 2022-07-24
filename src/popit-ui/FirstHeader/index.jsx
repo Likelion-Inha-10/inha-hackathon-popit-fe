@@ -5,7 +5,7 @@ import Margin from "../Margin";
 
 const Wrapper = styled(Flex)`
   width: 100%;
-  height: 59px;
+  height: 68px;
 `;
 
 const Title = styled.div`
@@ -34,7 +34,7 @@ const Back = styled.div`
 const FirstHeader = (props) => {
   return (
     <Wrapper align="center" justify="space-between">
-      <Back back={props.back}>
+      <Back onClick={props.onClick} back={props.back}>
         <IoChevronBackSharp size="30" color="#ffffff" />
       </Back>
       <Title popit={props.popit}>POP IT</Title>

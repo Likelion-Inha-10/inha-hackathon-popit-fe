@@ -26,6 +26,9 @@ const StyledInput = styled.input`
   ::placeholder {
     color: lightgrey;
   }
+  ${(props) =>
+    props.type &&
+    `font-family: "Spoqa Han Sans Neo", "sans-serif"`}//type=password 일 때 글꼴적용이 안됨. 나눔스퀘어가 특수문자 지원하지 않는 폰트여서 임시로 바꿔둠..
 `;
 
 const Input = (props) => {
@@ -37,7 +40,12 @@ const Input = (props) => {
   return (
     <Wrapper typing={typing} justify="center" align="center">
       <Container justify="space-between" align="center">
-        <StyledInput onInput={BorderColor} placeholder={props.placeholder} />
+        <StyledInput
+          type={props.type}
+          onChange={props.onChange}
+          onInput={BorderColor}
+          placeholder={props.placeholder}
+        />
         {typing ? (
           <BsCheck2 size="25" color="#FFC74A" />
         ) : (
