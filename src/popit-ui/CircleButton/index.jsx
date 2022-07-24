@@ -5,8 +5,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 const Circle = styled(Flex)`
   position: fixed;
-  margin-left: 265px;
-  margin-top: 515px;
+  margin-left: 270px;
+  margin-top: 530px;
   height: 64px;
   width: 64px;
   background-color: ${(props) => props.color || props.theme.colors.main};
