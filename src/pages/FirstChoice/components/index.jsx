@@ -104,7 +104,6 @@ const CategoryList = (props) => {
     <>
       <Wrapper>
         <CircleButton onClick={onClick} />
-        <img src="babo-cat.jpeg" />
         <Container>
           {_.map(categories, (category) => (
             <Category
