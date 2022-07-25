@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import Layout from "../../popit-ui/Layout";
 import Typography from "../../popit-ui/Typography";
+import RoundBox from "./../../popit-ui/RoundBox/index";
 
 const slideOut = keyframes`
   0%{
@@ -13,14 +14,9 @@ const slideOut = keyframes`
   }
 `;
 
-const Container = styled.div`
+const AnimationBox = styled.div`
   position: relative;
-  width: 100%;
-  min-height: 760px;
-  background: linear-gradient(270deg, #ff7c69 -30%, #ffc84b 100%);
-  border-bottom-left-radius: 10%;
-  border-bottom-right-radius: 10%;
-  box-shadow: 0 4px 10px -4px rgb(0, 0, 0, 0.3);
+  top: -230px;
   animation-name: ${slideOut};
   animation-duration: 1.5s;
   animation-iteration-count: 1;
@@ -29,7 +25,8 @@ const Container = styled.div`
 
 const LogoContainer = styled.div`
   position: relative;
-  top: 100px;
+  top: 350px;
+  left: 10px;
   width: 300px;
   height: 200px;
   border: none;
@@ -64,19 +61,21 @@ const Intro = () => {
 
   return (
     <Layout white>
-      <Container>
-        <LogoContainer>
-          <Typography size="48px" color="white">
-            POP IT!
-          </Typography>
-          <Circle />
-          <TextWrapper>
-            <Typography color="white" subhead>
-              내 손 안의 포스트잇, 팝잇!
+      <AnimationBox>
+        <RoundBox gradation up height="760px">
+          <LogoContainer>
+            <Typography size="48px" color="white">
+              POP IT
             </Typography>
-          </TextWrapper>
-        </LogoContainer>
-      </Container>
+            <Circle />
+            <TextWrapper>
+              <Typography color="white" small>
+                내 손 안의 포스트잇, 팝잇
+              </Typography>
+            </TextWrapper>
+          </LogoContainer>
+        </RoundBox>
+      </AnimationBox>
     </Layout>
   );
 };
