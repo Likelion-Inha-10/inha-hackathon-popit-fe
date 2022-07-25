@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const settings = {
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -22,10 +22,12 @@ const StyledSlider = styled(Slider)`
   .slick-slide > div {
     height: 100%;
   }
+
   .slick-slide > div {
     cursor: pointer;
     margin: auto;
   }
+
   .slick-dots {
     .slick-active {
       button::before {
@@ -82,9 +84,10 @@ const Tutorial = () => {
                 <br />
                 사람들과 교류해보세요
                 <br />
+                <br />
               </>
             }
-          />
+          ></Template>
         </StyledSlider>
       </Layout>
     </>

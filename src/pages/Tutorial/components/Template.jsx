@@ -23,7 +23,7 @@ const TextBox = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  margin-top: 80px;
+  margin-top: 60px;
   margin-left: 33px;
 `;
 
@@ -40,7 +40,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
-  height: 100%;
 `;
 
 const Template = (props) => {
@@ -50,8 +49,8 @@ const Template = (props) => {
       <StyledImage image={props.image} />
       <Wrapper>
         <TextBox
-          fontsize="32px"
-          paddingtop="135%"
+          fontsize="16px"
+          paddingtop="130%"
           paddingbottom="15px"
           fontweight="bolder"
         >
