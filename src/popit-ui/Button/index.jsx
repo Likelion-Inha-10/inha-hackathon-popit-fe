@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 //노란색버튼 (칠해져 있는 것)& 겉만 노랑(아이디 ,비번 적는 곳)
 const Button = styled.button`
   position: relative;
-  background-color: ${(props) => props.theme.colors.main};
+  background-color: #ffc74a;
   border-radius: 52px;
   height: 48px;
   width: 324px;
