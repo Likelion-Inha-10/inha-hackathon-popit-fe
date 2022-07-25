@@ -1,29 +1,14 @@
 import React from "react";
-import Button from "../../popit-ui/Button";
 import Layout from "../../popit-ui/Layout";
+import ToggleButton from "../../popit-ui/ToggleButton";
+import { useState } from "react";
 
 const Main = () => {
+  const [toggled, setToggled] = useState(false);
   return (
     <Layout white>
-      <Button whiteGray redTypo>
-        팔로우 취소
-      </Button>
-
-      <Button whiteGray>팝 저장</Button>
-
-      <Button large>hi</Button>
-
-      <Button medium>확인</Button>
-
-      <Button medium white>
-        취소
-      </Button>
-
-      <Button small>하이</Button>
-
-      <Button extraSmall gray>
-        삭제
-      </Button>
+      <ToggleButton onChange={(event) => setToggled(event.target.checked)} />
+      <p>The switch is {toggled ? "on" : "off"}</p>
     </Layout>
   );
 };
