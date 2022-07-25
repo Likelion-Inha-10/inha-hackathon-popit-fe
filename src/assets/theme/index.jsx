@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+const themes = {
+  backgroundColor: "000000",
+  main: "#FFC74A",
+  orange: "#FFA751",
+  yellow: "#FFE259",
+  black: "#000000",
+  green: "#34BA05",
+  white: "#FFFFFF",
+=======
 export default {
   colors: {
     backgroundColor: "000000",
@@ -10,7 +20,10 @@ export default {
     gray: "#DDDDDD",
     darkgray: "#7b7b7b",
   },
+>>>>>>> e54e1223b240a74016ab73b47a88eacacfb71e72
 };
+
+export default themes;
 //carrier/src/assets/theme/index.jsx 참고!!
 // 색상을 가져다 쓰는 것임, 색상 지정해주는 것임 가져다 쓸 때에는
 //background-color: ${(props) => props.theme.colors.primary};와 같이
