@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Flex from "../Flex";
 import Button from "./../Button/index";
+import Typography from "./../Typography/index";
 
 const Container = styled(Flex)`
   background-color: black;
@@ -8,11 +9,13 @@ const Container = styled(Flex)`
   height: 150px;
   border-radius: 16px;
 `;
-
+const Wrapper = styled.div``;
 const Noticepop = () => {
   return (
     <Container>
-      <Button medium />
+      <Wrapper>
+        <Button medium />
+      </Wrapper>
     </Container>
   );
 };
