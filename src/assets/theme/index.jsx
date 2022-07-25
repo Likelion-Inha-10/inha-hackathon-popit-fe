@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const themes = {
   backgroundColor: "000000",
   main: "#FFC74A",
@@ -6,6 +7,20 @@ const themes = {
   black: "#000000",
   green: "#34BA05",
   white: "#FFFFFF",
+=======
+export default {
+  colors: {
+    backgroundColor: "000000",
+    main: "#FFC74A",
+    orange: "#FFA751",
+    yellow: "#FFE259",
+    black: "#000000",
+    green: "#34BA05",
+    white: "#FFFFFF",
+    gray: "#DDDDDD",
+    darkgray: "#7b7b7b",
+  },
+>>>>>>> e54e1223b240a74016ab73b47a88eacacfb71e72
 };
 
 export default themes;

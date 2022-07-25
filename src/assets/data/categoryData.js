@@ -1,0 +1,18 @@
+export default [
+  { id: 0, title: "화학", selected: true },
+  { id: 1, title: "개발", selected: true },
+  { id: 2, title: "토익", selected: false },
+  { id: 3, title: "화학", selected: false },
+  { id: 4, title: "개발", selected: false },
+  { id: 5, title: "토익", selected: false },
+  { id: 6, title: "화학", selected: false },
+  { id: 7, title: "개발", selected: false },
+  { id: 8, title: "세현", selected: false },
+  { id: 9, title: "화학", selected: true },
+  { id: 10, title: "개발", selected: true },
+  { id: 11, title: "토익", selected: false },
+  { id: 12, title: "화학", selected: false },
+  { id: 13, title: "개발", selected: false },
+  { id: 14, title: "토익", selected: false },
+  { id: 15, title: "화학", selected: false },
+];

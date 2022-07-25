@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Typography = styled.div`
+  font-size: ${(props) => props.size || "1rem"};
   color: ${(props) =>
     props.color ? props.theme.colors[props.color] : "black"};
   ${(props) =>
@@ -12,6 +13,7 @@ const Typography = styled.div`
     props.underline &&
     `
       text-decoration: underline;
+      text-underline-position: under;
     `}
 
   ${(props) =>
@@ -64,6 +66,13 @@ const Typography = styled.div`
     props.inline &&
     `
       display : inline-block;
+    `}
+  
+    ${(props) =>
+    props.small &&
+    `
+      font-size: 14px;
+      font-family: "NanumSquareL";
     `}
 `;
 
