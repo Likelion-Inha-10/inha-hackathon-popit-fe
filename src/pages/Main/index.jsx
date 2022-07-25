@@ -1,9 +1,13 @@
 import React from "react";
-import Button from "../../popit-ui/Button";
-import Layout from "../../popit-ui/Layout";
+import Noticepop from "./../../popit-ui/Noticepop/index";
+import Layout from "./../../popit-ui/Layout/index";
 
 const Main = () => {
-  return <Layout white></Layout>;
+  return (
+    <Layout white>
+      <Noticepop />
+    </Layout>
+  );
 };
 
 export default Main;
