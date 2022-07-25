@@ -1,8 +1,9 @@
 import styled from "styled-components";
-//노란색버튼 (칠해져 있는 것)& 겉만 노랑(아이디 ,비번 적는 곳)
+
 const Button = styled.button`
   position: relative;
-  background-color: ${(props) => props.color || props.theme.colors.main};
+  background-color: ${(props) =>
+    props.color ? props.theme.colors[props.color] : props.theme.colors.main}
   border-radius: 52px;
   height: 48px;
   width: 324px;
@@ -12,8 +13,7 @@ const Button = styled.button`
   text-align: center;
 
   :hover {
-    background-color: ${(props) =>
-      props.hoverColor || props.theme.colors.orange};
+    background-color: ${(props) => props.theme.colors.orange};
   }
 
   ${(props) =>
@@ -28,6 +28,15 @@ const Button = styled.button`
       font-size: 12px;
       width: 70px;
       height: 30px;
+    `}
+
+  ${(props) =>
+    props.extraSmall &&
+    `
+      font-family: "NanumSquareR";
+      font-size: 12px;
+      width: 48px;
+      height: 24px;
     `}
 `;
 
