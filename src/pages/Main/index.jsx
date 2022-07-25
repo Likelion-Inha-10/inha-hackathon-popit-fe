@@ -1,13 +1,12 @@
 import React from "react";
-import Noticepop from "./../../popit-ui/Noticepop/index";
 import Layout from "./../../popit-ui/Layout";
-import Completepop from "../../popit-ui/Completepop";
-
+import Inputpopup from "./../../popit-ui/Inputpopup/index";
+import Categoryicon from "../../popit-ui/Categoryicon";
+import dog from "../../popit-ui/Categoryicon/dog.png";
 const Main = () => {
   return (
     <Layout white>
-      <Noticepop content="안녕하세요" />
-      <Completepop content="안녕하세요" subcontent="저는 " />
+      <Categoryicon image={dog}></Categoryicon>
     </Layout>
   );
 };

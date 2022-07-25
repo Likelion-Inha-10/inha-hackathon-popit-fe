@@ -1,26 +1,26 @@
+import React from "react";
 import styled from "styled-components";
+import Flex from "../Flex";
 
-const Image = styled.img`
-  background-image: url(${(props) => props.image});
-  width: 96px;
-  height: 96px;
-  border: none;
+const Container = styled(Flex)`
+  background-color: pink;
+  width: 360px;
+  height: 200px;
+  border-radius: 16px;
   margin-top: ${(props) => (props.margintop ? props.margintop : "none")};
   margin-left: ${(props) => (props.marginleft ? props.marginleft : "none")};
   margin-right: ${(props) => (props.marginright ? props.marginright : "none")};
   margin-bottom: ${(props) =>
     props.marginbottom ? props.marginbottom : "none"};
 `;
-const Categoryicon = (props) => {
+
+const Smallcontainer = styled(Flex)``;
+const Inputpopup = () => {
   return (
-    <Image
-      src={props.image}
-      margintop="15px"
-      marginleft="15px"
-      marginright="15px"
-      margindbottom="15px"
-    />
+    <div>
+      <Container />
+    </div>
   );
 };
 
-export default Categoryicon;
+export default Inputpopup;
