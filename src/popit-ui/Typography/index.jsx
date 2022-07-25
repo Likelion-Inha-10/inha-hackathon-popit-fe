@@ -22,51 +22,6 @@ const Typography = styled.div`
       font-size: 1.75rem;
       font-weight: bold;
     `}
-
-  ${(props) =>
-    props.headline &&
-    `
-      font-size: 1.25rem;
-      font-weight: bold;
-    `}
-
-  ${(props) =>
-    props.subhead &&
-    `
-      font-size: 0.875rem;
-      font-weight: 700;
-    `}
-
-  ${(props) =>
-    props.body &&
-    `
-      font-size: 0.875rem;
-      font-weight: normal;
-    `}
-
-  ${(props) =>
-    props.bold300 &&
-    `
-     font-weight : 300;
-   `}
-
-  ${(props) =>
-    props.bold400 &&
-    `
-     font-weight : 400;
-   `}
-
-  ${(props) =>
-    props.bold700 &&
-    `
-      font-weight : 700;
-    `}
-
-  ${(props) =>
-    props.inline &&
-    `
-      display : inline-block;
-    `}
   
     ${(props) =>
     props.small &&
@@ -74,6 +29,32 @@ const Typography = styled.div`
       font-size: 14px;
       font-family: "NanumSquareL";
     `}
+  
+    ${(props) =>
+    props.bold20 &&
+    `
+      font-family: "NanumSquare";
+      font-size: 20px;
+    `}
+
+    ${(props) =>
+    props.regular16 &&
+    `
+      font-family: "NanumSquareR";
+      font-size: 16px;
+    `}
+    ${(props) =>
+    props.bold16 &&
+    `
+    font-family: "NanumSquare";
+    font-size: 16px;
+    `}
+    ${(props) =>
+    props.regular12 &&
+    `
+    font-family: "NanumSquareR";
+    font-size: 12px;
+  `}
 `;
 
 export default Typography;
