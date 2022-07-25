@@ -31,7 +31,7 @@ const Typography = styled.div`
     `}
   
     ${(props) =>
-    pros.bold20 &&
+    props.bold20 &&
     `
       font-family: "NanumSquare";
       font-size: 20px;
