@@ -8,7 +8,10 @@ export default {
     green: "#34BA05",
     white: "#FFFFFF",
     gray: "#DDDDDD",
+    whitegray: "#F7F7F7",
+    middlegray: "#C1C1C1",
     darkgray: "#7b7b7b",
+    warningred: "#CF5959",
   },
 };
 

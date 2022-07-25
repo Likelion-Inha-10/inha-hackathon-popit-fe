@@ -2,26 +2,33 @@ import styled from "styled-components";
 
 const Button = styled.button`
   position: relative;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors[props.color] : props.theme.colors.main}
+  background-color: ${(props) => props.theme.colors.main};
   border-radius: 52px;
   height: 48px;
   width: 324px;
-  border: ${(props) => props.border || "none"};
+  border: none;
   color: white;
   font-size: 16px;
   text-align: center;
+  font-family: "NanumSquareR";
 
   :hover {
     background-color: ${(props) => props.theme.colors.orange};
   }
 
   ${(props) =>
-    props.medium &&
+    props.large &&
     `
       width: 160px;
     `}
-
+  ${(props) =>
+    props.medium &&
+    `
+      font-size: 12px;
+      width: 121px;
+      height: 36px;
+    `}
+  
   ${(props) =>
     props.small &&
     `
@@ -33,16 +40,50 @@ const Button = styled.button`
   ${(props) =>
     props.extraSmall &&
     `
-      font-family: "NanumSquareR";
+      color: ${props.theme.colors.middlegray};
       font-size: 12px;
       width: 48px;
       height: 24px;
+  `}
+
+  
+
+  ${(props) =>
+    props.white &&
+    `
+      border: 1px solid ${props.theme.colors.main};
+      color: ${props.theme.colors.middlegray};
+      background-color: ${props.theme.colors.white};
+
+      :hover {
+        background-color: ${props.theme.colors.main};
+      }
+    `}
+  ${(props) =>
+    props.whiteGray &&
+    `
+      color: ${props.theme.colors.black};
+      background-color: ${props.theme.colors.whitegray};
+
+      :hover {
+        background-color: ${props.theme.colors.gray};
+      }
+    `}
+  ${(props) =>
+    props.redTypo &&
+    `
+      color: ${props.theme.colors.warningred} ;
+    `}
+  ${(props) =>
+    props.gray &&
+    `
+      background-color: ${props.theme.colors.gray};
+      
+      :hover {
+        color: ${props.theme.colors.darkgray};
+        background-color: ${props.theme.colors.middlegray};
+      }
     `}
 `;
 
 export default Button;
-/* 사용법
-1. color="" 를 통해 버튼의 배경색을 바꿀 수 있음
-2. border="" 를 통해 버튼의 테두리 색을 바꿀 수 있음
-3. medium 전달시 중간 크기의 버튼 생성(기본은 대형)
-4. small 전달시 소형 크기의 버튼 생성 */
