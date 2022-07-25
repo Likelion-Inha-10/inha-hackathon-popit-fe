@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
 }
 @font-face {
-  font-family: "NanumSquareN";
+  font-family: "NanumSquareR";
   src: url(${han2}) format('ttf');
   font-style: normal;
 }
