@@ -11,13 +11,8 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
-    "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1",
-=======
     "react-simple-toasts": "^2.2.3",
     "react-toasts": "^3.0.6",
->>>>>>> e54e1223b240a74016ab73b47a88eacacfb71e72
     "styled-components": "^5.3.5",
     "styled-reset": "^4.4.2",
     "web-vitals": "^2.1.0"
