@@ -5,6 +5,9 @@ import Template from "./components/Template";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import img1 from "./img/A1.png";
+import img2 from "./img/A2.png";
+import img3 from "./img/A3.png";
 
 const settings = {
   dots: true,
@@ -47,7 +50,7 @@ const Tutorial = () => {
       <Layout white>
         <StyledSlider {...settings}>
           <Template
-            image="img/A1.png"
+            image={img1}
             title="READ"
             content={
               <>
@@ -61,7 +64,7 @@ const Tutorial = () => {
           />
 
           <Template
-            image="./img/A2.png"
+            image={img2}
             src="./img/A2.png"
             title="KEEP"
             content={
@@ -76,7 +79,7 @@ const Tutorial = () => {
           />
 
           <Template
-            image="./img/A3.png"
+            image={img3}
             title="CONNECT"
             content={
               <>

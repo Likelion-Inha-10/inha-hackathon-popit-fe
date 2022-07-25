@@ -3,15 +3,16 @@ import styled from "styled-components";
 import deco from "../img/deco.png";
 import Button from "../../../popit-ui/Button";
 
-const StyledImage = styled.div`
-  image: url(${(props) => props.image});
-  width: 30px;
-  height: 30px;
-  z-index: 5;
+const StyledImage = styled.img`
+  width: 290px;
+  height: 225px;
+  z-index: 1;
+  padding-top: 60%;
+  padding-left: 15%;
+  padding-right: 30%;
 `;
 
 const TextBox = styled.div`
-  width: 100%;
   font-size: ${(props) => (props.fontsize ? props.fontsize : "32px")};
   padding-top: ${(props) => (props.paddingtop ? props.paddingtop : "none")};
   padding-bottom: ${(props) =>
@@ -23,7 +24,7 @@ const TextBox = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  margin-top: 60px;
+  margin-top: 70px;
   margin-left: 33px;
 `;
 
@@ -33,35 +34,28 @@ const Backgroundimg = styled.img`
   background-image: url("../img/deco.png");
   background-size: cover;
   position: absolute;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
+  z-index: -1;
 `;
 
 const Template = (props) => {
   return (
     <>
       <Backgroundimg src={deco} />
-      <StyledImage image={props.image} />
-      <Wrapper>
-        <TextBox
-          fontsize="16px"
-          paddingtop="130%"
-          paddingbottom="15px"
-          fontweight="bolder"
-        >
-          <h1>{props.title}</h1>
-        </TextBox>
-        <TextBox fontsize="16px" textalign="center" lineheight="20px">
-          {props.content}
-        </TextBox>
+      <StyledImage src={props.image} />
 
-        <StyledButton>시작하기</StyledButton>
-      </Wrapper>
+      <TextBox
+        fontsize="16px"
+        paddingtop="20%"
+        paddingbottom="15px"
+        fontweight="bolder"
+      >
+        <h1>{props.title}</h1>
+      </TextBox>
+      <TextBox fontsize="16px" textalign="center" lineheight="20px">
+        {props.content}
+      </TextBox>
+
+      <StyledButton>시작하기</StyledButton>
     </>
   );
 };
