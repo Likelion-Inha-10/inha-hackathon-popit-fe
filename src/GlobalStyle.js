@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
   font-family: "NanumSquare";
   src: url(${han1}) format('woff');
   font-style: normal;
-
 }
 @font-face {
   font-family: "NanumSquareR";
