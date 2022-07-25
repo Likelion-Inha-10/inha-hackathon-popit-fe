@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import deco from "../img/deco.png";
 import Button from "../../../popit-ui/Button";
-import { Animated } from "react-animated-css";
 
 const StyledImage = styled.img`
   width: 290px;
@@ -42,9 +41,7 @@ const Template = (props) => {
   return (
     <>
       <Backgroundimg src={deco} />
-      <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-        <StyledImage src={props.image} />
-      </Animated>
+      <StyledImage src={props.image} />
 
       <TextBox
         fontsize="16px"

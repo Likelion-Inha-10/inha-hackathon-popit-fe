@@ -14,16 +14,19 @@ const Container = styled(Flex)`
   margin-bottom: ${(props) =>
     props.marginbottom ? props.marginbottom : "none"};
 `;
+
 const Wrapper = styled(Flex)`
   width: 280px;
   height: 150px;
   margin-top: 50px;
 `;
+
 const Buttonwrapper = styled(Flex)`
-  padding-top: 45px;
+  padding-top: 30px;
   padding-bottom: 20px;
 `;
-const Noticepop = (props) => {
+
+const Completepop = (props) => {
   return (
     <Container
       direction="column"
@@ -41,19 +44,11 @@ const Noticepop = (props) => {
           {props.subcontent}
         </Typography>
         <Buttonwrapper justify="space-around">
-          <Button white medium>
-            취소
-          </Button>
-          <Button medium>삭제</Button>
+          <Button medium>확인</Button>
         </Buttonwrapper>
       </Wrapper>
     </Container>
   );
 };
 
-export default Noticepop;
-
-/*사용법
--Button 공통적으로 취소/삭제 가 있는 팝업창이 2개 있어서
-미리 써 두었습니다! props.content내용만적으면 됩니당
--container margin으로 마구 움직일 수 있음다...*/
+export default Completepop;

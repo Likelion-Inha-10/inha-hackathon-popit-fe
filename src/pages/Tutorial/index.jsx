@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import img1 from "./img/A1.png";
 import img2 from "./img/A2.png";
 import img3 from "./img/A3.png";
+import { Animated } from "react-animated-css";
 
 const settings = {
   dots: true,
@@ -49,19 +50,25 @@ const Tutorial = () => {
     <>
       <Layout white>
         <StyledSlider {...settings}>
-          <Template
-            image={img1}
-            title="READ"
-            content={
-              <>
-                공부한 것을 한 줄로 정리하고,
-                <br />
-                타인이 공부한 한 줄 키워드들도
-                <br />
-                자유롭게 읽어보세요
-              </>
-            }
-          />
+          <Animated
+            animationIn="fadeIn"
+            animationInDuration={1000}
+            isVisible={true}
+          >
+            <Template
+              image={img1}
+              title="READ"
+              content={
+                <>
+                  공부한 것을 한 줄로 정리하고,
+                  <br />
+                  타인이 공부한 한 줄 키워드들도
+                  <br />
+                  자유롭게 읽어보세요
+                </>
+              }
+            />
+          </Animated>
 
           <Template
             image={img2}
