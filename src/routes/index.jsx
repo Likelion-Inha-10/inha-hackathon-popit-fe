@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp";
 const Router = () => (
   <BrowserRouter>
     <Routes>
+      hi
       <Route exact path="/" element={<Intro />}></Route>
       <Route exact path="/first-choice" element={<FirstChoice />}></Route>
       <Route esact path="/sign-up" element={<SignUp />} />
