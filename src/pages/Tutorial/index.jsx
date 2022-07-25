@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../Layout";
+import Layout from "../../popit-ui/Layout";
 import styled from "styled-components";
 import Template from "./components/Template";
 import Slider from "react-slick";

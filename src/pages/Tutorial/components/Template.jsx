@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import deco from "../img/deco.png";
-import Button from "../../Button";
+import Button from "../../../popit-ui/Button";
 
 const StyledImage = styled.div`
   image: url(${(props) => props.image});
