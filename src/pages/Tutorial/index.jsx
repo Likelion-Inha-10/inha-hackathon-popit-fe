@@ -5,10 +5,14 @@ import Template from "./components/Template";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import img1 from "./img/A1.png";
+import img2 from "./img/A2.png";
+import img3 from "./img/A3.png";
+import { Animated } from "react-animated-css";
 
 const settings = {
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -22,10 +26,12 @@ const StyledSlider = styled(Slider)`
   .slick-slide > div {
     height: 100%;
   }
+
   .slick-slide > div {
     cursor: pointer;
     margin: auto;
   }
+
   .slick-dots {
     .slick-active {
       button::before {
@@ -44,22 +50,28 @@ const Tutorial = () => {
     <>
       <Layout white>
         <StyledSlider {...settings}>
-          <Template
-            image="img/A1.png"
-            title="READ"
-            content={
-              <>
-                공부한 것을 한 줄로 정리하고,
-                <br />
-                타인이 공부한 한 줄 키워드들도
-                <br />
-                자유롭게 읽어보세요
-              </>
-            }
-          />
+          <Animated
+            animationIn="fadeIn"
+            animationInDuration={1000}
+            isVisible={true}
+          >
+            <Template
+              image={img1}
+              title="READ"
+              content={
+                <>
+                  공부한 것을 한 줄로 정리하고,
+                  <br />
+                  타인이 공부한 한 줄 키워드들도
+                  <br />
+                  자유롭게 읽어보세요
+                </>
+              }
+            />
+          </Animated>
 
           <Template
-            image="./img/A2.png"
+            image={img2}
             src="./img/A2.png"
             title="KEEP"
             content={
@@ -74,7 +86,7 @@ const Tutorial = () => {
           />
 
           <Template
-            image="./img/A3.png"
+            image={img3}
             title="CONNECT"
             content={
               <>
@@ -82,9 +94,10 @@ const Tutorial = () => {
                 <br />
                 사람들과 교류해보세요
                 <br />
+                <br />
               </>
             }
-          />
+          ></Template>
         </StyledSlider>
       </Layout>
     </>
