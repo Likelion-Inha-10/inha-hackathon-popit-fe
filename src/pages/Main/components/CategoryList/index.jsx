@@ -5,30 +5,39 @@ import ProfileIcon from "../../../../popit-ui/ProfileIcon/index";
 import styled from "styled-components";
 import cat from "../../../../assets/image/babo-cat.png";
 import Flex from "../../../../popit-ui/Flex";
+import { useNavigate } from "react-router-dom";
 
 const Category = styled(Flex)``;
 
 const CategoryWrapper = styled(Flex)`
-  height: 80px;
-  width: 100%;
+  height: 90px;
   padding: 20px;
-  overflow: scroll;
-  background-color: yellowgreen;
+  overflow: auto;
 `;
 
 const MainWrapper = styled(Flex)`
   background-color: gold;
 `;
+
+const CategoryContainer = styled(Flex)``;
+
 const CategoryList = (props) => {
+  const navigate = useNavigate();
+
+  const moveToCategory = () => {
+    navigate();
+  };
   return (
     <div>
       <CategoryWrapper>
-        <Category align="center" direction="column">
-          <ProfileIcon size48 backImage={cat} />
-          <Margin height="7px" />
-          <Typography regular12>화학</Typography>
-        </Category>
-        <Margin width="10px" />
+        <CategoryContainer>
+          <Category align="center" direction="column" onClick={moveToCategory}>
+            <ProfileIcon size48 backImage={cat} />
+            <Margin height="7px" />
+            <Typography regular12>화학</Typography>
+          </Category>
+          <Margin width="10px" />
+        </CategoryContainer>
       </CategoryWrapper>
     </div>
   );

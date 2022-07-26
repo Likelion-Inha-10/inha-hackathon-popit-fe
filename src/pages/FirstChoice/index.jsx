@@ -8,7 +8,7 @@ import Margin from "../../popit-ui/Margin";
 import CategoryList from "./components";
 
 const Wrapper = styled(Flex)`
-  padding: 50px 30px 0 30px;
+  padding: 57px 30px 0 30px;
 `;
 
 const FirstChoice = () => {
