@@ -18,7 +18,7 @@ const FollowList = (props) => {
   return (
     <>
       <Wrapper justify="space-between" align="center">
-        <Margin width="20px" height="100%" />
+        <Margin width="10px" height="100%" />
         <ProfileWrapper direction="row" align="center">
           <ProfileIcon size48 backImage={props.backImage} />
           <Margin width="15px" height="100%" />
@@ -28,7 +28,7 @@ const FollowList = (props) => {
         <Button extraSmall gray onClick={props.onDelete}>
           삭제
         </Button>
-        <Margin width="20px" height="100%" />
+        <Margin width="10px" height="100%" />
       </Wrapper>
 
       <Margin width="100%" height="15px" />
