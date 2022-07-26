@@ -98,7 +98,12 @@ const MyChatList = () => {
           button
           onDelete={onDelete}
         />
-        <ChatList name="홍길동" chat="숨 참고 Love Dive" />
+        <ChatList
+          name="홍길동"
+          chat="숨 참고 Love Dive"
+          button
+          onDelete={onDelete}
+        />
       </AnimationBox>
       {isPopup ? (
         <Dimmer>
