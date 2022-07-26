@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const Button = styled.button`
   position: relative;
   background-color: ${(props) => props.theme.colors.main};
   border-radius: 52px;
@@ -86,7 +86,4 @@ const StyledButton = styled.button`
     `}
 `;
 
-const Button = (props) => {
-  return <StyledButton onClick={props.onClick}>{props.children}</StyledButton>;
-};
 export default Button;
