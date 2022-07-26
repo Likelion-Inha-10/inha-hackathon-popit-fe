@@ -38,6 +38,54 @@ const CategoryList = (props) => {
           </Category>
           <Margin width="10px" />
         </CategoryContainer>
+        <CategoryContainer>
+          <Category align="center" direction="column" onClick={moveToCategory}>
+            <ProfileIcon size48 backImage={cat} />
+            <Margin height="7px" />
+            <Typography regular12>화학</Typography>
+          </Category>
+          <Margin width="10px" />
+        </CategoryContainer>
+        <CategoryContainer>
+          <Category align="center" direction="column" onClick={moveToCategory}>
+            <ProfileIcon size48 backImage={cat} />
+            <Margin height="7px" />
+            <Typography regular12>화학</Typography>
+          </Category>
+          <Margin width="10px" />
+        </CategoryContainer>
+        <CategoryContainer>
+          <Category align="center" direction="column" onClick={moveToCategory}>
+            <ProfileIcon size48 backImage={cat} />
+            <Margin height="7px" />
+            <Typography regular12>화학</Typography>
+          </Category>
+          <Margin width="10px" />
+        </CategoryContainer>
+        <CategoryContainer>
+          <Category align="center" direction="column" onClick={moveToCategory}>
+            <ProfileIcon size48 backImage={cat} />
+            <Margin height="7px" />
+            <Typography regular12>화학</Typography>
+          </Category>
+          <Margin width="10px" />
+        </CategoryContainer>
+        <CategoryContainer>
+          <Category align="center" direction="column" onClick={moveToCategory}>
+            <ProfileIcon size48 backImage={cat} />
+            <Margin height="7px" />
+            <Typography regular12>화학</Typography>
+          </Category>
+          <Margin width="10px" />
+        </CategoryContainer>
+        <CategoryContainer>
+          <Category align="center" direction="column" onClick={moveToCategory}>
+            <ProfileIcon size48 backImage={cat} />
+            <Margin height="7px" />
+            <Typography regular12>화학</Typography>
+          </Category>
+          <Margin width="10px" />
+        </CategoryContainer>
       </CategoryWrapper>
     </div>
   );
