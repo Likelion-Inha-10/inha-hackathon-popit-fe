@@ -1,16 +1,15 @@
 import React from "react";
 import Layout from "../../popit-ui/Layout";
-import ToggleButton from "../../popit-ui/ToggleButton";
 import { useState } from "react";
-import Pop from "../../popit-ui/Pop";
-import cat from "../../assets/image/babo-cat.png";
 import MainHeader from "../../popit-ui/MainHeader/index";
+import CategoryList from "./components/CategoryList";
 
 const Main = () => {
   const [toggled, setToggled] = useState(false);
   return (
     <Layout white>
       <MainHeader page="main" />
+      <CategoryList />
     </Layout>
   );
 };
