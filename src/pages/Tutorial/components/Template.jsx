@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import deco from "../img/deco.png";
 import Button from "../../../popit-ui/Button";
+import { useNavigate } from "react-router-dom";
 
 const StyledImage = styled.img`
   width: 290px;
@@ -38,6 +39,11 @@ const Backgroundimg = styled.img`
 `;
 
 const Template = (props) => {
+  const navigate = useNavigate();
+
+  const moveToSignUp = () => {
+    navigate("/login");
+  };
   return (
     <>
       <Backgroundimg src={deco} />
@@ -55,7 +61,7 @@ const Template = (props) => {
         {props.content}
       </TextBox>
 
-      <StyledButton>시작하기</StyledButton>
+      <StyledButton onClick={moveToSignUp}>시작하기</StyledButton>
     </>
   );
 };
