@@ -22,7 +22,7 @@ const TextWrapper = styled.div`
   text-align: center;
 `;
 const BoxWrapper = styled(Flex)`
-  padding: 237px 0px 0px 0px;
+  padding: 240px 0px 0px 0px;
 `;
 
 const ButtonWrapper = styled(Flex)`
@@ -75,7 +75,7 @@ const LoginList = () => {
         </Typography>
       </TextWrapper>
       <BoxWrapper direction="column">
-        <RoundBox white down height="550px">
+        <RoundBox white down height="555px">
           <ButtonWrapper direction="column" align="center">
             <Input
               onchange={onChangeId}
