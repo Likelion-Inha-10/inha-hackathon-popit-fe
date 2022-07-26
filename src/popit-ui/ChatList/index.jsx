@@ -24,9 +24,10 @@ const ChatList = (props) => {
 
   return (
     <>
-      <Wrapper justify="space-around" align="center">
-        <Margin width="10px" height="100%" />
+      <Wrapper align="center">
+        <Margin width="20px" height="100%" />
         <ProfileIcon size48 backImage={props.backImage} />
+        <Margin width="10px" height="100%" />
         <ProfileWrapper direction="column">
           <Typography bold12>{props.name}</Typography>
           <Margin height="2px" width="100%" />
@@ -36,13 +37,14 @@ const ChatList = (props) => {
             답글 달기
           </Typography>
         </ProfileWrapper>
+        <Margin width="40px" height="100%" />
         {props.button ? (
           <Button extraSmall gray onClick={props.onDelete}>
             삭제
           </Button>
         ) : isClick ? (
           <>
-            <Margin width="5px" height="100%" />
+            <Margin width="15px" height="100%" />
             <FaHeart
               onClick={() => setIsClick(!isClick)}
               color={theme.colors.black}
@@ -52,7 +54,7 @@ const ChatList = (props) => {
           </>
         ) : (
           <>
-            <Margin width="5px" height="100%" />
+            <Margin width="15px" height="100%" />
             <FaRegHeart
               onClick={() => setIsClick(!isClick)}
               color={theme.colors.black}
@@ -61,7 +63,6 @@ const ChatList = (props) => {
             <Margin width="5px" height="100%" />
           </>
         )}
-        <Margin width="10px" height="100%" />
       </Wrapper>
     </>
   );
