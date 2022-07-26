@@ -75,7 +75,7 @@ const LoginList = () => {
         </Typography>
       </TextWrapper>
       <BoxWrapper direction="column">
-        <RoundBox white down height="550px">
+        <RoundBox white down height="555px">
           <ButtonWrapper direction="column" align="center">
             <Input
               onChange={onChangeId}

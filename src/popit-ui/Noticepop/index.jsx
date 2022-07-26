@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Flex from "../Flex";
-import Button from "./../Button/index";
-import Typography from "./../Typography/index";
+import Button from "../Button/index";
+import Typography from "../Typography/index";
 
 const Container = styled(Flex)`
   background-color: white;
@@ -19,11 +19,11 @@ const Wrapper = styled(Flex)`
   height: 150px;
   margin-top: 50px;
 `;
-const Buttonwrapper = styled(Flex)`
+const ButtonWrapper = styled(Flex)`
   padding-top: 45px;
   padding-bottom: 20px;
 `;
-const Noticepop = (props) => {
+const NoticePop = (props) => {
   return (
     <Container
       direction="column"
@@ -40,18 +40,18 @@ const Noticepop = (props) => {
         <Typography regular12 center>
           {props.subcontent}
         </Typography>
-        <Buttonwrapper justify="space-around">
+        <ButtonWrapper justify="space-around">
           <Button white medium>
             취소
           </Button>
           <Button medium>삭제</Button>
-        </Buttonwrapper>
+        </ButtonWrapper>
       </Wrapper>
     </Container>
   );
 };
 
-export default Noticepop;
+export default NoticePop;
 
 /*사용법
 -Button 공통적으로 취소/삭제 가 있는 팝업창이 2개 있어서
