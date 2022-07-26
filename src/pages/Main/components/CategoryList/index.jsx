@@ -13,9 +13,13 @@ const CategoryWrapper = styled(Flex)`
   width: 100%;
   padding: 20px;
   overflow: scroll;
+  background-color: yellowgreen;
 `;
 
-const CategoryList = () => {
+const MainWrapper = styled(Flex)`
+  background-color: gold;
+`;
+const CategoryList = (props) => {
   return (
     <div>
       <CategoryWrapper>
