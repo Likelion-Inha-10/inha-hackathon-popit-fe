@@ -47,9 +47,6 @@ const Main = () => {
       <Wrapper>
         <CategoryList />
         <PopList />
-        <PopList />
-        <PopList />
-        <PopList />
       </Wrapper>
     </Layout>
   );

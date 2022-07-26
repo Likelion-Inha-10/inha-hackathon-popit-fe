@@ -12,7 +12,6 @@ const CategoryWrapper = styled(Flex)`
   height: 90px;
   padding: 20px;
   overflow: auto;
-  width: 200px;
 `;
 
 const CategoryContainer = styled(Flex)``;
