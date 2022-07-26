@@ -48,12 +48,24 @@ const Typography = styled.div`
     `
     font-family: "NanumSquare";
     font-size: 16px;
+    `} 
+    ${(props) =>
+    props.bold12 &&
+    `
+    font-family: "NanumSquare";
+    font-size: 12px;
     `}
     ${(props) =>
     props.regular12 &&
     `
     font-family: "NanumSquareR";
     font-size: 12px;
+  `}
+     ${(props) =>
+    props.regular10 &&
+    `
+    font-family: "NanumSquareR";
+    font-size: 10px;
   `}
 `;
 
