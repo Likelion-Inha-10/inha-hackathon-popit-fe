@@ -36,7 +36,12 @@ const MainPopContainer = (props) => {
           </MoreContainer>
         </TypoContainer>
         <Margin height="10px" />
-        <Pop src={cat} likes="324" repls="1">
+        <Pop
+          onClick={() => props.setPopModal(!props.popModal)}
+          src={cat}
+          likes="324"
+          repls="1"
+        >
           개발이 하고싶니?
         </Pop>
       </Container>

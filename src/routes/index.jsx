@@ -8,6 +8,7 @@ import Main from "../pages/Main/index";
 import Login from "../pages/Login";
 import Hamburger from "../pages/Hamburger";
 import OwnerProfile from "../pages/OwnerProfile";
+import Test from "../pages/Test";
 import MyChatList from "./../pages/MyChatList";
 import ProfileEdit from "./../pages/ProfileEdit/index";
 
@@ -24,6 +25,7 @@ const Router = () => (
       <Route exact path="/main" element={<Main />} />
       <Route exact path="/menu" element={<Hamburger />} />
       <Route exact path="/owner-profile" element={<OwnerProfile />} />
+      <Route exact path="/test" element={<Test />} />
       <Route exact path="/mychat-list" element={<MyChatList />} />
       <Route exact path="/profile-edit" element={<ProfileEdit />} />
     </Routes>
