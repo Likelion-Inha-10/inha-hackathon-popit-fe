@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 import Tutorial from "../pages/Tutorial";
 import Main from "../pages/Main/index";
 import Login from "./../pages/Login/index";
+import Hamburger from "../pages/Hamburger";
 
 // 라우트명은 kebab-case 로 작성합니다
 
@@ -18,6 +19,7 @@ const Router = () => (
       <Route exact path="/sign-up" element={<SignUp />} />
       <Route exact path="/main" element={<Main />} />
       <Route exact path="/login" element={<Login />} />
+      <Route exact path="/menu" element={<Hamburger />} />
     </Routes>
   </BrowserRouter>
 );
