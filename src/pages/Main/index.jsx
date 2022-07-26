@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Flex from "../../popit-ui/Flex";
 import CircleButton from "../../popit-ui/CircleButton";
 import Alert from "../../popit-ui/Alert";
+import NoticePop from "../../popit-ui/Noticepop/index";
 
 const Wrapper = styled.div`
   overflow: scroll;
@@ -16,9 +17,20 @@ const Wrapper = styled.div`
     display: none;
   }
 `;
+
+const Modal = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+`;
+
 const SubWrapper = styled.div``;
 const Main = () => {
-  const [toggled, setToggled] = useState(false);
+  const [toggled, setToggled] = useState(true);
 
   const onPostPop = () => {
     //모달로 글 생성하는 팝 띄우기
@@ -33,6 +45,13 @@ const Main = () => {
       <Wrapper>
         <CategoryList />
         <PopList />
+        {toggled ? (
+          <Modal>
+            <NoticePop />
+          </Modal>
+        ) : (
+          <></>
+        )}
       </Wrapper>
     </Layout>
   );
