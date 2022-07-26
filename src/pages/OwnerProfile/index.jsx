@@ -4,7 +4,7 @@ import Layout from "../../popit-ui/Layout";
 const OwnerProfile = () => {
   return (
     <div>
-      <Layout>hi</Layout>
+      <Layout>마이페이지 입니다</Layout>
     </div>
   );
 };

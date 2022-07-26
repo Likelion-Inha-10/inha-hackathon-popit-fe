@@ -10,6 +10,7 @@ import CircleButton from "../../popit-ui/CircleButton";
 import Alert from "../../popit-ui/Alert";
 import NoticePop from "../../popit-ui/Noticepop/index";
 import Modal from "../../popit-ui/Modal";
+import ExpandPop from "../../popit-ui/ExpandPop";
 
 const Wrapper = styled.div`
   overflow: scroll;
@@ -21,7 +22,8 @@ const Wrapper = styled.div`
 
 const SubWrapper = styled.div``;
 const Main = () => {
-  const [modal, setModal] = useState();
+  const [modal, setModal] = useState(false);
+  const [popModal, setPopModal] = useState(false);
   return (
     <Layout white>
       {modal && (
@@ -33,6 +35,9 @@ const Main = () => {
           content="hi"
           type="noticePop"
         />
+      )}
+      {popModal && (
+        <Modal popModal={popModal} setPopModal={setPopModal} type="expandPop" />
       )}
       <CircleButton
         right="305px"
@@ -46,7 +51,7 @@ const Main = () => {
       </SubWrapper>
       <Wrapper>
         <CategoryList />
-        <PopList />
+        <PopList popModal={popModal} setPopModal={setPopModal} />
       </Wrapper>
     </Layout>
   );

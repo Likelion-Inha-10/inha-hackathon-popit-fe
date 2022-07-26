@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Flex from "../Flex";
 import { useState } from "react";
 import NoticePop from "../Noticepop";
+import ExpandPop from "../ExpandPop";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -32,6 +33,20 @@ const Modal = (props) => {
               leftButton={props.leftButton}
               rightButton={props.rightButton}
             ></NoticePop>
+          </Container>
+        </Wrapper>
+      </div>
+    );
+  }
+  if (props.type === "expandPop") {
+    return (
+      <div>
+        <Wrapper>
+          <Container justify="center" align="center">
+            <ExpandPop
+              popModal={props.popModal}
+              setPopModal={props.setPopModal}
+            ></ExpandPop>
           </Container>
         </Wrapper>
       </div>

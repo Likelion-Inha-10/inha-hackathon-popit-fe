@@ -73,6 +73,7 @@ const Pop = (props) => {
 
   return (
     <Wrapper
+      onClick={props.onClick}
       likes={props.likes}
       repls={props.repls}
       small={props.small}
