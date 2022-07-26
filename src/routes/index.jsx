@@ -21,7 +21,7 @@ const Router = () => (
       <Route exact path="/sign-up" element={<SignUp />}></Route>
       <Route exact path="/first-choice" element={<FirstChoice />}></Route>
       <Route exact path="/main" element={<Main />} />
-      <Route exact path="/hamburger" element={<Hamburger />} />
+      <Route exact path="/menu" element={<Hamburger />} />
       <Route exact path="/owner-profile" element={<OwnerProfile />} />
       <Route exact path="/test" element={<Test />} />
     </Routes>
