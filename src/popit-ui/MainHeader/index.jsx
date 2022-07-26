@@ -61,13 +61,13 @@ const MainHeader = (props) => {
       return (
         <>
           <Left>
-            <Typography bold20>POP IT</Typography>
+            <Typography bold24>POP IT</Typography>
           </Left>
           <Profile onClick={onProfileClick}>
             <ProfileIcon size40 backImage={bImage} />
           </Profile>
           <Right onClick={onMenuClick}>
-            <GiHamburgerMenu size="30" color="#000000" />
+            <GiHamburgerMenu size="27" color="#000000" />
           </Right>
         </>
       );
@@ -77,14 +77,14 @@ const MainHeader = (props) => {
       return (
         <>
           <Left onClick={onBackClick}>
-            <IoChevronBackSharp size="30" color="#000000" />
+            <IoChevronBackSharp size="27" color="#000000" />
           </Left>
           <Typography bold20>{title}</Typography>
           <Right onClick={onAlarmClick}>
             {isClick ? (
-              <TbBellRinging size="30" color="#000000" />
+              <TbBellRinging size="27" color="#000000" />
             ) : (
-              <TbBellRinging size="30" color="#d7d7d7" />
+              <TbBellRinging size="27" color="#d7d7d7" />
             )}
           </Right>
         </>
@@ -113,7 +113,7 @@ const MainHeader = (props) => {
       return (
         <>
           <Left onClick={onBackClick}>
-            <IoChevronBackSharp size="30" color="#000000" />
+            <IoChevronBackSharp size="27" color="#000000" />
           </Left>
           <Typography size="20px">{title}</Typography>
           <Margin width="50px" height="100%" />
