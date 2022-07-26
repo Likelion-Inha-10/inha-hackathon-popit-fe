@@ -29,7 +29,13 @@ const Typography = styled.div`
       font-size: 14px;
       font-family: "NanumSquareL";
     `}
-  
+    ${(props) =>
+    props.bold24 &&
+    `
+        font-family: "NanumSquare";
+        font-size: 24px;
+      `}
+    
     ${(props) =>
     props.bold20 &&
     `

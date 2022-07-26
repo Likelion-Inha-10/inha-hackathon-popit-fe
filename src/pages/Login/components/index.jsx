@@ -22,7 +22,7 @@ const TextWrapper = styled.div`
   text-align: center;
 `;
 const BoxWrapper = styled(Flex)`
-  padding: 237px 0px 0px 0px;
+  padding: 250px 0px 0px 0px;
 `;
 
 const ButtonWrapper = styled(Flex)`
@@ -50,7 +50,7 @@ const LoginList = () => {
   };
 
   const onClickNew = () => {
-    navigate("/SignUp");
+    navigate("/sign-up");
   };
 
   const onClickSubmit = () => {
@@ -78,23 +78,23 @@ const LoginList = () => {
         <RoundBox white down height="550px">
           <ButtonWrapper direction="column" align="center">
             <Input
-              onchange={onChangeId}
+              onChange={onChangeId}
               type="text"
               placeholder="아이디를 입력해주세요."
             />
             <Margin height="10px" />
             <Input
-              onchange={onChangePassword}
+              onChange={onChangePassword}
               type="text"
               placeholder="비밀번호를 입력해주세요."
             />
             <Margin height="30px" />
-            <Button large onclick={onClickSubmit}>
+            <Button large onClick={onClickSubmit}>
               로그인
             </Button>
           </ButtonWrapper>
           <Margin height="120px" />
-          <Typography underline center regular16 onclick={onClickNew}>
+          <Typography underline center regular16 onClick={onClickNew}>
             회원가입
           </Typography>
         </RoundBox>
