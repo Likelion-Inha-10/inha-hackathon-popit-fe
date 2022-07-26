@@ -30,7 +30,7 @@ const CategoryList = (props) => {
         </Category>
         <Margin width="10px" />
       </CategoryContainer>{" "}
-      <CategoryContainer>
+      {/* <CategoryContainer>
         <Category align="center" direction="column" onClick={moveToCategory}>
           <ProfileIcon size48 backImage={cat} />
           <Margin height="7px" />
@@ -85,7 +85,7 @@ const CategoryList = (props) => {
           <Typography regular12>화학</Typography>
         </Category>
         <Margin width="10px" />
-      </CategoryContainer>
+      </CategoryContainer> */}
     </CategoryWrapper>
   );
 };

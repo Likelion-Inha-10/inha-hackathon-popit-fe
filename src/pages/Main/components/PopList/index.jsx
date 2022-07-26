@@ -45,7 +45,7 @@ const MainPopContainer = (props) => {
           개발이 하고싶니?
         </Pop>
       </Container>
-      <Container height="400px" direction="column" align="center">
+      {/* <Container height="400px" direction="column" align="center">
         <TypoContainer align="center" justify="space-between">
           <Typography bold20>지금 뜨는 팝 ✨</Typography>
           <MoreContainer>
@@ -84,7 +84,7 @@ const MainPopContainer = (props) => {
         <Pop small src={cat} likes="324" repls="1">
           개발이 하고싶니?
         </Pop>
-      </Container>
+      </Container> */}
     </>
   );
 };
