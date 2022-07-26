@@ -7,6 +7,9 @@ import Typography from "../Typography";
 import Flex from "../Flex";
 import Margin from "../Margin";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import CircleButton from "../CircleButton";
+import Alert from "../Alert";
 
 const Wrapper = styled(Flex)`
   height: 319px;
@@ -15,6 +18,7 @@ const Wrapper = styled(Flex)`
   background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
 
   ${(props) =>
@@ -50,24 +54,41 @@ const ReplHeartContainer = styled(Flex)`
   width: 100%;
 `;
 
-const Pop = (props, { onClick }) => {
+const Pop = (props) => {
   const [isClick, setIsClick] = useState(false);
+  const navigate = useNavigate();
+
+  const onClickLick = () => {
+    setIsClick(!isClick);
+  };
+
+  const onClickRepl = () => {
+    navigate();
+  };
+
+  const onClickMore = () => {
+    //모달로 경고 창을 띄워야함
+    Alert("팝저장, 팔로우 취소 같은 창을 아래에");
+  };
 
   return (
     <Wrapper
-      hearts={props.hearts}
+      likes={props.likes}
       repls={props.repls}
       small={props.small}
       justify="center"
       align="center"
       color={props.color}
-      onClick={props.onClick}
       src={props.src}
     >
       <Dimmer justify="center" align="center">
         <Container direction="column" justify="space-between" align="center">
           <MoreContainer justify="flex-end">
-            <FiMoreHorizontal color={theme.colors.white} size={18} />
+            <FiMoreHorizontal
+              onClick={onClickMore}
+              color={theme.colors.white}
+              size={18}
+            />
           </MoreContainer>
           <TypoContainer>
             <Typography regular16 color="white">
@@ -75,7 +96,11 @@ const Pop = (props, { onClick }) => {
             </Typography>
           </TypoContainer>
           <ReplHeartContainer align="center" justify="flex-end">
-            <FiMessageSquare color={theme.colors.white} size={18} />
+            <FiMessageSquare
+              onClick={onClickRepl}
+              color={theme.colors.white}
+              size={18}
+            />
             <Margin width="5px" />
             <Typography regular12 inline color="white">
               {props.repls}
@@ -84,25 +109,25 @@ const Pop = (props, { onClick }) => {
             {isClick ? (
               <>
                 <FaHeart
-                  onClick={() => setIsClick(!isClick)}
+                  onClick={onClickLick}
                   color={theme.colors.white}
                   size={18}
                 />
                 <Margin width="5px" />
                 <Typography regular12 inline color="white">
-                  {props.hearts}
+                  {props.likes}
                 </Typography>
               </>
             ) : (
               <>
                 <FaRegHeart
-                  onClick={() => setIsClick(!isClick)}
+                  onClick={onClickLick}
                   color={theme.colors.white}
                   size={18}
                 />
                 <Margin width="5px" />
                 <Typography regular12 inline color="white">
-                  {props.hearts}
+                  {props.likes}
                 </Typography>
               </>
             )}

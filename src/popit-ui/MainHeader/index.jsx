@@ -49,14 +49,14 @@ const MainHeader = (props) => {
     navigate(-1);
   };
 
-  const createHeader = (
-    type,
-    title,
-    onMenuClick,
-    onProfileClick,
-    onButtonClick,
-    bImage
-  ) => {
+  const onProfileClick = () => {
+    navigate("/owner-profile");
+  };
+
+  const createHeader = (type, title, onButtonClick, bImage) => {
+    const onMenuClick = () => {
+      navigate("/hamburger");
+    };
     if (type === "main") {
       return (
         <>

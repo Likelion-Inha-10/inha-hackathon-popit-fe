@@ -15,7 +15,7 @@ import Alert from "../../../popit-ui/Alert";
 
 const Wrapper = styled.div`
   position: relative;
-  height: 620px;
+  height: 616px;
   overflow: scroll;
 
   ::-webkit-scrollbar {
@@ -103,7 +103,7 @@ const CategoryList = (props) => {
   return (
     <>
       <Wrapper>
-        <CircleButton onClick={onClick} />
+        <CircleButton right="270px" down="530px" onClick={onClick} />
         <Container>
           {_.map(categories, (category) => (
             <Category
