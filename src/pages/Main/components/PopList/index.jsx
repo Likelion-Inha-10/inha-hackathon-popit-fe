@@ -42,7 +42,7 @@ const MainPopContainer = (props) => {
           likes="324"
           repls="1"
         >
-          개발이 하고싶니?
+          {theme.user.pop}
         </Pop>
       </Container>
       {/* <Container height="400px" direction="column" align="center">

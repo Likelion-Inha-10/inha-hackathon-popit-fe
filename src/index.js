@@ -5,7 +5,6 @@ import { ThemeProvider } from "styled-components";
 import theme from "./assets/theme";
 import GlobalStyle from "./GlobalStyle";
 import Router from "./routes/index";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
