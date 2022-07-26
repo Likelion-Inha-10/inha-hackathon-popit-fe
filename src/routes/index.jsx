@@ -8,7 +8,8 @@ import Main from "../pages/Main/index";
 import Login from "../pages/Login";
 import Hamburger from "../pages/Hamburger";
 import OwnerProfile from "../pages/OwnerProfile";
-import MyChatList from "./../pages/MyChatList/index";
+import MyChatList from "./../pages/MyChatList";
+import ProfileEdit from "./../pages/ProfileEdit/index";
 
 // 라우트명은 kebab-case 로 작성합니다
 
@@ -24,6 +25,7 @@ const Router = () => (
       <Route exact path="/menu" element={<Hamburger />} />
       <Route exact path="/owner-profile" element={<OwnerProfile />} />
       <Route exact path="/mychat-list" element={<MyChatList />} />
+      <Route exact path="/profile-edit" element={<ProfileEdit />} />
     </Routes>
   </BrowserRouter>
 );
