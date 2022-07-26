@@ -55,7 +55,7 @@ const Hamburger = () => {
   };
 
   const onChatClick = () => {
-    navigate("/chat-list");
+    navigate("/mychat-list");
   };
 
   const onRequestClick = () => {
