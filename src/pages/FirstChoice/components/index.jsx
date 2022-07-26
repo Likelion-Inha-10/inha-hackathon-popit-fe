@@ -15,7 +15,7 @@ import Alert from "../../../popit-ui/Alert";
 
 const Wrapper = styled.div`
   position: relative;
-  height: 616px;
+  height: 620px;
   overflow: scroll;
 
   ::-webkit-scrollbar {
