@@ -3,7 +3,7 @@ import Layout from "../../popit-ui/Layout";
 import { useState } from "react";
 import MainHeader from "../../popit-ui/MainHeader/index";
 import CategoryList from "./components/CategoryList";
-import MainPopContainer from "./components/MainPopContainer";
+import PopList from "./components/PopList";
 import styled from "styled-components";
 import Flex from "../../popit-ui/Flex";
 import CircleButton from "../../popit-ui/CircleButton";
@@ -11,6 +11,10 @@ import Alert from "../../popit-ui/Alert";
 
 const Wrapper = styled.div`
   overflow: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const SubWrapper = styled.div``;
 const Main = () => {
@@ -28,7 +32,7 @@ const Main = () => {
       </SubWrapper>
       <Wrapper>
         <CategoryList />
-        <MainPopContainer />
+        <PopList />
       </Wrapper>
     </Layout>
   );
