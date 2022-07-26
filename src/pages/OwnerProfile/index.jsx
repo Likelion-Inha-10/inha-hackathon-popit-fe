@@ -1,12 +1,11 @@
 import React from "react";
-import Layout from "../../popit-ui/Layout";
+import ProfileDetail from "./components";
 
 const OwnerProfile = () => {
-  return (
-    <div>
-      <Layout>hi</Layout>
-    </div>
-  );
+  const onClick = () => {
+    navigate("/profile-edit");
+  };
+  return <ProfileDetail />;
 };
 
 export default OwnerProfile;
