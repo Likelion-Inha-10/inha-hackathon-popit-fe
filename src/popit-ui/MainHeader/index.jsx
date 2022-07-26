@@ -53,7 +53,7 @@ const MainHeader = (props) => {
     navigate("/owner-profile");
   };
 
-  const createHeader = ({ type, title, onButtonClick, bImage }) => {
+  const createHeader = (type, title, onButtonClick, bImage) => {
     const onMenuClick = () => {
       navigate("/hamburger");
     };
