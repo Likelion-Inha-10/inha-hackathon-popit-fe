@@ -51,19 +51,19 @@ const Hamburger = () => {
   const navigate = useNavigate();
 
   const onChestClick = () => {
-    navigate("/:userId/pop-chest");
+    navigate("/pop-chest");
   };
 
   const onChatClick = () => {
-    navigate("/:userId/chat-list");
+    navigate("/chat-list");
   };
 
   const onRequestClick = () => {
-    navigate("/:userId/request-list");
+    navigate("/request-list");
   };
 
   const onAlarmClick = () => {
-    navigate("/:userId/set-alarm");
+    navigate("/set-alarm");
   };
 
   const onLogOutClick = () => {
