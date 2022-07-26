@@ -53,7 +53,7 @@ const MainHeader = (props) => {
     navigate("/owner-profile");
   };
 
-  const createHeader = (type, title, onButtonClick, bImage) => {
+  const createHeader = ({ type, title, onButtonClick, bImage }) => {
     const onMenuClick = () => {
       navigate("/hamburger");
     };
@@ -127,8 +127,6 @@ const MainHeader = (props) => {
       {createHeader(
         props.page,
         props.title,
-        props.onMenuClick,
-        props.onProfileClick,
         props.onButtonClick,
         props.backImage
       )}
