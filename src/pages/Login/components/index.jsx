@@ -22,7 +22,7 @@ const TextWrapper = styled.div`
   text-align: center;
 `;
 const BoxWrapper = styled(Flex)`
-  padding: 240px 0px 0px 0px;
+  padding: 250px 0px 0px 0px;
 `;
 
 const ButtonWrapper = styled(Flex)`
