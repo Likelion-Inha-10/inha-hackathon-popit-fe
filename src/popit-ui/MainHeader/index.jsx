@@ -55,7 +55,7 @@ const MainHeader = (props) => {
 
   const createHeader = (type, title, onButtonClick, bImage) => {
     const onMenuClick = () => {
-      navigate("/hamburger");
+      navigate("/menu");
     };
     if (type === "main") {
       return (
