@@ -8,15 +8,11 @@ import Flex from "../../../../popit-ui/Flex";
 import { useNavigate } from "react-router-dom";
 
 const Category = styled(Flex)``;
-
 const CategoryWrapper = styled(Flex)`
   height: 90px;
   padding: 20px;
   overflow: auto;
-`;
-
-const MainWrapper = styled(Flex)`
-  background-color: gold;
+  width: 200px;
 `;
 
 const CategoryContainer = styled(Flex)``;
@@ -24,70 +20,74 @@ const CategoryContainer = styled(Flex)``;
 const CategoryList = (props) => {
   const navigate = useNavigate();
 
-  const moveToCategory = () => {
-    navigate();
-  };
+  const moveToCategory = () => {};
   return (
-    <div>
-      <CategoryWrapper>
-        <CategoryContainer>
-          <Category align="center" direction="column" onClick={moveToCategory}>
-            <ProfileIcon size48 backImage={cat} />
-            <Margin height="7px" />
-            <Typography regular12>화학</Typography>
-          </Category>
-          <Margin width="10px" />
-        </CategoryContainer>
-        <CategoryContainer>
-          <Category align="center" direction="column" onClick={moveToCategory}>
-            <ProfileIcon size48 backImage={cat} />
-            <Margin height="7px" />
-            <Typography regular12>화학</Typography>
-          </Category>
-          <Margin width="10px" />
-        </CategoryContainer>
-        <CategoryContainer>
-          <Category align="center" direction="column" onClick={moveToCategory}>
-            <ProfileIcon size48 backImage={cat} />
-            <Margin height="7px" />
-            <Typography regular12>화학</Typography>
-          </Category>
-          <Margin width="10px" />
-        </CategoryContainer>
-        <CategoryContainer>
-          <Category align="center" direction="column" onClick={moveToCategory}>
-            <ProfileIcon size48 backImage={cat} />
-            <Margin height="7px" />
-            <Typography regular12>화학</Typography>
-          </Category>
-          <Margin width="10px" />
-        </CategoryContainer>
-        <CategoryContainer>
-          <Category align="center" direction="column" onClick={moveToCategory}>
-            <ProfileIcon size48 backImage={cat} />
-            <Margin height="7px" />
-            <Typography regular12>화학</Typography>
-          </Category>
-          <Margin width="10px" />
-        </CategoryContainer>
-        <CategoryContainer>
-          <Category align="center" direction="column" onClick={moveToCategory}>
-            <ProfileIcon size48 backImage={cat} />
-            <Margin height="7px" />
-            <Typography regular12>화학</Typography>
-          </Category>
-          <Margin width="10px" />
-        </CategoryContainer>
-        <CategoryContainer>
-          <Category align="center" direction="column" onClick={moveToCategory}>
-            <ProfileIcon size48 backImage={cat} />
-            <Margin height="7px" />
-            <Typography regular12>화학</Typography>
-          </Category>
-          <Margin width="10px" />
-        </CategoryContainer>
-      </CategoryWrapper>
-    </div>
+    <CategoryWrapper>
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>{" "}
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>{" "}
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>{" "}
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>{" "}
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>{" "}
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>{" "}
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>{" "}
+      <CategoryContainer>
+        <Category align="center" direction="column" onClick={moveToCategory}>
+          <ProfileIcon size48 backImage={cat} />
+          <Margin height="7px" />
+          <Typography regular12>화학</Typography>
+        </Category>
+        <Margin width="10px" />
+      </CategoryContainer>
+    </CategoryWrapper>
   );
 };
 

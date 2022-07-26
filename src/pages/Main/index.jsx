@@ -9,6 +9,7 @@ import Flex from "../../popit-ui/Flex";
 import CircleButton from "../../popit-ui/CircleButton";
 import Alert from "../../popit-ui/Alert";
 import NoticePop from "../../popit-ui/Noticepop/index";
+import Modal from "../../popit-ui/Modal";
 
 const Wrapper = styled.div`
   overflow: scroll;
@@ -18,40 +19,37 @@ const Wrapper = styled.div`
   }
 `;
 
-const Modal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  background-color: rgba(0, 0, 0, 0.4);
-`;
-
 const SubWrapper = styled.div``;
 const Main = () => {
-  const [toggled, setToggled] = useState(true);
-
-  const onPostPop = () => {
-    //모달로 글 생성하는 팝 띄우기
-    Alert("모달로 글 생성하는 팝 띄우기");
-  };
+  const [modal, setModal] = useState();
   return (
     <Layout white>
-      <CircleButton right="305px" down="760px" onClick={onPostPop} />
+      {modal && (
+        <Modal
+          modal={modal}
+          setModal={setModal}
+          rightButton="확인"
+          leftButton="취소"
+          content="hi"
+          type="noticePop"
+        />
+      )}
+      <CircleButton
+        right="305px"
+        down="760px"
+        onClick={() => {
+          setModal(!modal);
+        }}
+      />
       <SubWrapper>
         <MainHeader page="main" />
       </SubWrapper>
       <Wrapper>
         <CategoryList />
         <PopList />
-        {toggled ? (
-          <Modal>
-            <NoticePop />
-          </Modal>
-        ) : (
-          <></>
-        )}
+        <PopList />
+        <PopList />
+        <PopList />
       </Wrapper>
     </Layout>
   );

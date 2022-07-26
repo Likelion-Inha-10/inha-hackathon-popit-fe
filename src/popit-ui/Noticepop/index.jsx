@@ -41,10 +41,12 @@ const NoticePop = (props) => {
           {props.subcontent}
         </Typography>
         <ButtonWrapper justify="space-around">
-          <Button white medium>
-            취소
+          <Button white medium onClick={() => props.setModal(!props.modal)}>
+            {props.leftButton}
           </Button>
-          <Button medium>삭제</Button>
+          <Button medium onClick={() => props.setModal(!props.modal)}>
+            {props.rightButton}
+          </Button>
         </ButtonWrapper>
       </Wrapper>
     </Container>
