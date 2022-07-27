@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import Flex from "../Flex";
 
-const Typography = styled.div`
+const Typography = styled(Flex)`
   font-family: "NanumSquare";
   font-size: ${(props) => props.size || "1rem"};
   color: ${(props) =>

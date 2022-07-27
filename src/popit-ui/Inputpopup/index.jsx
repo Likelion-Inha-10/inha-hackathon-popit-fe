@@ -16,13 +16,13 @@ const Wrapper = styled(Flex)`
   height: 200px;
   border-radius: 16px;
 `;
-const Container = styled(Flex)``;
+const Container = styled(Flex)`
+  height: 170px;
+`;
 
 const Close = styled.div``;
 
-const ButtonWrapper = styled(Flex)`
-  padding-top: 10px;
-`;
+const ButtonWrapper = styled(Flex)``;
 
 const StyledInput = styled.input`
   width: 320px;
@@ -63,26 +63,16 @@ const StyledCircle = styled(Flex)`
 const InputPopUp = (props) => {
   return (
     <Wrapper justify="center" align="center">
-      <Container direction="column" jusify="baseline">
+      <Container direction="column" justify="space-between">
         <ButtonWrapper align="left">
-          <Close onClick={props.onClick}>
-            <IoCloseSharp size="30px" color="black" />
-          </Close>
+          <IoCloseSharp size="30px" color="black" />
           <Margin width="20px" />
-          <Typography underline regular12 color="main">
+          <Typography align="center" underline regular12 color="main">
             카테고리
           </Typography>
-          <Margin width="130px" />
+          <Margin width="160px" />
           <Button small>{props.buttoncontent}</Button>
         </ButtonWrapper>
-        <StyledInput
-          type={props.type}
-          onChange={props.onChange}
-          placeholder={props.placeholder}
-        />
-        <StyledCircle align="center" justify="center">
-          <FaCamera color="grey" />
-        </StyledCircle>
       </Container>
     </Wrapper>
   );
