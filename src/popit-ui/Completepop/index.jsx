@@ -1,52 +1,56 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Flex from "../Flex";
 import Button from "./../Button/index";
 import Typography from "./../Typography/index";
+import Margin from "../Margin";
+import { useNavigate } from "react-router-dom";
+
+const fadeIn = keyframes`
+   from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
 
 const Container = styled(Flex)`
   background-color: white;
-  width: 280px;
+  width: 300px;
   height: 150px;
   border-radius: 16px;
-  margin-top: ${(props) => (props.margintop ? props.margintop : "none")};
-  margin-left: ${(props) => (props.marginleft ? props.marginleft : "none")};
-  margin-right: ${(props) => (props.marginright ? props.marginright : "none")};
-  margin-bottom: ${(props) =>
-    props.marginbottom ? props.marginbottom : "none"};
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
+  animation-name: ${fadeIn};
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
 `;
 
-const Wrapper = styled(Flex)`
-  width: 280px;
-  height: 150px;
-  margin-top: 50px;
-`;
-
-const Buttonwrapper = styled(Flex)`
-  padding-top: 30px;
-  padding-bottom: 20px;
+const ButtonWrapper = styled(Flex)`
+  padding: 20px 10px 20px 10px;
 `;
 
 const Completepop = (props) => {
+  const navigate = useNavigate();
+  const onButtonClick = () => {
+    setTimeout(() => {
+      navigate(`/login`);
+    }, 350);
+  };
   return (
-    <Container
-      direction="column"
-      justify="space-around"
-      margintop={props.margintop}
-      marginleft={props.marginleft}
-      marginright={props.marginright}
-      marginbottom={props.marginbottom}
-    >
-      <Wrapper justify="flex-end" direction="column">
-        <Typography bold16 center>
-          {props.content}
-        </Typography>
-        <Typography regular12 center>
-          {props.subcontent}
-        </Typography>
-        <Buttonwrapper justify="space-around">
-          <Button medium>확인</Button>
-        </Buttonwrapper>
-      </Wrapper>
+    <Container direction="column" justify="space-around">
+      <Margin height="50px" width="100%" />
+      <Typography bold16 center>
+        {props.content}
+      </Typography>
+      <Margin height="5px" width="100%" />
+      <Typography regular12 center color="middlegray">
+        {props.subcontent}
+      </Typography>
+      <ButtonWrapper justify="space-around">
+        <Button onClick={onButtonClick} medium>
+          확인
+        </Button>
+      </ButtonWrapper>
     </Container>
   );
 };
