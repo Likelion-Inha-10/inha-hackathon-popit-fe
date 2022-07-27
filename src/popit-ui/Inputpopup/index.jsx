@@ -7,18 +7,16 @@ import Button from "../Button";
 import Input from "../Input";
 import Margin from "../Margin";
 import { FaCamera } from "react-icons/fa";
+import Typography from "../Typography";
+import theme from "../../assets/theme";
 
-const Container = styled(Flex)`
+const Wrapper = styled(Flex)`
   background-color: white;
   width: 360px;
   height: 200px;
   border-radius: 16px;
-  margin-top: ${(props) => (props.margintop ? props.margintop : "none")};
-  margin-left: ${(props) => (props.marginleft ? props.marginleft : "none")};
-  margin-right: ${(props) => (props.marginright ? props.marginright : "none")};
-  margin-bottom: ${(props) =>
-    props.marginbottom ? props.marginbottom : "none"};
 `;
+const Container = styled(Flex)``;
 
 const Close = styled.div``;
 
@@ -61,28 +59,33 @@ const StyledCircle = styled(Flex)`
   left: 5px;
   z-index: 1;
 `;
-const Inputpopup = (props) => {
+
+const InputPopUp = (props) => {
   return (
-    <Container direction="column">
-      <ButtonWrapper align="left">
-        <Close onClick={props.onClick}>
-          <IoCloseSharp size="30px" color="black" />
-        </Close>
-        <Margin width="20px" />
-        <CategoryInput type="type" placeholder="카테고리" />
-        <Margin width="130px" />
-        <Button small>{props.buttoncontent}</Button>
-      </ButtonWrapper>
-      <StyledInput
-        type={props.type}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
-      />
-      <StyledCircle align="center" justify="center">
-        <FaCamera color="grey" />
-      </StyledCircle>
-    </Container>
+    <Wrapper justify="center" align="center">
+      <Container direction="column" jusify="baseline">
+        <ButtonWrapper align="left">
+          <Close onClick={props.onClick}>
+            <IoCloseSharp size="30px" color="black" />
+          </Close>
+          <Margin width="20px" />
+          <Typography underline regular12 color="main">
+            카테고리
+          </Typography>
+          <Margin width="130px" />
+          <Button small>{props.buttoncontent}</Button>
+        </ButtonWrapper>
+        <StyledInput
+          type={props.type}
+          onChange={props.onChange}
+          placeholder={props.placeholder}
+        />
+        <StyledCircle align="center" justify="center">
+          <FaCamera color="grey" />
+        </StyledCircle>
+      </Container>
+    </Wrapper>
   );
 };
 
-export default Inputpopup;
+export default InputPopUp;
