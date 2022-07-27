@@ -33,7 +33,7 @@ const Modal = (props) => {
               content={props.content}
               leftButton={props.leftButton}
               rightButton={props.rightButton}
-              message={props.message}
+              usage={props.usage}
             ></NoticePopUp>
           </Container>
         </Wrapper>
