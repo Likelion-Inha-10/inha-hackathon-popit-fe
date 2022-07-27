@@ -70,10 +70,13 @@ body {
 }
 .nav.left {
   transform: translateX(-100%) translatey(-50%);
+  padding-right: 0;
 }
 .nav.right {
   right: 0;
   transform: translateX(100%) translatey(-50%);
+  padding-left: 0;
+
 }
 
 `;

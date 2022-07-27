@@ -17,7 +17,13 @@ const MAX_VISIBILITY = 3;
 
 const Card = ({ title, content }) => (
   <div className="card">
-    <Pop src={theme.user.image} />
+    <Pop
+      likes={theme.user.likes}
+      repls={theme.user.repls}
+      src={theme.user.image}
+    >
+      {theme.user.pop}
+    </Pop>
   </div>
 );
 const StyledCarousel = ({ children }) => {
@@ -28,7 +34,7 @@ const StyledCarousel = ({ children }) => {
     <div className="carousel">
       {active > 0 && (
         <button className="nav left" onClick={() => setActive((i) => i - 1)}>
-          <IoChevronBackSharp size={35} color={theme.colors.black} />
+          <IoChevronBackSharp size={35} color={theme.colors.white} />
         </button>
       )}
       {React.Children.map(children, (child, i) => (
@@ -49,7 +55,7 @@ const StyledCarousel = ({ children }) => {
       ))}
       {active < count - 1 && (
         <button className="nav right" onClick={() => setActive((i) => i + 1)}>
-          <IoChevronForwardSharp size={35} color={theme.colors.black} />
+          <IoChevronForwardSharp size={35} color={theme.colors.white} />
         </button>
       )}
     </div>

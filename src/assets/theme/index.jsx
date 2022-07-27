@@ -22,6 +22,8 @@ export default {
     black: "#000000",
     pop: "이건 팝 데이터",
     image: cat,
+    likes: 24,
+    repls: 324,
   },
 };
 
