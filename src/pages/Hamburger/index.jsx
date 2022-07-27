@@ -42,7 +42,7 @@ const Hamburger = () => {
             leftButton="취소"
             rightButton="확인"
             type="noticePopUp"
-            message="로그아웃 되었습니다"
+            usage="로그아웃"
           />
         ) : (
           <></>

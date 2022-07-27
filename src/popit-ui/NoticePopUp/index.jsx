@@ -32,10 +32,16 @@ const ButtonWrapper = styled(Flex)`
 const NoticePop = (props) => {
   const navigate = useNavigate();
   const onRightClick = () => {
-    Alert(props.message);
-    setTimeout(() => {
-      navigate(`/login`);
-    }, 350);
+    if (props.usage === "로그아웃") {
+      Alert("로그아웃 되었습니다");
+      setTimeout(() => {
+        navigate(`/login`);
+      }, 350);
+    }
+    if (props.usage === "삭제") {
+      Alert("삭제되었습니다");
+      props.setPopModal(!props.PopModal);
+    }
   };
 
   const onLeftClick = () => {
