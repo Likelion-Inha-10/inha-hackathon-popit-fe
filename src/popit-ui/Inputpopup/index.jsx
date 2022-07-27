@@ -61,7 +61,7 @@ const StyledCircle = styled(Flex)`
   left: 5px;
   z-index: 1;
 `;
-const Inputpopup = (props) => {
+const InputPopUp = (props) => {
   return (
     <Container direction="column">
       <ButtonWrapper align="left">
@@ -85,4 +85,4 @@ const Inputpopup = (props) => {
   );
 };
 
-export default Inputpopup;
+export default InputPopUp;
