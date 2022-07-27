@@ -12,6 +12,7 @@ const Circle = styled(Flex)`
   background-color: ${(props) => props.color || props.theme.colors.main};
   border-radius: 50%;
   box-shadow: 0px 4px 10px 2px rgb(0, 0, 0, 0.15);
+  cursor: pointer;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.orange};

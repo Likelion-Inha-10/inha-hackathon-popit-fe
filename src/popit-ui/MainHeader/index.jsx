@@ -18,11 +18,11 @@ const Wrapper = styled(Flex)`
 
 const Title = styled.div`
   padding-left: 40px;
+  cursor: default;
 `;
 
 const Left = styled.div`
   padding-left: 15px;
-  cursor: pointer;
 `;
 
 const Right = styled.div`
