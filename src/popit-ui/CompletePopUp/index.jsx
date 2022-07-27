@@ -29,7 +29,7 @@ const ButtonWrapper = styled(Flex)`
   padding: 20px 10px 20px 10px;
 `;
 
-const Completepop = (props) => {
+const CompletePopUp = (props) => {
   const navigate = useNavigate();
   const onButtonClick = () => {
     setTimeout(() => {
@@ -55,4 +55,4 @@ const Completepop = (props) => {
   );
 };
 
-export default Completepop;
+export default CompletePopUp;

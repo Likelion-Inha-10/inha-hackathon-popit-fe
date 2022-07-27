@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Flex from "../Flex";
 import { useState } from "react";
 import ExpandPop from "../ExpandPop";
-import Inputpopup from "../Inputpopup/index";
+import InputPopUp from "../InputPopUp";
 import NoticePopUp from "../NoticePopUp";
-import Completepop from "../Completepop";
+import CompletePopUp from "../CompletePopUp";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -57,12 +57,12 @@ const Modal = (props) => {
       <div>
         <Wrapper>
           <Container justify="center" align="center">
-            <Completepop
+            <CompletePopUp
               PopModal={props.completeModal}
               setPopModal={props.setCompleteModal}
               content={props.content}
               subcontent={props.subcontent}
-            ></Completepop>
+            ></CompletePopUp>
           </Container>
         </Wrapper>
       </div>
@@ -74,10 +74,10 @@ const Modal = (props) => {
       <div>
         <Wrapper>
           <Container justify="center" align="center">
-            <Inputpopup
+            <InputPopUp
               CreateNewPop={props.CreateNewPop}
               setCreateNewPop={props.setCreateNewPop}
-            ></Inputpopup>
+            ></InputPopUp>
           </Container>
         </Wrapper>
       </div>
