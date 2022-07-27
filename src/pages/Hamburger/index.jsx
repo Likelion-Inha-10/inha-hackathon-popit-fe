@@ -58,14 +58,6 @@ const Hamburger = () => {
     navigate("/mychat-list");
   };
 
-  const onRequestClick = () => {
-    navigate("/request-list");
-  };
-
-  const onAlarmClick = () => {
-    navigate("/set-alarm");
-  };
-
   const onLogOutClick = () => {
     setIsPopup(true);
   };
@@ -90,14 +82,6 @@ const Hamburger = () => {
         <MenuWrapper align="center" onClick={onChatClick}>
           <Margin width="30px" height="100%" />
           <Typography bold16>나의 댓글 목록</Typography>
-        </MenuWrapper>
-        <MenuWrapper align="center" onClick={onRequestClick}>
-          <Margin width="30px" height="100%" />
-          <Typography bold16>수정 건의 목록</Typography>
-        </MenuWrapper>
-        <MenuWrapper align="center" onClick={onAlarmClick}>
-          <Margin width="30px" height="100%" />
-          <Typography bold16>알림 설정</Typography>
         </MenuWrapper>
         <MenuWrapper align="center" onClick={onLogOutClick}>
           <Margin width="30px" height="100%" />
