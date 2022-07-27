@@ -28,10 +28,12 @@ const Modal = (props) => {
         <Wrapper>
           <Container justify="center" align="center">
             <NoticePopUp
+              PopModal={props.PopModal}
               setPopModal={props.setPopModal}
               content={props.content}
               leftButton={props.leftButton}
               rightButton={props.rightButton}
+              message={props.message}
             ></NoticePopUp>
           </Container>
         </Wrapper>
