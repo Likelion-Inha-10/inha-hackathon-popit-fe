@@ -9,6 +9,7 @@ import Margin from "../Margin";
 import { FaCamera } from "react-icons/fa";
 import Typography from "../Typography";
 import theme from "../../assets/theme";
+import { IoCloseOutline } from "react-icons/io5";
 
 const Wrapper = styled(Flex)`
   background-color: white;
@@ -52,36 +53,53 @@ const CategoryInput = styled.input`
   text-decoration: underline;
   text-underline-position: under;
   font-family: "NanumSquareR";
+
   :focus {
     text-decoration: underline;
     text-underline-position: under;
     font-family: "NanumSquareR";
   }
 `;
+
+const ChestWrapper = styled(Flex)``;
 const StyledCircle = styled(Flex)`
   border-radius: 50%;
   background-color: white;
   box-shadow: 0px 4px 10px 2px rgb(0, 0, 0, 0.08);
   height: 26px;
   width: 26px;
-  position: relative;
-  left: 25px;
-  bottom: 50px;
-  z-index: 1;
+  position: fixed;
+  margin-left: ${(props) => props.right};
+  margin-top: ${(props) => props.down};
+  margin-bottom: ${(props) => props.up};
+  margin-right: ${(props) => props.left};
+  z-index: 555;
 `;
 
 const InputPopUp = (props) => {
   return (
     <>
+      <StyledCircle
+        down={props.down}
+        right={props.right}
+        left={props.left}
+        up={props.up}
+        justify="center"
+        align="center"
+      >
+        <FaCamera color={theme.colors.middlegray} />
+      </StyledCircle>
       <Wrapper justify="center" align="center">
         <Container direction="column" justify="space-between">
           <ButtonWrapper align="left">
-            <IoCloseSharp size="30px" color="black" />
+            <IoCloseOutline size={30} color="black" />
             <Margin width="14px" />
-            <Typography align="center" underline regular12 color="main">
-              카테고리
-            </Typography>
-            <Margin width="171px" />
+            <ChestWrapper align="center">
+              <Typography align="center" underline regular12 color="main">
+                보관함
+              </Typography>
+            </ChestWrapper>
+            <Margin width="182px" />
             <Button small>완료</Button>
           </ButtonWrapper>
           <InputWrapper justify="center" align="center">
@@ -89,9 +107,6 @@ const InputPopUp = (props) => {
           </InputWrapper>
         </Container>
       </Wrapper>
-      <StyledCircle justify="center" align="center">
-        <FaCamera color={theme.colors.middlegray} />
-      </StyledCircle>
     </>
   );
 };

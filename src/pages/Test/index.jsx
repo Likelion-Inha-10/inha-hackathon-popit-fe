@@ -12,6 +12,7 @@ const Test = (props) => {
   return (
     <Layout gradation>
       <CategoryPopUp title="보관함 목록" buttonContent="선택"></CategoryPopUp>
+      <InputPopUp></InputPopUp>
     </Layout>
   );
 };
