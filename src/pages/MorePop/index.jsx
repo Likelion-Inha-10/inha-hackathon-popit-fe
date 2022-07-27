@@ -11,7 +11,7 @@ import theme from "../../assets/theme";
 
 const Wrapper = styled(Flex)`
   height: 793px;
-  overflow: scroll;
+  overflow: auto;
 `;
 const PopContainer = styled(Flex)``;
 const ClassificationWrapper = styled(Flex)`
