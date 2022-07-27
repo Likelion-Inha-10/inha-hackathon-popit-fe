@@ -30,7 +30,7 @@ const MorePop = () => {
   return (
     <div>
       <Layout white>
-        <MainHeader page="others" title="오늘의 팝" />
+        <MainHeader page="others" title="팝 더보기" />
 
         <Wrapper direction="column" align="center">
           <ClassificationWrapper align="flex-end" justify="flex-end">
@@ -45,42 +45,6 @@ const MorePop = () => {
               <IoChevronDownSharp size={14} color={theme.colors.middlegray} />
             </Classification>
           </ClassificationWrapper>
-          <PopContainer direction="column" align="center">
-            <Margin height="10px" />
-
-            <Pop small />
-            <Margin height="10px" />
-          </PopContainer>{" "}
-          <PopContainer direction="column" align="center">
-            <Margin height="10px" />
-
-            <Pop small />
-            <Margin height="10px" />
-          </PopContainer>{" "}
-          <PopContainer direction="column" align="center">
-            <Margin height="10px" />
-
-            <Pop small />
-            <Margin height="10px" />
-          </PopContainer>{" "}
-          <PopContainer direction="column" align="center">
-            <Margin height="10px" />
-
-            <Pop small />
-            <Margin height="10px" />
-          </PopContainer>{" "}
-          <PopContainer direction="column" align="center">
-            <Margin height="10px" />
-
-            <Pop small />
-            <Margin height="10px" />
-          </PopContainer>{" "}
-          <PopContainer direction="column" align="center">
-            <Margin height="10px" />
-
-            <Pop small />
-            <Margin height="10px" />
-          </PopContainer>{" "}
           <PopContainer direction="column" align="center">
             <Margin height="10px" />
 
