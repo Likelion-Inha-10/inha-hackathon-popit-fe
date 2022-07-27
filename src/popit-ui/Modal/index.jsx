@@ -5,6 +5,7 @@ import { useState } from "react";
 import ExpandPop from "../ExpandPop";
 import Inputpopup from "../Inputpopup/index";
 import NoticePopUp from "../NoticePopUp";
+import Completepop from "../Completepop";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -51,6 +52,23 @@ const Modal = (props) => {
       </div>
     );
   }
+  if (props.type === "completePopUp") {
+    return (
+      <div>
+        <Wrapper>
+          <Container justify="center" align="center">
+            <Completepop
+              PopModal={props.completeModal}
+              setPopModal={props.setCompleteModal}
+              content={props.content}
+              subcontent={props.subcontent}
+            ></Completepop>
+          </Container>
+        </Wrapper>
+      </div>
+    );
+  }
+
   if (props.type === "inputPopUp") {
     return (
       <div>
