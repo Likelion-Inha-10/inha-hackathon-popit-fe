@@ -7,31 +7,39 @@ import Button from "../Button";
 import Input from "../Input";
 import Margin from "../Margin";
 import { FaCamera } from "react-icons/fa";
+import Typography from "../Typography";
+import theme from "../../assets/theme";
 
-const Container = styled(Flex)`
+const Wrapper = styled(Flex)`
   background-color: white;
   width: 360px;
   height: 200px;
-  border-radius: 16px;
-  margin-top: ${(props) => (props.margintop ? props.margintop : "none")};
-  margin-left: ${(props) => (props.marginleft ? props.marginleft : "none")};
-  margin-right: ${(props) => (props.marginright ? props.marginright : "none")};
-  margin-bottom: ${(props) =>
-    props.marginbottom ? props.marginbottom : "none"};
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 0 rgb(0, 0, 0, 0.1);
+`;
+const Container = styled(Flex)`
+  height: 170px;
 `;
 
-const Close = styled.div``;
+const ButtonWrapper = styled(Flex)``;
 
-const ButtonWrapper = styled(Flex)`
-  padding-top: 10px;
+const InputWrapper = styled(Flex)`
+  height: 128px;
+  width: 330px;
+  background-color: ${(props) => props.theme.colors.whitegray};
+  border-radius: 20px;
 `;
 
 const StyledInput = styled.input`
-  width: 320px;
-  height: 130px;
-  background-color: #f7f7f7;
+  height: 80px;
+  width: 260px;
   border: none;
-  border-radius: 20px;
+  background-color: ${(props) => props.theme.colors.whitegray};
+  text-align: center;
+
+  :focus {
+    outline: none;
+  }
 `;
 
 const CategoryInput = styled.input`
@@ -53,35 +61,38 @@ const CategoryInput = styled.input`
 const StyledCircle = styled(Flex)`
   border-radius: 50%;
   background-color: white;
-  box-shadow: 0px 4px 10px 2px rgb(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 10px 2px rgb(0, 0, 0, 0.08);
   height: 26px;
   width: 26px;
   position: relative;
-  bottom: 33px;
-  left: 5px;
+  left: 25px;
+  bottom: 50px;
   z-index: 1;
 `;
+
 const InputPopUp = (props) => {
   return (
-    <Container direction="column">
-      <ButtonWrapper align="left">
-        <Close onClick={props.onClick}>
-          <IoCloseSharp size="30px" color="black" />
-        </Close>
-        <Margin width="20px" />
-        <CategoryInput type="type" placeholder="카테고리" />
-        <Margin width="130px" />
-        <Button small>{props.buttoncontent}</Button>
-      </ButtonWrapper>
-      <StyledInput
-        type={props.type}
-        onChange={props.onChange}
-        placeholder={props.placeholder}
-      />
-      <StyledCircle align="center" justify="center">
-        <FaCamera color="grey" />
+    <>
+      <Wrapper justify="center" align="center">
+        <Container direction="column" justify="space-between">
+          <ButtonWrapper align="left">
+            <IoCloseSharp size="30px" color="black" />
+            <Margin width="14px" />
+            <Typography align="center" underline regular12 color="main">
+              카테고리
+            </Typography>
+            <Margin width="171px" />
+            <Button small>완료</Button>
+          </ButtonWrapper>
+          <InputWrapper justify="center" align="center">
+            <StyledInput />
+          </InputWrapper>
+        </Container>
+      </Wrapper>
+      <StyledCircle justify="center" align="center">
+        <FaCamera color={theme.colors.middlegray} />
       </StyledCircle>
-    </Container>
+    </>
   );
 };
 

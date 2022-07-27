@@ -11,6 +11,7 @@ const Wrapper = styled(Flex)`
   background-color: ${(props) => props.theme.colors.white};
   border-radius: 20px 20px 0 0;
   overflow: hidden;
+  box-shadow: 0px 4px 4px 0 rgb(0, 0, 0, 0.1);
 
   ${(props) =>
     props.type == "small" &&
