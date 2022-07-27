@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Flex from "../Flex";
 import { IoChevronBackSharp } from "react-icons/io5";
 import Margin from "../Margin";
+import Typography from "../Typography";
+import theme from "../../assets/theme";
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled(Flex)`
   width: 100%;
@@ -32,12 +35,21 @@ const Back = styled.div`
 `;
 
 const FirstHeader = (props) => {
+  const navigate = useNavigate();
+
+  const moveToBack = () => {
+    navigate("/login");
+  };
   return (
     <Wrapper align="center" justify="space-between">
-      <Back onClick={props.onClick} back={props.back}>
+      <Back onClick={moveToBack} back={props.back}>
         <IoChevronBackSharp size="30" color="#ffffff" />
       </Back>
-      <Title popit={props.popit}>POP IT</Title>
+      <Title popit={props.popit}>
+        <Typography size="24px" color={theme.colors.white}>
+          POP IT
+        </Typography>
+      </Title>
       <Margin width="30px" height="100%" />
     </Wrapper>
   );
