@@ -3,10 +3,13 @@ import Layout from "../../popit-ui/Layout";
 import styled from "styled-components";
 import Flex from "../../popit-ui/Flex";
 import { useState } from "react";
+import SelectPopUp from "../../popit-ui/SelectPopUp";
 const Test = (props) => {
   return (
     <>
-      <Layout white></Layout>
+      <Layout gradation>
+        <SelectPopUp></SelectPopUp>
+      </Layout>
     </>
   );
 };
