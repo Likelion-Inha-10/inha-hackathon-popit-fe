@@ -4,7 +4,7 @@ import Flex from "../Flex";
 import { useState } from "react";
 import ExpandPop from "../ExpandPop";
 import Inputpopup from "../Inputpopup/index";
-import NoticePop from "../NoticePop";
+import NoticePopUp from "../NoticePopUp";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -22,23 +22,23 @@ const Container = styled(Flex)`
 `;
 
 const Modal = (props) => {
-  if (props.type === "noticePop") {
+  if (props.type === "noticePopUp") {
     return (
       <div>
         <Wrapper>
           <Container justify="center" align="center">
-            <NoticePop
+            <NoticePopUp
               setPopModal={props.setPopModal}
               content={props.content}
               leftButton={props.leftButton}
               rightButton={props.rightButton}
-            ></NoticePop>
+            ></NoticePopUp>
           </Container>
         </Wrapper>
       </div>
     );
   }
-  if (props.type === "expandPop") {
+  if (props.type === "expandPopUp") {
     return (
       <div>
         <Wrapper>
