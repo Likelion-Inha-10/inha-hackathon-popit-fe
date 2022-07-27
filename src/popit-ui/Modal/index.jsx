@@ -6,13 +6,12 @@ import ExpandPop from "../ExpandPop";
 import InputPopUp from "../InputPopUp";
 import NoticePopUp from "../NoticePopUp";
 import CompletePopUp from "../CompletePopUp";
+import SelectPopUp from "../SelectPopUp";
 
-const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+const Wrapper = styled(Flex)`
+  position: fixed;
+  width: 390px;
+  height: 844px;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.4);
 `;
@@ -23,6 +22,25 @@ const Container = styled(Flex)`
 `;
 
 const Modal = (props) => {
+  if (props.type === "selectPopUp") {
+    return (
+      <Wrapper onClick={() => props.setClickMore(!props.clickMore)}>
+        <Container
+          justify="center"
+          align="flex-end"
+          onClick={() => props.setClickMore(!props.clickMore)}
+        >
+          <SelectPopUp
+            type="small"
+            first="팝 저장"
+            second="팔로우 취소"
+            clickMore={props.clickMore}
+            setClickMore={props.setClickMore}
+          ></SelectPopUp>
+        </Container>
+      </Wrapper>
+    );
+  }
   if (props.type === "noticePopUp") {
     return (
       <div>
@@ -71,18 +89,16 @@ const Modal = (props) => {
 
   if (props.type === "inputPopUp") {
     return (
-      <div>
-        <Wrapper>
-          <Container justify="center" align="center">
-            <InputPopUp
-              left="285px"
-              down="125px"
-              CreateNewPop={props.CreateNewPop}
-              setCreateNewPop={props.setCreateNewPop}
-            ></InputPopUp>
-          </Container>
-        </Wrapper>
-      </div>
+      <Wrapper onClick={() => props.setCreateNewPop(!props.createNewPop)}>
+        <Container justify="center" align="center">
+          <InputPopUp
+            left="285px"
+            down="125px"
+            createNewPop={props.createNewPop}
+            setCreateNewPop={props.setCreateNewPop}
+          ></InputPopUp>
+        </Container>
+      </Wrapper>
     );
   }
 };

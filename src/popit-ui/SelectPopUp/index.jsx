@@ -70,6 +70,7 @@ const SelectPopUp = (props) => {
     return (
       <div>
         <Wrapper
+          onClick={props.onClick}
           type={props.type}
           first={props.first}
           second={props.second}
@@ -107,17 +108,32 @@ const SelectPopUp = (props) => {
           direction="column"
           align="center"
           justify="center"
+          onClick={(e) => e.stopPropagation()}
         >
           <Container direction="column" align="center" justify="space-between">
             <Bar />
             <ButtonWrapper direction="column" justify="space-between">
-              <Button whiteGray>{props.first}</Button>
+              <Button
+                whiteGray
+                onClick={() => props.setClickMore(!props.clickMore)}
+              >
+                {props.first}
+              </Button>
               {props.red ? (
-                <Button whiteGray redTypo>
+                <Button
+                  onClick={() => props.setClickMore(!props.clickMore)}
+                  whiteGray
+                  redTypo
+                >
                   {props.second}
                 </Button>
               ) : (
-                <Button whiteGray>{props.second}</Button>
+                <Button
+                  onClick={() => props.setClickMore(!props.clickMore)}
+                  whiteGray
+                >
+                  {props.second}
+                </Button>
               )}
             </ButtonWrapper>
           </Container>

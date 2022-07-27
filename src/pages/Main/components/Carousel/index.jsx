@@ -15,12 +15,14 @@ const MAX_VISIBILITY = 3;
 //   </div>
 // );
 
-const Card = ({ title, content }) => (
+const Card = (props, { title, content }) => (
   <div className="card">
     <Pop
       likes={theme.user.likes}
       repls={theme.user.repls}
       src={theme.user.image}
+      clickMore={props.clickMore}
+      setClickMore={props.setClickMore}
     >
       {theme.user.pop}
     </Pop>
@@ -62,13 +64,15 @@ const StyledCarousel = ({ children }) => {
   );
 };
 
-const Carousel = () => (
+const Carousel = (props) => (
   <>
     <GlobalStyle />
     <div className="app">
       <StyledCarousel>
         {[...new Array(CARDS)].map((_, i) => (
           <Card
+            clickMore={props.clickMore}
+            setClickMore={props.setClickMore}
             title={"Card " + (i + 1)}
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d"
           />
