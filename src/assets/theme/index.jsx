@@ -1,5 +1,5 @@
 import cat from "../image/babo-cat.png";
-
+import React, { createContext, useState } from "react";
 export default {
   colors: {
     backgroundColor: "000000",
@@ -24,6 +24,8 @@ export default {
     image: cat,
     likes: 24,
     repls: 324,
+    isCreateNewPop: false,
+    isClickMorePop: false,
   },
 };
 

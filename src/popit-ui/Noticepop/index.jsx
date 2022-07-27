@@ -15,6 +15,8 @@ const Container = styled(Flex)`
     props.marginbottom ? props.marginbottom : "none"};
 `;
 const Wrapper = styled(Flex)`
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
+
   width: 280px;
   height: 150px;
   margin-top: 50px;
@@ -41,12 +43,10 @@ const NoticePop = (props) => {
           {props.subcontent}
         </Typography>
         <ButtonWrapper justify="space-around">
-          <Button white medium onClick={() => props.setModal(!props.modal)}>
+          <Button white medium>
             {props.leftButton}
           </Button>
-          <Button medium onClick={() => props.setModal(!props.modal)}>
-            {props.rightButton}
-          </Button>
+          <Button medium>{props.rightButton}</Button>
         </ButtonWrapper>
       </Wrapper>
     </Container>

@@ -7,7 +7,9 @@ import cat from "../../../../assets/image/babo-cat.png";
 import Flex from "../../../../popit-ui/Flex";
 import { useNavigate } from "react-router-dom";
 
-const Category = styled(Flex)``;
+const Category = styled(Flex)`
+  cursor: pointer;
+`;
 const CategoryWrapper = styled(Flex)`
   height: 120px;
   padding: 20px;

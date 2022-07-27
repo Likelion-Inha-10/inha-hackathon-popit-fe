@@ -46,6 +46,7 @@ const Container = styled(Flex)`
 `;
 
 const MoreContainer = styled(Flex)`
+  cursor: pointer;
   width: 100%;
 `;
 
@@ -55,6 +56,7 @@ const TypoContainer = styled(Flex)`
 `;
 const ReplHeartContainer = styled(Flex)`
   width: 100%;
+  cursor: pointer;
 `;
 
 const Pop = (props) => {
@@ -73,7 +75,13 @@ const Pop = (props) => {
     //모달로 경고 창을 띄워야함
     Alert("팝저장, 팔로우 취소 같은 창을 아래에");
   };
+  const ReplWrapper = styled(Flex)`
+    cursor: pointer;
+  `;
 
+  const moveToReplList = () => {
+    Alert("댓글리스트로 이동, url파라미터사용");
+  };
   return (
     <Wrapper
       onClick={props.onClick}
@@ -104,16 +112,18 @@ const Pop = (props) => {
             </Typography>
           </TypoContainer>
           <ReplHeartContainer align="center" justify="flex-end">
-            <FiMessageSquare
-              onClick={onClickRepl}
-              color={theme.colors.white}
-              size={18}
-            />
-            <Margin width="5px" />
-            <Typography regular12 inline color="white">
-              {props.repls}
-            </Typography>
-            <Margin width="10px" />
+            <ReplWrapper onClick={moveToReplList} align="center">
+              <FiMessageSquare
+                onClick={onClickRepl}
+                color={theme.colors.white}
+                size={18}
+              />
+              <Margin width="5px" />
+              <Typography regular12 inline color="white">
+                {props.repls}
+              </Typography>
+              <Margin width="10px" />
+            </ReplWrapper>
             {isClick ? (
               <>
                 <FaHeart

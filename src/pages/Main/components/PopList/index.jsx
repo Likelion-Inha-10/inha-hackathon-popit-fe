@@ -7,6 +7,8 @@ import Margin from "../../../../popit-ui/Margin";
 import Pop from "../../../../popit-ui/Pop";
 import cat from "../../../../assets/image/babo-cat.png";
 import Carousel from "../Carousel";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled(Flex)`
   height: ${(props) => props.height};
@@ -20,15 +22,24 @@ const TypoContainer = styled(Flex)`
 `;
 
 const PopContainer = styled(Flex)``;
-const MoreContainer = styled(Flex)``;
+const MoreContainer = styled(Flex)`
+  cursor: pointer;
+`;
 const MainPopContainer = (props) => {
+  const Navigate = useNavigate();
+
+  const moveToMorePop = () => {
+    Navigate("/more-pop");
+    //나중에 id로 연결
+  };
+
   return (
     <>
       <Margin height="20px" />
       <Container height="430px" direction="column" align="center">
         <TypoContainer align="center" justify="space-between">
           <Typography bold20>오늘의 팝</Typography>
-          <MoreContainer>
+          <MoreContainer onClick={moveToMorePop}>
             <Typography regular12 color="middlegray">
               더보기
             </Typography>

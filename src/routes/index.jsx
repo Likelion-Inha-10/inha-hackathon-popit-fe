@@ -11,6 +11,7 @@ import OwnerProfile from "../pages/OwnerProfile";
 import Test from "../pages/Test";
 import MyChatList from "./../pages/MyChatList";
 import ProfileEdit from "./../pages/ProfileEdit/index";
+import MorePop from "../pages/MorePop";
 
 // 라우트명은 kebab-case 로 작성합니다
 
@@ -28,6 +29,7 @@ const Router = () => (
       <Route exact path="/test" element={<Test />} />
       <Route exact path="/mychat-list" element={<MyChatList />} />
       <Route exact path="/profile-edit" element={<ProfileEdit />} />
+      <Route exact path="/more-pop" element={<MorePop />} />
     </Routes>
   </BrowserRouter>
 );
