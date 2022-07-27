@@ -107,16 +107,6 @@ const CategoryPopUp = (props) => {
               <Margin height="10px" />
               <Typography regular12>보관함1</Typography>
             </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
           </CategoryWrapper>
         </Container>
       </Wrapper>

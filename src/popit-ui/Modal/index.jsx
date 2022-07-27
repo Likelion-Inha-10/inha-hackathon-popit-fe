@@ -75,6 +75,8 @@ const Modal = (props) => {
         <Wrapper>
           <Container justify="center" align="center">
             <InputPopUp
+              left="285px"
+              down="125px"
               CreateNewPop={props.CreateNewPop}
               setCreateNewPop={props.setCreateNewPop}
             ></InputPopUp>
