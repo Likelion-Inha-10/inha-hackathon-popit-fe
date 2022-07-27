@@ -74,11 +74,11 @@ const ProfileDetail = (props) => {
           <Pop src={B1} small>
             블라블라
           </Pop>
-          <Margin height="30px" />
+          <Margin height="20px" />
           <Pop src={B2} small>
             블라블라
           </Pop>
-          <Margin height="30px" />
+          <Margin height="20px" />
           <Pop src={B3} small>
             블라블라
           </Pop>

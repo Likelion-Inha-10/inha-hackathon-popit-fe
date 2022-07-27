@@ -11,6 +11,7 @@ import Alert from "../../popit-ui/Alert";
 import NoticePop from "../../popit-ui/Noticepop/index";
 import Modal from "../../popit-ui/Modal";
 import ExpandPop from "../../popit-ui/ExpandPop";
+import theme from "../../assets/theme";
 
 const Wrapper = styled.div`
   overflow: scroll;
@@ -22,37 +23,30 @@ const Wrapper = styled.div`
 
 const SubWrapper = styled.div``;
 const Main = () => {
-  const [modal, setModal] = useState(false);
-  const [popModal, setPopModal] = useState(false);
+  const [CreateNewPop, setCreateNewPop] = useState(false);
+
   return (
     <Layout white>
-      {modal && (
+      {CreateNewPop ? (
         <Modal
-          modal={modal}
-          setModal={setModal}
-          rightButton="확인"
-          leftButton="취소"
-          content="hi"
-          type="noticePop"
+          CreateNewPop={CreateNewPop}
+          setCreateNewPop={setCreateNewPop}
+          type="inputPopUp"
         />
-      )}
-      {popModal && (
-        <Modal popModal={popModal} setPopModal={setPopModal} type="expandPop" />
+      ) : (
+        <></>
       )}
       <CircleButton
-        plus
         right="305px"
         down="760px"
-        onClick={() => {
-          setModal(!modal);
-        }}
+        onClick={() => setCreateNewPop(!CreateNewPop)}
       />
       <SubWrapper>
         <MainHeader page="main" />
       </SubWrapper>
       <Wrapper>
         <CategoryList />
-        <PopList popModal={popModal} setPopModal={setPopModal} />
+        <PopList />
       </Wrapper>
     </Layout>
   );

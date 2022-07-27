@@ -4,6 +4,7 @@ import Flex from "../Flex";
 import { useState } from "react";
 import NoticePop from "../Noticepop";
 import ExpandPop from "../ExpandPop";
+import Inputpopup from "../Inputpopup/index";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -27,8 +28,7 @@ const Modal = (props) => {
         <Wrapper>
           <Container justify="center" align="center">
             <NoticePop
-              modal={props.modal}
-              setModal={props.setModal}
+              setPopModal={props.setPopModal}
               content={props.content}
               leftButton={props.leftButton}
               rightButton={props.rightButton}
@@ -43,10 +43,21 @@ const Modal = (props) => {
       <div>
         <Wrapper>
           <Container justify="center" align="center">
-            <ExpandPop
-              popModal={props.popModal}
-              setPopModal={props.setPopModal}
-            ></ExpandPop>
+            <ExpandPop></ExpandPop>
+          </Container>
+        </Wrapper>
+      </div>
+    );
+  }
+  if (props.type === "inputPopUp") {
+    return (
+      <div>
+        <Wrapper>
+          <Container justify="center" align="center">
+            <Inputpopup
+              CreateNewPop={props.CreateNewPop}
+              setCreateNewPop={props.setCreateNewPop}
+            ></Inputpopup>
           </Container>
         </Wrapper>
       </div>

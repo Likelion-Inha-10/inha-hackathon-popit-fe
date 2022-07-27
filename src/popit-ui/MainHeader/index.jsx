@@ -115,7 +115,7 @@ const MainHeader = (props) => {
           <Left onClick={onBackClick}>
             <IoChevronBackSharp size="27" color="#000000" />
           </Left>
-          <Typography size="20px">{title}</Typography>
+          <Typography bold20>{title}</Typography>
           <Margin width="50px" height="100%" />
         </>
       );
