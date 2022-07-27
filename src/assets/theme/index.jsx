@@ -1,3 +1,5 @@
+import cat from "../image/babo-cat.png";
+
 export default {
   colors: {
     backgroundColor: "000000",
@@ -12,6 +14,16 @@ export default {
     middlegray: "#C1C1C1",
     darkgray: "#7b7b7b",
     warningred: "#CF5959",
+  },
+
+  user: {
+    name: "sehyun",
+    more: "dafdfa",
+    black: "#000000",
+    pop: "이건 팝 데이터",
+    image: cat,
+    likes: 24,
+    repls: 324,
   },
 };
 

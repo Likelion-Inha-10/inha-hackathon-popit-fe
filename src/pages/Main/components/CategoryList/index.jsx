@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const Category = styled(Flex)``;
 const CategoryWrapper = styled(Flex)`
-  height: 90px;
+  height: 120px;
   padding: 20px;
   overflow: auto;
 `;

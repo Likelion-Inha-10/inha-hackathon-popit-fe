@@ -7,6 +7,7 @@ const Wrapper = styled(Flex)`
   height: 100%;
   width: 100%;
 `;
+
 const Dimmer = (props) => {
   return <Wrapper>{props.children}</Wrapper>;
 };
