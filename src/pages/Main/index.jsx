@@ -8,7 +8,6 @@ import styled from "styled-components";
 import Flex from "../../popit-ui/Flex";
 import CircleButton from "../../popit-ui/CircleButton";
 import Alert from "../../popit-ui/Alert";
-import NoticePop from "../../popit-ui/Noticepop/index";
 import Modal from "../../popit-ui/Modal";
 import ExpandPop from "../../popit-ui/ExpandPop";
 import theme from "../../assets/theme";

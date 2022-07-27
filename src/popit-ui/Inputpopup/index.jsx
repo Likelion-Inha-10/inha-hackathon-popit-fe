@@ -34,21 +34,19 @@ const StyledInput = styled.input`
 `;
 const Inputpopup = (props) => {
   return (
-    <Layout white>
-      <Container direction="column" align="center">
-        <ButtonWrapper>
-          <Close onClick={props.onClick}>
-            <IoCloseSharp size="30px" color="black" />
-          </Close>
-          <Button small>{props.buttoncontent}</Button>
-        </ButtonWrapper>
-        <StyledInput
-          type={props.type}
-          onChange={props.onChange}
-          placeholder={props.placeholder}
-        />
-      </Container>
-    </Layout>
+    <Container direction="column" align="center">
+      <ButtonWrapper>
+        <Close onClick={props.onClick}>
+          <IoCloseSharp size="30px" color="black" />
+        </Close>
+        <Button small>{props.buttoncontent}</Button>
+      </ButtonWrapper>
+      <StyledInput
+        type={props.type}
+        onChange={props.onChange}
+        placeholder={props.placeholder}
+      />
+    </Container>
   );
 };
 
