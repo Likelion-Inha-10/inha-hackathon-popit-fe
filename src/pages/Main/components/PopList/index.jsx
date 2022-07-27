@@ -6,6 +6,7 @@ import theme from "../../../../assets/theme";
 import Margin from "../../../../popit-ui/Margin";
 import Pop from "../../../../popit-ui/Pop";
 import cat from "../../../../assets/image/babo-cat.png";
+import Carousel from "../Carousel";
 
 const Container = styled(Flex)`
   height: ${(props) => props.height};
@@ -36,14 +37,16 @@ const MainPopContainer = (props) => {
           </MoreContainer>
         </TypoContainer>
         <Margin height="10px" />
-        <Pop
-          onClick={() => props.setPopModal(!props.popModal)}
+        {/* <Pop
+          popModal={props.popModal}
+          setPopModal={props.setPopModal}
           src={cat}
           likes="324"
           repls="1"
         >
           {theme.user.pop}
-        </Pop>
+        </Pop> */}
+        <Carousel />
       </Container>
       {/* <Container height="400px" direction="column" align="center">
         <TypoContainer align="center" justify="space-between">

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Dimmer from "../Dimmer";
 import theme from "../../assets/theme";
 import Typography from "../Typography";
+
 const Wrapper = styled(Flex)`
   height: 494px;
   width: 304px;
@@ -20,6 +21,9 @@ const ExpandPop = (props) => {
     <div>
       <Wrapper onClick={() => props.setPopModal(!props.popModal)}>
         <Dimmer>
+          <Typography regular16 color="white">
+            {theme.user.name}
+          </Typography>
           <Typography regular16 color="white">
             {theme.user.pop}
           </Typography>

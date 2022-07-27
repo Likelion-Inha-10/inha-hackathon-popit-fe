@@ -2,26 +2,12 @@ import React from "react";
 import Layout from "../../popit-ui/Layout";
 import styled from "styled-components";
 import NoticePop from "../../popit-ui/Noticepop";
+import Flex from "../../popit-ui/Flex";
+import { useState } from "react";
+import StyledCarousel from "../Main/components/Carousel";
 
-const Modal = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  background-color: rgba(0, 0, 0, 0.4);
-`;
-
-const Test = () => {
-  return (
-    <Layout gradation>
-      hi
-      <Modal>
-        <NoticePop />
-      </Modal>
-    </Layout>
-  );
+const Test = (props) => {
+  return <StyledCarousel />;
 };
 
 export default Test;

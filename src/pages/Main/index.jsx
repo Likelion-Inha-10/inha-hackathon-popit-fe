@@ -40,6 +40,7 @@ const Main = () => {
         <Modal popModal={popModal} setPopModal={setPopModal} type="expandPop" />
       )}
       <CircleButton
+        plus
         right="305px"
         down="760px"
         onClick={() => {

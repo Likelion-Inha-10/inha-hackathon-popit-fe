@@ -34,9 +34,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 
-* {
-  font-family: "NanumSquare";
-}
+
+
 `;
 
 export default GlobalStyle;

@@ -49,7 +49,10 @@ const MoreContainer = styled(Flex)`
   width: 100%;
 `;
 
-const TypoContainer = styled(Flex)``;
+const TypoContainer = styled(Flex)`
+  height: 80%;
+  width: 100%;
+`;
 const ReplHeartContainer = styled(Flex)`
   width: 100%;
 `;
@@ -91,7 +94,11 @@ const Pop = (props) => {
               size={18}
             />
           </MoreContainer>
-          <TypoContainer>
+          <TypoContainer
+            onClick={() => props.setPopModal(!props.popModal)}
+            align="center"
+            justify="center"
+          >
             <Typography regular16 color="white">
               {props.children}
             </Typography>
