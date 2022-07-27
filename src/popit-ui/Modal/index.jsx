@@ -4,7 +4,7 @@ import Flex from "../Flex";
 import { useState } from "react";
 import ExpandPop from "../ExpandPop";
 import Inputpopup from "../Inputpopup/index";
-import NoticePop from "./../NoticePop/index";
+import NoticePop from "../NoticePop";
 
 const Wrapper = styled.div`
   position: absolute;
