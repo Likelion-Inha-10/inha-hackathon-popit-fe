@@ -7,9 +7,7 @@ import PopList from "./components/PopList";
 import styled from "styled-components";
 import Flex from "../../popit-ui/Flex";
 import CircleButton from "../../popit-ui/CircleButton";
-import Alert from "../../popit-ui/Alert";
 import Modal from "../../popit-ui/Modal";
-import ExpandPop from "../../popit-ui/ExpandPop";
 import theme from "../../assets/theme";
 
 const Wrapper = styled.div`
