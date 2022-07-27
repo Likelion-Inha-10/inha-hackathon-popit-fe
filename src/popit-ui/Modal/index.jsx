@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Flex from "../Flex";
 import { useState } from "react";
 import ExpandPop from "../ExpandPop";
-import Inputpopup from "../Inputpopup/index";
+import InputPopUp from "../InputPopUp";
 import NoticePopUp from "../NoticePopUp";
 import Completepop from "../Completepop";
 
@@ -74,10 +74,10 @@ const Modal = (props) => {
       <div>
         <Wrapper>
           <Container justify="center" align="center">
-            <Inputpopup
+            <InputPopUp
               CreateNewPop={props.CreateNewPop}
               setCreateNewPop={props.setCreateNewPop}
-            ></Inputpopup>
+            ></InputPopUp>
           </Container>
         </Wrapper>
       </div>
