@@ -67,7 +67,7 @@ const ProfileDetail = (props) => {
               <Typography bold12>124</Typography>
             </ContentWrapper>
           </InfoWrapper>
-          <MdOutlineModeEdit size="20px" onClick={props.onClick} />
+          <MdOutlineModeEdit size="20px" onClick={props.onClickEvent} />
         </ProfileWrapper>
 
         <PopWrapper direction="column">
