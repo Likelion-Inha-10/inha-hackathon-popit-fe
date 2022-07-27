@@ -4,6 +4,9 @@ import Flex from "../Flex";
 import Layout from "../Layout";
 import { IoCloseSharp } from "react-icons/io5";
 import Button from "../Button";
+import Input from "../Input";
+import Margin from "../Margin";
+import { FaCamera } from "react-icons/fa";
 
 const Container = styled(Flex)`
   background-color: white;
@@ -17,9 +20,7 @@ const Container = styled(Flex)`
     props.marginbottom ? props.marginbottom : "none"};
 `;
 
-const Close = styled.div`
-  padding: 0px 220px 10px 0px;
-`;
+const Close = styled.div``;
 
 const ButtonWrapper = styled(Flex)`
   padding-top: 10px;
@@ -32,13 +33,44 @@ const StyledInput = styled.input`
   border: none;
   border-radius: 20px;
 `;
+
+const CategoryInput = styled.input`
+  width: 60px;
+  height: 20px;
+  background-color: white;
+  border: none;
+  box-shadow: 0px 2px 0px 0px rgb(0, 0, 0, 0.15);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-position: under;
+  font-family: "NanumSquareR";
+  :focus {
+    text-decoration: underline;
+    text-underline-position: under;
+    font-family: "NanumSquareR";
+  }
+`;
+const StyledCircle = styled(Flex)`
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0px 4px 10px 2px rgb(0, 0, 0, 0.15);
+  height: 26px;
+  width: 26px;
+  position: relative;
+  bottom: 33px;
+  left: 5px;
+  z-index: 1;
+`;
 const Inputpopup = (props) => {
   return (
-    <Container direction="column" align="center">
-      <ButtonWrapper>
+    <Container direction="column">
+      <ButtonWrapper align="left">
         <Close onClick={props.onClick}>
           <IoCloseSharp size="30px" color="black" />
         </Close>
+        <Margin width="20px" />
+        <CategoryInput type="type" placeholder="카테고리" />
+        <Margin width="130px" />
         <Button small>{props.buttoncontent}</Button>
       </ButtonWrapper>
       <StyledInput
@@ -46,6 +78,9 @@ const Inputpopup = (props) => {
         onChange={props.onChange}
         placeholder={props.placeholder}
       />
+      <StyledCircle align="center" justify="center">
+        <FaCamera color="grey" />
+      </StyledCircle>
     </Container>
   );
 };
