@@ -15,7 +15,12 @@ const ProfileIcon = styled.div`
       width: 90px;
       height: 90px;
     `}
-
+  ${(props) =>
+    props.size72 &&
+    `
+        width: 72px;
+        height: 72px;
+      `}
   ${(props) =>
     props.size60 &&
     `
