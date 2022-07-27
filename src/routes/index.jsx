@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Intro from "../pages/Intro";
 import FirstChoice from "../pages/FirstChoice";
 import SignUp from "../pages/SignUp";
-import Tutorial from "../pages/Tutorial";
+import Tutorial from "../pages/Tutorial/index";
 import Main from "../pages/Main/index";
 import Login from "../pages/Login";
 import Hamburger from "../pages/Hamburger";
@@ -18,11 +18,11 @@ import MorePop from "../pages/MorePop";
 const Router = () => (
   <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<Intro />}></Route>
-      <Route exact path="/tutorial" element={<Tutorial />}></Route>
-      <Route exact path="/login" element={<Login />}></Route>
-      <Route exact path="/sign-up" element={<SignUp />}></Route>
-      <Route exact path="/first-choice" element={<FirstChoice />}></Route>
+      <Route exact path="/" element={<Intro />} />
+      <Route exact path="/tutorial" element={<Tutorial />} />
+      <Route exact path="/login" element={<Login />} />
+      <Route exact path="/sign-up" element={<SignUp />} />
+      <Route exact path="/first-choice" element={<FirstChoice />} />
       <Route exact path="/main" element={<Main />} />
       <Route exact path="/menu" element={<Hamburger />} />
       <Route exact path="/owner-profile" element={<OwnerProfile />} />

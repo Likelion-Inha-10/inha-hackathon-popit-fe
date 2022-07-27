@@ -32,10 +32,6 @@ const GlobalStyle = createGlobalStyle`
   font-style: normal;
   unicode-range: U+0041-005A, U+0061-007A;
 }
-
-
-
-
 `;
 
 export default GlobalStyle;

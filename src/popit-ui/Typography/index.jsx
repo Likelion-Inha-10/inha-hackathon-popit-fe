@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Typography = styled.div`
+  font-family: "NanumSquare";
   font-size: ${(props) => props.size || "1rem"};
   color: ${(props) =>
     props.color ? props.theme.colors[props.color] : "black"};
