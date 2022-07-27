@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Typography from "../../popit-ui/Typography";
+import Flex from "../../popit-ui/Flex";
 import Margin from "../../popit-ui/Margin";
 import styled, { keyframes } from "styled-components";
 import Layout from "../../popit-ui/Layout";
 import MainHeader from "../../popit-ui/MainHeader";
 import ChatList from "./../../popit-ui/ChatList";
-import { Alert } from "./../../popit-ui/Alert";
+import Modal from "../../popit-ui/Modal";
 
 const slideIn = keyframes`
    0%{
@@ -24,8 +27,9 @@ const AnimationBox = styled.div`
 
 // api 연동시 map으로 구현해야됨
 const MyChatList = () => {
+  const [isPopup, setIsPopup] = useState(false);
   const onDelete = () => {
-    Alert("삭제되었습니다");
+    setIsPopup(true);
   };
 
   return (
@@ -64,6 +68,19 @@ const MyChatList = () => {
           onDelete={onDelete}
         />
       </AnimationBox>
+      {isPopup ? (
+        <Modal
+          PopModal={isPopup}
+          setPopModal={setIsPopup}
+          content="삭제 하시겠습니까?"
+          leftButton="취소"
+          rightButton="확인"
+          type="noticePopUp"
+          usage="삭제"
+        />
+      ) : (
+        <></>
+      )}
     </Layout>
   );
 };
