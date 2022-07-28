@@ -1,6 +1,4 @@
 import React from "react";
-import Layout from "../../../popit-ui/Layout";
-import MainHeader from "../../../popit-ui/MainHeader";
 import Margin from "../../../popit-ui/Margin";
 import ProfileIcon from "../../../popit-ui/ProfileIcon/index";
 import styled from "styled-components";
@@ -45,45 +43,42 @@ const PopWrapper = styled(Flex)`
 const ProfileDetail = (props) => {
   return (
     <>
-      <Layout white>
-        <MainHeader page="others" title="프로필" />
-        <ProfileWrapper>
-          <NameWrapper direction="column">
-            <ProfileIcon size60 />
-            <Margin height="10px" />
-            <Typography bold16 center>
-              홍길동
-            </Typography>
-          </NameWrapper>
-          <InfoWrapper direction="column">
-            <ContentWrapper paddingleft="20px" justify="space-around">
-              <Typography regular12>내 팝</Typography>
-              <Typography regular12>팔로워</Typography>
-              <Typography regular12>팔로잉</Typography>
-            </ContentWrapper>
-            <ContentWrapper justify="space-around">
-              <Typography bold12>615</Typography>
-              <Typography bold12>324</Typography>
-              <Typography bold12>124</Typography>
-            </ContentWrapper>
-          </InfoWrapper>
-          <MdOutlineModeEdit size="20px" onClick={props.onClickEvent} />
-        </ProfileWrapper>
+      <ProfileWrapper>
+        <NameWrapper direction="column">
+          <ProfileIcon size60 />
+          <Margin height="10px" />
+          <Typography bold16 center>
+            홍길동
+          </Typography>
+        </NameWrapper>
+        <InfoWrapper direction="column">
+          <ContentWrapper paddingleft="20px" justify="space-around">
+            <Typography regular12>내 팝</Typography>
+            <Typography regular12>팔로워</Typography>
+            <Typography regular12>팔로잉</Typography>
+          </ContentWrapper>
+          <ContentWrapper justify="space-around">
+            <Typography bold12>615</Typography>
+            <Typography bold12>324</Typography>
+            <Typography bold12>124</Typography>
+          </ContentWrapper>
+        </InfoWrapper>
+        <MdOutlineModeEdit size="20px" onClick={props.onClickEvent} />
+      </ProfileWrapper>
 
-        <PopWrapper direction="column">
-          <Pop src={B1} small>
-            블라블라
-          </Pop>
-          <Margin height="20px" />
-          <Pop src={B2} small>
-            블라블라
-          </Pop>
-          <Margin height="20px" />
-          <Pop src={B3} small>
-            블라블라
-          </Pop>
-        </PopWrapper>
-      </Layout>
+      <PopWrapper direction="column">
+        <Pop src={B1} small>
+          블라블라
+        </Pop>
+        <Margin height="20px" />
+        <Pop src={B2} small>
+          블라블라
+        </Pop>
+        <Margin height="20px" />
+        <Pop src={B3} small>
+          블라블라
+        </Pop>
+      </PopWrapper>
     </>
   );
 };

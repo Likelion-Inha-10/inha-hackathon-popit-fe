@@ -84,6 +84,10 @@ const Pop = (props) => {
   };
   return (
     <Wrapper
+      clickMore={props.clickMore}
+      setClickMore={props.setClickMore}
+      popSave={props.popSave}
+      setPopSave={props.setPopSave}
       onClick={props.onClick}
       likes={props.likes}
       repls={props.repls}
@@ -97,7 +101,7 @@ const Pop = (props) => {
         <Container direction="column" justify="space-between" align="center">
           <MoreContainer justify="flex-end">
             <FiMoreHorizontal
-              onClick={onClickMore}
+              onClick={() => props.setClickMore(!props.clickMore)}
               color={theme.colors.white}
               size={18}
             />

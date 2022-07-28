@@ -6,11 +6,13 @@ import { useState } from "react";
 import SelectPopUp from "../../popit-ui/SelectPopUp";
 import Margin from "../../popit-ui/Margin";
 import InputPopUp from "../../popit-ui/InputPopUp";
+import CategoryPopUp from "../../popit-ui/CategoryPopUp";
 
 const Test = (props) => {
   return (
     <Layout gradation>
-      <InputPopUp />
+      <CategoryPopUp title="보관함 목록" buttonContent="선택"></CategoryPopUp>
+      <InputPopUp></InputPopUp>
     </Layout>
   );
 };

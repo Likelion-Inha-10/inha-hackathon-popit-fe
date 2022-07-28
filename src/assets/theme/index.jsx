@@ -24,10 +24,11 @@ export default {
     image: cat,
     likes: 24,
     repls: 324,
-    isCreateNewPop: false,
-    isClickMorePop: false,
+
   },
 };
+
+
 
 //carrier/src/assets/theme/index.jsx 참고!!
 // 색상을 가져다 쓰는 것임, 색상 지정해주는 것임 가져다 쓸 때에는

@@ -20,15 +20,38 @@ const Wrapper = styled.div`
 
 const SubWrapper = styled.div``;
 const Main = () => {
-  const [CreateNewPop, setCreateNewPop] = useState(false);
-
+  const [createNewPop, setCreateNewPop] = useState(false);
+  const [clickMore, setClickMore] = useState(false);
+  const [popSave, setPopSave] = useState(true);
   return (
     <Layout white>
-      {CreateNewPop ? (
+      {createNewPop ? (
         <Modal
-          CreateNewPop={CreateNewPop}
+          createNewPop={createNewPop}
           setCreateNewPop={setCreateNewPop}
           type="inputPopUp"
+        />
+      ) : (
+        <></>
+      )}
+      {clickMore ? (
+        <Modal
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+          popSave={popSave}
+          setPopSave={setPopSave}
+          type="selectPopUp"
+        />
+      ) : (
+        <></>
+      )}
+      {popSave ? (
+        <Modal
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+          popSave={popSave}
+          setPopSave={setPopSave}
+          type="categoryPopUp"
         />
       ) : (
         <></>
@@ -36,14 +59,19 @@ const Main = () => {
       <CircleButton
         right="305px"
         down="760px"
-        onClick={() => setCreateNewPop(!CreateNewPop)}
+        onClick={() => setCreateNewPop(!createNewPop)}
       />
       <SubWrapper>
         <MainHeader page="main" />
       </SubWrapper>
       <Wrapper>
         <CategoryList />
-        <PopList />
+        <PopList
+          popSave={popSave}
+          setPopSave={setPopSave}
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+        />
       </Wrapper>
     </Layout>
   );

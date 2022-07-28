@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ProfileIcon from "../../../popit-ui/ProfileIcon";
 import MainHeader from "./../../../popit-ui/MainHeader/index";
 import { MdOutlineModeEdit } from "react-icons/md";
 import styled from "styled-components";
 import Flex from "../../../popit-ui/Flex";
-import Layout from "../../../popit-ui/Layout";
 
 const StyledCircle = styled(Flex)`
   border-radius: 50%;
@@ -25,20 +25,25 @@ const ProfileWrapper = styled.div`
   flex-direction: column;
   padding-top: 30px;
 `;
-const Edit = () => {
+
+const PhotoEdit = () => {
+  const navigate = useNavigate();
+
+  const onButtonClick = () => {
+    navigate("/owner-profile");
+  };
+
   return (
-    <div>
-      <Layout white>
-        <MainHeader page="profile" />
-        <ProfileWrapper>
-          <ProfileIcon size90 />
-          <StyledCircle align="center" justify="center">
-            <MdOutlineModeEdit size="15px" />
-          </StyledCircle>
-        </ProfileWrapper>
-      </Layout>
-    </div>
+    <>
+      <MainHeader page="profile" onButtonClick={onButtonClick} />
+      <ProfileWrapper>
+        <ProfileIcon size90 />
+        <StyledCircle align="center" justify="center">
+          <MdOutlineModeEdit size="15px" />
+        </StyledCircle>
+      </ProfileWrapper>
+    </>
   );
 };
 
-export default Edit;
+export default PhotoEdit;
