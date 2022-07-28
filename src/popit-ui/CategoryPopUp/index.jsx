@@ -12,6 +12,7 @@ const Wrapper = styled(Flex)`
   background-color: ${(props) => props.theme.colors.white};
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0 rgb(0, 0, 0, 0.1);
+  z-index: 3px;
 `;
 
 const Container = styled(Flex)`
@@ -39,13 +40,26 @@ const CategoryWrapper = styled.div`
     display: none;
   }
 `;
+
 const CategoryPopUp = (props) => {
+  const onPopUpCategory = () => {
+    if (props.popSave == true) {
+      props.setPopSave(!props.popSave);
+      Alert("보관함에 팝을 저장했습니다.");
+    } else {
+      props.setSelectCategory(!props.selectCategory);
+      Alert("저장할 보관함을 선택하였습니다.");
+    }
+  };
+
   return (
     <div>
       <Wrapper
         onClick={(e) => e.stopPropagation()}
         clickMore={props.clickMore}
         setClickMore={props.setClickMore}
+        selectCategory={props.selectCategory}
+        setSelectCategory={props.setSelectCategory}
         popSave={props.popSave}
         setPopSave={props.setPopSave}
         title={props.title}
@@ -58,10 +72,8 @@ const CategoryPopUp = (props) => {
             <Margin width="26px" />
             <Typography bold20>{props.title}</Typography>
             <Typography
-              onClick={() => {
-                props.setPopSave(!props.popSave);
-                Alert("보관함에 팝을 저장했습니다.");
-              }}
+              style={{ cursor: "pointer" }}
+              onClick={() => onPopUpCategory()}
               regular16
               color="orange"
             >

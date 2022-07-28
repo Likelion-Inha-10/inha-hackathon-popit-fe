@@ -65,6 +65,16 @@ const Dimmer = styled(Flex)`
 
 const CategoryList = (props) => {
   const navigate = useNavigate();
+  const [checkedItems, setCheckedItems] = useState([]);
+  const checkedHandler = (code, isSelected) => {
+    if (!isSelected) {
+      // 체크 추가할 때
+      setCheckedItems([...checkedItems, code]);
+    } else if (isSelected && checkedItems.find((one) => one === code)) {
+      const filter = checkedItems.filter((one) => one !== code);
+      setCheckedItems([...filter]);
+    }
+  };
 
   const [categories, setCategories] = useState(
     _.map(categoryData, (category) => ({
@@ -83,10 +93,17 @@ const CategoryList = (props) => {
         return { ...category };
       })
     );
+
+    console.log(e.currentTarget.selected);
+    checkedHandler(e.currentTarget, e.currentTarget.selected);
   };
 
   const onClick = () => {
     var numberOfSelected = 0;
+
+    console.log(checkedItems[0].title);
+    console.log(checkedItems[1].title);
+    console.log(checkedItems[2].title);
 
     _.map(categories, (category) => {
       if (category.selected) {
@@ -113,6 +130,7 @@ const CategoryList = (props) => {
               onClick={onCategoryClick}
               direction="column"
               justify="center"
+              selected={category.selected}
             >
               <CategoryPhoto>
                 <Dimmer
