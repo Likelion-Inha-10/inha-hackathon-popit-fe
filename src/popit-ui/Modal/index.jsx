@@ -33,9 +33,10 @@ const Modal = (props) => {
         >
           <SelectPopUp
             red
-            type="small"
-            first="팝 저장"
-            second="팔로우 취소"
+            size={props.size}
+            first={props.first}
+            second={props.second}
+            third={props.third}
             popSave={props.popSave}
             setPopSave={props.setPopSave}
             clickMore={props.clickMore}
@@ -98,6 +99,8 @@ const Modal = (props) => {
           <InputPopUp
             left="285px"
             down="125px"
+            selectCategory={props.selectCategory}
+            setSelectCategory={props.setSelectCategory}
             createNewPop={props.createNewPop}
             setCreateNewPop={props.setCreateNewPop}
           ></InputPopUp>
@@ -113,6 +116,8 @@ const Modal = (props) => {
           <CategoryPopUp
             title="보관함 목록"
             buttonContent="선택"
+            selectCategory={props.selectCategory}
+            setSelectCategory={props.setSelectCategory}
             clickMore={props.clickMore}
             setClickMore={props.setClickMore}
             popSave={props.popSave}

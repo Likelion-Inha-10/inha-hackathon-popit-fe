@@ -66,12 +66,16 @@ const ButtonWrapper = styled(Flex)`
 `;
 
 const SelectPopUp = (props) => {
-  if (props.type == "medium") {
+  if (props.size == "medium") {
     return (
       <div>
         <Wrapper
-          onClick={props.onClick}
-          type={props.type}
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
+          clickMore={props.clickMore}
+          setClickMore={props.setClickMore}
+          onClick={(e) => e.stopPropagation()}
+          size={props.type}
           first={props.first}
           second={props.second}
           third={props.third}
@@ -82,8 +86,23 @@ const SelectPopUp = (props) => {
           <Container direction="column" align="center" justify="space-between">
             <Bar />
             <ButtonWrapper direction="column" justify="space-between">
-              <Button whiteGray>{props.first}</Button>
-              <Button whiteGray>{props.second}</Button>
+              <Button
+                onClick={() => {
+                  props.setClickMore(!props.clickMore);
+                  props.setPopSave(!props.popSave);
+                }}
+                whiteGray
+              >
+                {props.first}
+              </Button>
+              <Button
+                onClick={() => {
+                  props.setClickMore(!props.clickMore);
+                }}
+                whiteGray
+              >
+                {props.second}
+              </Button>
               {props.red ? (
                 <Button whiteGray redTypo>
                   {props.third}
@@ -98,12 +117,10 @@ const SelectPopUp = (props) => {
     );
   }
 
-  if (props.type == "small") {
+  if (props.size == "small") {
     return (
       <div>
         <Wrapper
-          popSave={props.popSave}
-          setPopSave={props.setPopSave}
           type={props.type}
           red={props.red}
           first={props.first}
@@ -115,23 +132,9 @@ const SelectPopUp = (props) => {
           <Container direction="column" align="center" justify="space-between">
             <Bar />
             <ButtonWrapper direction="column" justify="space-between">
-              <Button
-                whiteGray
-                onClick={() => {
-                  props.setClickMore(!props.clickMore);
-                  props.setPopSave(!props.popSave);
-                }}
-              >
-                {props.first}
-              </Button>
+              <Button whiteGray>{props.first}</Button>
               {props.red ? (
-                <Button
-                  onClick={() => {
-                    props.setClickMore(!props.clickMore);
-                  }}
-                  whiteGray
-                  redTypo
-                >
+                <Button whiteGray redTypo>
                   {props.second}
                 </Button>
               ) : (
@@ -149,7 +152,7 @@ const SelectPopUp = (props) => {
     );
   }
 
-  if (props.type == "large") {
+  if (props.size == "large") {
     return (
       <div>
         <Wrapper
