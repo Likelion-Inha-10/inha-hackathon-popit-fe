@@ -30,7 +30,7 @@ const PhotoEdit = () => {
   const navigate = useNavigate();
 
   const onButtonClick = () => {
-    navigate("/owner-profile");
+    navigate(-1);
   };
 
   return (
