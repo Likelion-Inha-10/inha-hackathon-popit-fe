@@ -13,10 +13,16 @@ import MyChatList from "./../pages/MyChatList";
 import ProfileEdit from "./../pages/ProfileEdit/index";
 import MorePop from "../pages/MorePop";
 import InputPopUp from "./../popit-ui/InputPopUp/index";
+<<<<<<< HEAD
+import FollowerList from "../pages/FollowerList";
+import FollowingList from "../pages/FollowingList";
+
+=======
 import ReplList from "../pages/ReplList";
 import MyPopList from "../pages/MyPopList";
 import CategoryPopList from "../pages/CategoryPopList";
 import MyPopListEdit from "../pages/MyPopListEdit";
+>>>>>>> 7d7b24ca7a586d2e237bef654b54fbb8b2d3a033
 // 라우트명은 kebab-case 로 작성합니다
 
 const Router = () => (
@@ -35,10 +41,15 @@ const Router = () => (
       <Route exact path="/profile-edit" element={<ProfileEdit />} />
       <Route exact path="/more-pop" element={<MorePop />} />
       <Route exact path="/inputpop" element={<InputPopUp />} />
+<<<<<<< HEAD
+      <Route exact path="/follower-list" element={<FollowerList />} />
+      <Route exact path="/following-list" element={<FollowingList />} />
+=======
       <Route exact path="/repl-list" element={<ReplList />} />
       <Route exact path="/pop-chest" element={<MyPopList />} />
       <Route exact path="/pop-chest/edit" element={<MyPopListEdit />} />
       <Route exact path="/pop-list/:title" element={<CategoryPopList />} />
+>>>>>>> 7d7b24ca7a586d2e237bef654b54fbb8b2d3a033
     </Routes>
   </BrowserRouter>
 );

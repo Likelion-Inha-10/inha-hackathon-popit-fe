@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Margin from "../../../popit-ui/Margin";
 import ProfileIcon from "../../../popit-ui/ProfileIcon/index";
 import styled from "styled-components";
@@ -41,6 +42,14 @@ const PopWrapper = styled(Flex)`
   padding-top: 50px;
 `;
 const ProfileDetail = (props) => {
+  const navigate = useNavigate();
+
+  const onClickFollower = () => {
+    navigate("/follower-list");
+  };
+  const onClickFollowing = () => {
+    navigate("/following-list");
+  };
   return (
     <>
       <ProfileWrapper>
@@ -54,8 +63,12 @@ const ProfileDetail = (props) => {
         <InfoWrapper direction="column">
           <ContentWrapper paddingleft="20px" justify="space-around">
             <Typography regular12>내 팝</Typography>
-            <Typography regular12>팔로워</Typography>
-            <Typography regular12>팔로잉</Typography>
+            <Typography regular12 onClick={onClickFollower}>
+              팔로워
+            </Typography>
+            <Typography regular12 onClick={onClickFollowing}>
+              팔로잉
+            </Typography>
           </ContentWrapper>
           <ContentWrapper justify="space-around">
             <Typography bold12>615</Typography>
