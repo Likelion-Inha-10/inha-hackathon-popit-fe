@@ -85,7 +85,7 @@ const LoginList = () => {
             <Margin height="10px" />
             <Input
               onChange={onChangePassword}
-              type="text"
+              type="password"
               placeholder="비밀번호를 입력해주세요."
             />
             <Margin height="30px" />
