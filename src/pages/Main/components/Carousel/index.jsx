@@ -23,6 +23,8 @@ const Card = (props, { title, content }) => (
       src={theme.user.image}
       clickMore={props.clickMore}
       setClickMore={props.setClickMore}
+      popSave={props.popSave}
+      setPopSave={props.setPopSave}
     >
       {theme.user.pop}
     </Pop>
@@ -71,6 +73,8 @@ const Carousel = (props) => (
       <StyledCarousel>
         {[...new Array(CARDS)].map((_, i) => (
           <Card
+            popSave={props.popSave}
+            setPopSave={props.setPopSave}
             clickMore={props.clickMore}
             setClickMore={props.setClickMore}
             title={"Card " + (i + 1)}

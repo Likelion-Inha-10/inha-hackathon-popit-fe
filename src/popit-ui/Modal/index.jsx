@@ -7,6 +7,7 @@ import InputPopUp from "../InputPopUp";
 import NoticePopUp from "../NoticePopUp";
 import CompletePopUp from "../CompletePopUp";
 import SelectPopUp from "../SelectPopUp";
+import CategoryPopUp from "../CategoryPopUp/index";
 
 const Wrapper = styled(Flex)`
   position: fixed;
@@ -31,9 +32,12 @@ const Modal = (props) => {
           onClick={() => props.setClickMore(!props.clickMore)}
         >
           <SelectPopUp
+            red
             type="small"
             first="팝 저장"
             second="팔로우 취소"
+            popSave={props.popSave}
+            setPopSave={props.setPopSave}
             clickMore={props.clickMore}
             setClickMore={props.setClickMore}
           ></SelectPopUp>
@@ -97,6 +101,23 @@ const Modal = (props) => {
             createNewPop={props.createNewPop}
             setCreateNewPop={props.setCreateNewPop}
           ></InputPopUp>
+        </Container>
+      </Wrapper>
+    );
+  }
+
+  if (props.type === "categoryPopUp") {
+    return (
+      <Wrapper onClick={() => props.setPopSave(!props.popSave)}>
+        <Container justify="center" align="center">
+          <CategoryPopUp
+            title="보관함 목록"
+            buttonContent="선택"
+            clickMore={props.clickMore}
+            setClickMore={props.setClickMore}
+            popSave={props.popSave}
+            setPopSave={props.setPopSave}
+          ></CategoryPopUp>
         </Container>
       </Wrapper>
     );

@@ -102,6 +102,8 @@ const SelectPopUp = (props) => {
     return (
       <div>
         <Wrapper
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
           type={props.type}
           red={props.red}
           first={props.first}
@@ -115,13 +117,18 @@ const SelectPopUp = (props) => {
             <ButtonWrapper direction="column" justify="space-between">
               <Button
                 whiteGray
-                onClick={() => props.setClickMore(!props.clickMore)}
+                onClick={() => {
+                  props.setClickMore(!props.clickMore);
+                  props.setPopSave(!props.popSave);
+                }}
               >
                 {props.first}
               </Button>
               {props.red ? (
                 <Button
-                  onClick={() => props.setClickMore(!props.clickMore)}
+                  onClick={() => {
+                    props.setClickMore(!props.clickMore);
+                  }}
                   whiteGray
                   redTypo
                 >

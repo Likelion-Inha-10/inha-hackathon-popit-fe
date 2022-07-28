@@ -86,6 +86,8 @@ const Pop = (props) => {
     <Wrapper
       clickMore={props.clickMore}
       setClickMore={props.setClickMore}
+      popSave={props.popSave}
+      setPopSave={props.setPopSave}
       onClick={props.onClick}
       likes={props.likes}
       repls={props.repls}

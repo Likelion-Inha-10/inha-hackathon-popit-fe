@@ -22,6 +22,7 @@ const SubWrapper = styled.div``;
 const Main = () => {
   const [createNewPop, setCreateNewPop] = useState(false);
   const [clickMore, setClickMore] = useState(false);
+  const [popSave, setPopSave] = useState(true);
   return (
     <Layout white>
       {createNewPop ? (
@@ -37,7 +38,20 @@ const Main = () => {
         <Modal
           clickMore={clickMore}
           setClickMore={setClickMore}
+          popSave={popSave}
+          setPopSave={setPopSave}
           type="selectPopUp"
+        />
+      ) : (
+        <></>
+      )}
+      {popSave ? (
+        <Modal
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+          popSave={popSave}
+          setPopSave={setPopSave}
+          type="categoryPopUp"
         />
       ) : (
         <></>
@@ -52,7 +66,12 @@ const Main = () => {
       </SubWrapper>
       <Wrapper>
         <CategoryList />
-        <PopList clickMore={clickMore} setClickMore={setClickMore} />
+        <PopList
+          popSave={popSave}
+          setPopSave={setPopSave}
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+        />
       </Wrapper>
     </Layout>
   );

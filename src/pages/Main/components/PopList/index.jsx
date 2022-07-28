@@ -49,6 +49,8 @@ const MainPopContainer = (props) => {
         </TypoContainer>
         <Margin height="10px" />
         <Carousel
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
           clickMore={props.clickMore}
           setClickMore={props.setClickMore}
         />
@@ -66,6 +68,8 @@ const MainPopContainer = (props) => {
         </TypoContainer>
         <Margin height="10px" />
         <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
           clickMore={props.clickMore}
           setClickMore={props.setClickMore}
           small
@@ -77,6 +81,8 @@ const MainPopContainer = (props) => {
         </Pop>
         <Margin height="20px" />
         <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
           clickMore={props.clickMore}
           setClickMore={props.setClickMore}
           small
@@ -100,6 +106,8 @@ const MainPopContainer = (props) => {
         </TypoContainer>
         <Margin height="10px" />
         <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
           clickMore={props.clickMore}
           setClickMore={props.setClickMore}
           small
@@ -111,6 +119,8 @@ const MainPopContainer = (props) => {
         </Pop>
         <Margin height="20px" />
         <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
           clickMore={props.clickMore}
           setClickMore={props.setClickMore}
           small
