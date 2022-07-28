@@ -68,7 +68,7 @@ const Pop = (props) => {
   };
 
   const onClickRepl = () => {
-    navigate();
+    navigate("/repl-list");
   };
 
   const onClickMore = () => {

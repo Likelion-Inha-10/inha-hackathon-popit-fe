@@ -25,17 +25,35 @@ const Container = styled(Flex)`
 const Modal = (props) => {
   if (props.type === "selectPopUp") {
     return (
-      <Wrapper onClick={() => props.setClickMore(!props.clickMore)}>
+      <Wrapper
+        onClick={() => {
+          if (props.clickMore == true) {
+            props.setClickMore(!props.clickMore);
+          } else {
+            props.setClassify(!props.classify);
+          }
+        }}
+      >
         <Container
           justify="center"
           align="flex-end"
-          onClick={() => props.setClickMore(!props.clickMore)}
+          onClick={() => {
+            if (props.clickMore == true) {
+              props.setClickMore(!props.clickMore);
+            } else {
+              props.setClassify(!props.classify);
+            }
+          }}
         >
           <SelectPopUp
             red
-            type="small"
-            first="팝 저장"
-            second="팔로우 취소"
+            size={props.size}
+            title={props.title}
+            first={props.first}
+            second={props.second}
+            third={props.third}
+            classify={props.classify}
+            setClassify={props.setClassify}
             popSave={props.popSave}
             setPopSave={props.setPopSave}
             clickMore={props.clickMore}
@@ -98,6 +116,8 @@ const Modal = (props) => {
           <InputPopUp
             left="285px"
             down="125px"
+            selectCategory={props.selectCategory}
+            setSelectCategory={props.setSelectCategory}
             createNewPop={props.createNewPop}
             setCreateNewPop={props.setCreateNewPop}
           ></InputPopUp>
@@ -113,6 +133,8 @@ const Modal = (props) => {
           <CategoryPopUp
             title="보관함 목록"
             buttonContent="선택"
+            selectCategory={props.selectCategory}
+            setSelectCategory={props.setSelectCategory}
             clickMore={props.clickMore}
             setClickMore={props.setClickMore}
             popSave={props.popSave}

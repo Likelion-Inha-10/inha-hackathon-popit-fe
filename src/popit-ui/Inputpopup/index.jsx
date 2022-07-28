@@ -95,6 +95,8 @@ const InputPopUp = (props) => {
         <FaCamera color={theme.colors.middlegray} />
       </StyledCircle>
       <Wrapper
+        selectCategory={props.selectCategory}
+        setSelectCategory={props.setSelectCategory}
         onClick={(e) => e.stopPropagation()}
         justify="center"
         align="center"
@@ -109,7 +111,13 @@ const InputPopUp = (props) => {
             />
             <Margin width="14px" />
             <ChestWrapper align="center">
-              <Typography align="center" underline regular12 color="main">
+              <Typography
+                onClick={() => props.setSelectCategory(!props.selectCategory)}
+                align="center"
+                underline
+                regular12
+                color="main"
+              >
                 보관함
               </Typography>
             </ChestWrapper>

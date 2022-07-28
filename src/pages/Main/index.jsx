@@ -22,13 +22,16 @@ const SubWrapper = styled.div``;
 const Main = () => {
   const [createNewPop, setCreateNewPop] = useState(false);
   const [clickMore, setClickMore] = useState(false);
-  const [popSave, setPopSave] = useState(true);
+  const [popSave, setPopSave] = useState(false);
+  const [selectCategory, setSelectCategory] = useState(false);
   return (
     <Layout white>
       {createNewPop ? (
         <Modal
           createNewPop={createNewPop}
           setCreateNewPop={setCreateNewPop}
+          selectCategory={selectCategory}
+          setSelectCategory={setSelectCategory}
           type="inputPopUp"
         />
       ) : (
@@ -36,6 +39,10 @@ const Main = () => {
       )}
       {clickMore ? (
         <Modal
+          first="팝 저장"
+          second="팔로우"
+          third="언팔로우"
+          size="medium"
           clickMore={clickMore}
           setClickMore={setClickMore}
           popSave={popSave}
@@ -56,7 +63,22 @@ const Main = () => {
       ) : (
         <></>
       )}
+      {selectCategory ? (
+        <>
+          <Modal
+            selectCategory={selectCategory}
+            setSelectCategory={setSelectCategory}
+            popSave={popSave}
+            setPopSave={setPopSave}
+            type="categoryPopUp"
+          />
+        </>
+      ) : (
+        <></>
+      )}
+
       <CircleButton
+        plus
         right="305px"
         down="760px"
         onClick={() => setCreateNewPop(!createNewPop)}
@@ -67,10 +89,10 @@ const Main = () => {
       <Wrapper>
         <CategoryList />
         <PopList
-          popSave={popSave}
-          setPopSave={setPopSave}
           clickMore={clickMore}
           setClickMore={setClickMore}
+          setSelectCategory={setSelectCategory}
+          selectCategory={selectCategory}
         />
       </Wrapper>
     </Layout>
