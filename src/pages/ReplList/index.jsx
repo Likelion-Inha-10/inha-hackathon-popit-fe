@@ -12,7 +12,6 @@ import { Alert } from "./../../popit-ui/Alert/index";
 
 const Wrapper = styled.div`
   position: relative;
-  top: 265px;
   border-top: 1px #eaeaea solid;
   padding: 20px 5px 20px 20px;
   height: 40px;
