@@ -34,12 +34,12 @@ const MyPopList = () => {
   return (
     <Layout white>
       <AnimationBox>
-        <MainHeader page="poplist" title="팝 보관함" />
+        <MainHeader page="others" title="팝 보관함" />
         <PopWrapper>
-          <PopChest title="화학" type="list" />
-          <PopChest title="개발" type="list" />
-          <PopChest title="토익" type="list" />
-          <PopChest title="씨언어" type="list" />
+          <PopChest title="화학" type="edit" />
+          <PopChest title="개발" type="edit" />
+          <PopChest title="토익" type="edit" />
+          <PopChest title="씨언어" type="edit" />
         </PopWrapper>
       </AnimationBox>
     </Layout>

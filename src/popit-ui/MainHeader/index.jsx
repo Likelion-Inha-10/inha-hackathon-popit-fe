@@ -38,11 +38,10 @@ const Profile = styled.div`
 `;
 
 const MainHeader = (props) => {
-  const [isClick, setIsClick] = useState(true);
   const navigate = useNavigate();
 
-  const onAlarmClick = () => {
-    setIsClick(!isClick);
+  const onEditClick = () => {
+    navigate("/pop-chest/edit");
   };
 
   const onBackClick = () => {
@@ -73,19 +72,15 @@ const MainHeader = (props) => {
       );
     }
 
-    if (type === "alarm") {
+    if (type === "poplist") {
       return (
         <>
           <Left onClick={onBackClick}>
             <IoChevronBackSharp size="27" color="#000000" />
           </Left>
           <Typography bold20>{title}</Typography>
-          <Right onClick={onAlarmClick}>
-            {isClick ? (
-              <TbBellRinging size="27" color="#000000" />
-            ) : (
-              <TbBellRinging size="27" color="#d7d7d7" />
-            )}
+          <Right onClick={onEditClick}>
+            <Typography color="orange">편집</Typography>
           </Right>
         </>
       );

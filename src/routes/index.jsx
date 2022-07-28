@@ -14,6 +14,9 @@ import ProfileEdit from "./../pages/ProfileEdit/index";
 import MorePop from "../pages/MorePop";
 import InputPopUp from "./../popit-ui/InputPopUp/index";
 import ReplList from "../pages/ReplList";
+import MyPopList from "../pages/MyPopList";
+import CategoryPopList from "../pages/CategoryPopList";
+import MyPopListEdit from "../pages/MyPopListEdit";
 // 라우트명은 kebab-case 로 작성합니다
 
 const Router = () => (
@@ -33,6 +36,9 @@ const Router = () => (
       <Route exact path="/more-pop" element={<MorePop />} />
       <Route exact path="/inputpop" element={<InputPopUp />} />
       <Route exact path="/repl-list" element={<ReplList />} />
+      <Route exact path="/pop-chest" element={<MyPopList />} />
+      <Route exact path="/pop-chest/edit" element={<MyPopListEdit />} />
+      <Route exact path="/pop-list/:title" element={<CategoryPopList />} />
     </Routes>
   </BrowserRouter>
 );
