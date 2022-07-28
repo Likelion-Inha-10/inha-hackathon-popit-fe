@@ -25,18 +25,35 @@ const Container = styled(Flex)`
 const Modal = (props) => {
   if (props.type === "selectPopUp") {
     return (
-      <Wrapper onClick={() => props.setClickMore(!props.clickMore)}>
+      <Wrapper
+        onClick={() => {
+          if (props.clickMore == true) {
+            props.setClickMore(!props.clickMore);
+          } else {
+            props.setClassify(!props.classify);
+          }
+        }}
+      >
         <Container
           justify="center"
           align="flex-end"
-          onClick={() => props.setClickMore(!props.clickMore)}
+          onClick={() => {
+            if (props.clickMore == true) {
+              props.setClickMore(!props.clickMore);
+            } else {
+              props.setClassify(!props.classify);
+            }
+          }}
         >
           <SelectPopUp
             red
             size={props.size}
+            title={props.title}
             first={props.first}
             second={props.second}
             third={props.third}
+            classify={props.classify}
+            setClassify={props.setClassify}
             popSave={props.popSave}
             setPopSave={props.setPopSave}
             clickMore={props.clickMore}

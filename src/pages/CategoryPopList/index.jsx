@@ -22,53 +22,73 @@ const MoreContainer = styled(Flex)`
 `;
 
 const CategoryPopList = () => {
-  const [clickMore, setClickMore] = useState(false);
+  const [classify, setClassify] = useState(false);
   const { title } = useParams();
-
+  const [clickMore, setClickMore] = useState(false);
   const onMoreClick = () => {
-    setClickMore(true);
+    setClassify(true);
   };
   return (
     <Layout white>
+      {classify ? (
+        <Modal
+          first="시간 순"
+          second="좋아요 순"
+          third="댓글 순"
+          size="large"
+          title="분류"
+          classify={classify}
+          setClassify={setClassify}
+          type="selectPopUp"
+        />
+      ) : (
+        <></>
+      )}
+
+      {clickMore ? (
+        <Modal
+          first="언팔로우"
+          second="보관함에서 삭제"
+          size="small"
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+          type="selectPopUp"
+        />
+      ) : (
+        <></>
+      )}
       <MainHeader page="others" title={title} />
       <MoreContainer onClick={onMoreClick} direction="row">
-        <Typography regular12 color="middlegray">
-          더보기
+        <Typography
+          onClick={() => setClassify(!classify)}
+          regular12
+          color="middlegray"
+        >
+          분류
         </Typography>
-        <Margin width="3px" />
+        <Margin width="0px" />
         <IoChevronForwardSharp size={12} color={theme.colors.middlegray} />
       </MoreContainer>
       <PopContainer direction="column" align="center">
         {/* 나중에 axios로 카테고리에 속하는 pop get 해와서 map으로 연결.. */}
         <Pop
+          clickMore={clickMore}
+          setClickMore={setClickMore}
           small
           src="https://i.pinimg.com/564x/93/4a/c4/934ac4da0339aa7531d080e713ea211c.jpg"
         >
           수소의 원소기호는 1번입니다.
         </Pop>
-        <Margin height="10px" width="100%" />
+        <Margin height="20px" width="100%" />
         <Pop
+          clickMore={clickMore}
+          setClickMore={setClickMore}
           small
           src="https://i.pinimg.com/564x/ea/98/d9/ea98d92347f8fe73673024915bc10107.jpg"
         >
           토익은 어려워
         </Pop>
       </PopContainer>
-
-      {clickMore ? (
-        <Modal
-          type="selectPopUp"
-          clickMore={clickMore}
-          setClickMore={setClickMore}
-          size="extraLarge"
-          first="최신 순"
-          second="좋아요 순"
-          third="댓글 순"
-          title="분류"
-        />
-      ) : (
-        <></>
-      )}
     </Layout>
   );
 };
