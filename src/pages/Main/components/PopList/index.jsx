@@ -48,16 +48,12 @@ const MainPopContainer = (props) => {
           </MoreContainer>
         </TypoContainer>
         <Margin height="10px" />
-        {/* <Pop
-          popModal={props.popModal}
-          setPopModal={props.setPopModal}
-          src={cat}
-          likes="324"
-          repls="1"
-        >
-          {theme.user.pop}
-        </Pop> */}
-        <Carousel />
+        <Carousel
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
+          clickMore={props.clickMore}
+          setClickMore={props.setClickMore}
+        />
       </Container>
       <Container height="400px" direction="column" align="center">
         <TypoContainer align="center" justify="space-between">
@@ -71,15 +67,33 @@ const MainPopContainer = (props) => {
           </MoreContainer>
         </TypoContainer>
         <Margin height="10px" />
-        <Pop small src={cat} likes="324" repls="1">
+        <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
+          clickMore={props.clickMore}
+          setClickMore={props.setClickMore}
+          small
+          src={cat}
+          likes="324"
+          repls="1"
+        >
           개발이 하고싶니?
         </Pop>
         <Margin height="20px" />
-        <Pop small src={cat} likes="324" repls="1">
+        <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
+          clickMore={props.clickMore}
+          setClickMore={props.setClickMore}
+          small
+          src={cat}
+          likes="324"
+          repls="1"
+        >
           개발이 하고싶니?
         </Pop>
       </Container>
-      {/* <Container height="400px" direction="column" align="center">
+      <Container height="400px" direction="column" align="center">
         <TypoContainer align="center" justify="space-between">
           <Typography bold20>나에게 맞는 팝 ✨</Typography>
           <MoreContainer>
@@ -91,14 +105,32 @@ const MainPopContainer = (props) => {
           </MoreContainer>
         </TypoContainer>
         <Margin height="10px" />
-        <Pop small src={cat} likes="324" repls="1">
+        <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
+          clickMore={props.clickMore}
+          setClickMore={props.setClickMore}
+          small
+          src={cat}
+          likes="324"
+          repls="1"
+        >
           개발이 하고싶니?
         </Pop>
         <Margin height="20px" />
-        <Pop small src={cat} likes="324" repls="1">
+        <Pop
+          popSave={props.popSave}
+          setPopSave={props.setPopSave}
+          clickMore={props.clickMore}
+          setClickMore={props.setClickMore}
+          small
+          src={cat}
+          likes="324"
+          repls="1"
+        >
           개발이 하고싶니?
         </Pop>
-      </Container> */}
+      </Container>
     </>
   );
 };

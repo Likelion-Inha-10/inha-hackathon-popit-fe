@@ -4,6 +4,7 @@ import Flex from "../Flex";
 import Typography from "../Typography";
 import Margin from "../Margin";
 import ProfileIcon from "../ProfileIcon";
+import Alert from "../Alert";
 
 const Wrapper = styled(Flex)`
   width: 375px;
@@ -42,6 +43,11 @@ const CategoryPopUp = (props) => {
   return (
     <div>
       <Wrapper
+        onClick={(e) => e.stopPropagation()}
+        clickMore={props.clickMore}
+        setClickMore={props.setClickMore}
+        popSave={props.popSave}
+        setPopSave={props.setPopSave}
         title={props.title}
         buttonContent={props.buttonContent}
         align="flex-end"
@@ -49,9 +55,16 @@ const CategoryPopUp = (props) => {
       >
         <Container direction="column" align="center">
           <ButtonWrapper justify="space-between" align="center">
-            <Margin width="22px" />
+            <Margin width="26px" />
             <Typography bold20>{props.title}</Typography>
-            <Typography regular16 color="orange">
+            <Typography
+              onClick={() => {
+                props.setPopSave(!props.popSave);
+                Alert("보관함에 팝을 저장했습니다.");
+              }}
+              regular16
+              color="orange"
+            >
               {props.buttonContent}
             </Typography>
           </ButtonWrapper>
