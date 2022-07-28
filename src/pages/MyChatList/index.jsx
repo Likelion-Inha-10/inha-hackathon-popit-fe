@@ -31,6 +31,19 @@ const MyChatList = () => {
 
   return (
     <Layout white>
+      {isPopup ? (
+        <Modal
+          PopModal={isPopup}
+          setPopModal={setIsPopup}
+          content="삭제 하시겠습니까?"
+          leftButton="취소"
+          rightButton="확인"
+          type="noticePopUp"
+          usage="삭제"
+        />
+      ) : (
+        <></>
+      )}
       <AnimationBox>
         <MainHeader page="others" title="나의 댓글 목록" />
         <Margin height="10px" width="100%" />
@@ -65,19 +78,6 @@ const MyChatList = () => {
           onDelete={onDelete}
         />
       </AnimationBox>
-      {isPopup ? (
-        <Modal
-          PopModal={isPopup}
-          setPopModal={setIsPopup}
-          content="삭제 하시겠습니까?"
-          leftButton="취소"
-          rightButton="확인"
-          type="noticePopUp"
-          usage="삭제"
-        />
-      ) : (
-        <></>
-      )}
     </Layout>
   );
 };
