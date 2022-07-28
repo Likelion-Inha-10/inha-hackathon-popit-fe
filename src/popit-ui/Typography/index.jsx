@@ -50,6 +50,12 @@ const Typography = styled.div`
       font-family: "NanumSquareR";
       font-size: 16px;
     `}
+        ${(props) =>
+    props.regular14 &&
+    `
+      font-family: "NanumSquareR";
+      font-size: 14px;
+    `}
     ${(props) =>
     props.bold16 &&
     `
