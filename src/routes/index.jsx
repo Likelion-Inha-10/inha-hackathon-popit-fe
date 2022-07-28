@@ -13,6 +13,8 @@ import MyChatList from "./../pages/MyChatList";
 import ProfileEdit from "./../pages/ProfileEdit/index";
 import MorePop from "../pages/MorePop";
 import InputPopUp from "./../popit-ui/InputPopUp/index";
+import FollowerList from "../pages/FollowerList";
+import FollowingList from "../pages/FollowingList";
 
 // 라우트명은 kebab-case 로 작성합니다
 
@@ -32,6 +34,8 @@ const Router = () => (
       <Route exact path="/profile-edit" element={<ProfileEdit />} />
       <Route exact path="/more-pop" element={<MorePop />} />
       <Route exact path="/inputpop" element={<InputPopUp />} />
+      <Route exact path="/follower-list" element={<FollowerList />} />
+      <Route exact path="/following-list" element={<FollowingList />} />
     </Routes>
   </BrowserRouter>
 );
