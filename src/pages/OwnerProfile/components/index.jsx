@@ -11,6 +11,8 @@ import B2 from "./B2.png";
 import B3 from "./B3.png";
 import { MdOutlineModeEdit } from "react-icons/md";
 import Modal from "../../../popit-ui/Modal";
+import { IoChevronDownSharp } from "react-icons/io5";
+import theme from "../../../assets/theme";
 
 const ProfileWrapper = styled(Flex)`
   width: 100%;
@@ -35,6 +37,16 @@ const InfoWrapper = styled(Flex)`
 `;
 
 const NameWrapper = styled(Flex)``;
+
+const ClassificationWrapper = styled(Flex)`
+  height: 60px;
+  width: 80%;
+`;
+
+const Classification = styled(Flex)`
+  height: 40px;
+  cursor: pointer;
+`;
 
 const PopWrapper = styled(Flex)`
   width: 304px;
@@ -96,6 +108,15 @@ const ProfileDetail = (props) => {
         </InfoWrapper>
         <MdOutlineModeEdit size="20px" onClick={props.onClickEvent} />
       </ProfileWrapper>
+      <ClassificationWrapper align="flex-end" justify="flex-end">
+        <Classification align="flex-end" onClick={onMoreClick}>
+          <Typography regular12 color="middlegray">
+            분류
+          </Typography>
+          <Margin width="4px" />
+          <IoChevronDownSharp size={14} color={theme.colors.middlegray} />
+        </Classification>
+      </ClassificationWrapper>
 
       <PopWrapper direction="column">
         <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
