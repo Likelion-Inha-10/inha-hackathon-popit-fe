@@ -6,6 +6,7 @@ import Flex from "../../popit-ui/Flex";
 import Typography from "../../popit-ui/Typography";
 import Margin from "../../popit-ui/Margin";
 import CategoryList from "./components";
+import React, { useEffect, useState } from "react";
 
 const Wrapper = styled(Flex)`
   padding: 57px 30px 0 30px;
