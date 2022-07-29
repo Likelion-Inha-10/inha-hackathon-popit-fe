@@ -1,60 +1,68 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Flex from "../Flex";
 import Button from "../Button/index";
 import Typography from "../Typography/index";
 import { useNavigate } from "react-router-dom";
+import { Alert } from "./../../popit-ui/Alert/index";
+import Margin from "../Margin";
+
+const fadeIn = keyframes`
+   from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
 
 const Container = styled(Flex)`
   background-color: white;
   width: 280px;
   height: 150px;
   border-radius: 16px;
-  margin-top: ${(props) => (props.margintop ? props.margintop : "none")};
-  margin-left: ${(props) => (props.marginleft ? props.marginleft : "none")};
-  margin-right: ${(props) => (props.marginright ? props.marginright : "none")};
-  margin-bottom: ${(props) =>
-    props.marginbottom ? props.marginbottom : "none"};
-  box-shadow: 2px 2px 0px 0px rgb(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
+  animation-name: ${fadeIn};
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
 `;
-const Wrapper = styled(Flex)`
-  width: 280px;
-  height: 150px;
-  margin-top: 50px;
-`;
+
 const ButtonWrapper = styled(Flex)`
-  padding-top: 45px;
-  padding-bottom: 20px;
+  padding: 35px 10px 20px 10px;
 `;
+
 const NoticePopUp = (props) => {
   const navigate = useNavigate();
-  const onButtonClick = () => {
-    navigate(0);
+  const onRightClick = () => {
+    if (props.usage === "로그아웃") {
+      Alert("로그아웃 되었습니다");
+      setTimeout(() => {
+        navigate(`/login`);
+      }, 350);
+    }
+    if (props.usage === "삭제") {
+      Alert("삭제되었습니다");
+      props.setPopModal(!props.PopModal);
+    }
+  };
+
+  const onLeftClick = () => {
+    Alert("취소되었습니다");
+    props.setPopModal(!props.PopModal);
   };
   return (
-    <Container
-      direction="column"
-      justify="space-around"
-      margintop={props.margintop}
-      marginleft={props.marginleft}
-      marginright={props.marginright}
-      marginbottom={props.marginbottom}
-    >
-      <Wrapper justify="flex-end" direction="column">
-        <Typography bold16 center>
-          {props.content}
-        </Typography>
-        <Typography regular12 center>
-          {props.subcontent}
-        </Typography>
-        <ButtonWrapper justify="space-around">
-          <Button white medium onClick={onButtonClick}>
-            {props.leftButton}
-          </Button>
-          <Button medium onClick={onButtonClick}>
-            {props.rightButton}
-          </Button>
-        </ButtonWrapper>
-      </Wrapper>
+    <Container direction="column" justify="space-around">
+      <Margin height="50px" width="100%" />
+      <Typography bold16 center>
+        {props.content}
+      </Typography>
+      <ButtonWrapper justify="space-around">
+        <Button onClick={onLeftClick} white medium>
+          {props.leftButton}
+        </Button>
+        <Button medium onClick={onRightClick}>
+          {props.rightButton}
+        </Button>
+      </ButtonWrapper>
     </Container>
   );
 };

@@ -20,7 +20,7 @@ const Hamburger = () => {
   const navigate = useNavigate();
 
   const onChestClick = () => {
-    navigate("/pop-chest");
+    navigate("/pop-list");
   };
 
   const onChatClick = () => {

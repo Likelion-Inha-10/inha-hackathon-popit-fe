@@ -19,7 +19,6 @@ import ReplList from "../pages/ReplList";
 import MyPopList from "../pages/MyPopList";
 import CategoryPopList from "../pages/CategoryPopList";
 import MyPopListEdit from "../pages/MyPopListEdit";
-
 // 라우트명은 kebab-case 로 작성합니다
 
 const Router = () => (
@@ -41,8 +40,8 @@ const Router = () => (
       <Route exact path="/follower-list" element={<FollowerList />} />
       <Route exact path="/following-list" element={<FollowingList />} />
       <Route exact path="/repl-list" element={<ReplList />} />
-      <Route exact path="/pop-chest" element={<MyPopList />} />
-      <Route exact path="/pop-chest/edit" element={<MyPopListEdit />} />
+      <Route exact path="/pop-list" element={<MyPopList />} />
+      <Route exact path="/pop-list/edit" element={<MyPopListEdit />} />
       <Route exact path="/pop-list/:title" element={<CategoryPopList />} />
     </Routes>
   </BrowserRouter>

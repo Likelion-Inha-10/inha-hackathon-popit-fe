@@ -41,7 +41,7 @@ const MainHeader = (props) => {
   const navigate = useNavigate();
 
   const onEditClick = () => {
-    navigate("/pop-chest/edit");
+    navigate("/pop-list/edit");
   };
 
   const onBackClick = () => {
