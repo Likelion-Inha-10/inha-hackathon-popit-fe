@@ -27,13 +27,14 @@ const CategoryList = (props) => {
   const moveToCategory = () => {
     Alert("착한사람한테만 보이는 창");
   };
+
   return (
     <CategoryWrapper>
       <CategoryContainer>
         <Category align="center" direction="column" onClick={moveToCategory}>
           <ProfileIcon
             size48
-            backImage="http://172.105.201.195:8000/media/ch.jpg"
+            backImage={`${process.env.REACT_APP_API}/media/ch.jpg`}
           />
           <Margin height="10px" />
           <Typography regular12>IT</Typography>
@@ -42,7 +43,7 @@ const CategoryList = (props) => {
         <Category align="center" direction="column" onClick={moveToCategory}>
           <ProfileIcon
             size48
-            backImage="http://172.105.201.195:8000/media/Sports.jpg"
+            backImage={`${process.env.REACT_APP_API}/media/Sports.jpg`}
           />
           <Margin height="10px" />
           <Typography regular12>스포츠</Typography>
@@ -51,7 +52,7 @@ const CategoryList = (props) => {
         <Category align="center" direction="column" onClick={moveToCategory}>
           <ProfileIcon
             size48
-            backImage="http://172.105.201.195:8000/media/Health.png"
+            backImage={`${process.env.REACT_APP_API}/media/Health.png`}
           />
           <Margin height="10px" />
           <Typography regular12>Health</Typography>
