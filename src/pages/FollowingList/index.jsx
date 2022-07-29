@@ -16,13 +16,13 @@ const FollowingList = () => {
       <Layout white>
         {isPopup ? (
           <Modal
-            deletepop={isPopup}
-            setDeletePop={setIsPopup}
+            PopModal={isPopup}
+            setPopModal={setIsPopup}
             content="팔로잉를 삭제하시겠습니까?"
             leftButton="취소"
             rightButton="삭제"
             type="noticePopUp"
-            usage="팔로잉 삭제"
+            usage="삭제"
           />
         ) : (
           <></>
