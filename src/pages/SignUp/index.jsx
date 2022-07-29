@@ -35,7 +35,7 @@ const SignUp = ({ api }) => {
           re_password: re_password,
         })
         .then(() => {
-          navigate("/first-choice");
+          setIsPopup(true);
         });
     }
   };
