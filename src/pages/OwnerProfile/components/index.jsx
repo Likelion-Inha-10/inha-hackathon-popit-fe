@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Margin from "../../../popit-ui/Margin";
 import ProfileIcon from "../../../popit-ui/ProfileIcon/index";
@@ -10,6 +10,7 @@ import B1 from "./B1.png";
 import B2 from "./B2.png";
 import B3 from "./B3.png";
 import { MdOutlineModeEdit } from "react-icons/md";
+import Modal from "../../../popit-ui/Modal";
 
 const ProfileWrapper = styled(Flex)`
   width: 100%;
@@ -42,6 +43,8 @@ const PopWrapper = styled(Flex)`
   padding-top: 50px;
 `;
 const ProfileDetail = (props) => {
+  const [clickMore, setClickMore] = useState(false);
+  const [popSave, setPopSave] = useState(false);
   const navigate = useNavigate();
 
   const onClickFollower = () => {
@@ -52,6 +55,21 @@ const ProfileDetail = (props) => {
   };
   return (
     <>
+      {clickMore ? (
+        <Modal
+          first="최신 순"
+          second="좋아요 순"
+          third="댓글 순"
+          size="medium"
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+          popSave={popSave}
+          setPopSave={setPopSave}
+          type="selectPopUp"
+        />
+      ) : (
+        <></>
+      )}
       <ProfileWrapper>
         <NameWrapper direction="column">
           <ProfileIcon size60 />
@@ -80,7 +98,7 @@ const ProfileDetail = (props) => {
       </ProfileWrapper>
 
       <PopWrapper direction="column">
-        <Pop src={B1} small>
+        <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
           블라블라
         </Pop>
         <Margin height="20px" />
