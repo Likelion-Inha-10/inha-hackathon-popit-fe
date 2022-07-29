@@ -62,8 +62,8 @@ const LoginList = () => {
     if (!login_id || !re_password) {
       Alert("모든 항목을 입력해주세요.");
     } else {
-      console.log(`${process.env.REACT_APP_API}login`);
-      axios(`${process.env.REACT_APP_API}login`, {
+      console.log(`${process.env.REACT_APP_API}/login`);
+      axios(`${process.env.REACT_APP_API}/login`, {
         method: "POST",
         header: {
           "content-type": "application/json",
