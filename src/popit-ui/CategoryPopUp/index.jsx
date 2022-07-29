@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Flex from "../Flex";
 import Typography from "../Typography";
 import Margin from "../Margin";
 import ProfileIcon from "../ProfileIcon";
 import Alert from "../Alert";
+import _ from "lodash";
+import categoryData from "../../assets/data/categoryData";
+import { BsCheck2 } from "react-icons/bs";
+import theme from "../../assets/theme";
+import cat from "../../assets/image/babo-cat.png";
 
 const Wrapper = styled(Flex)`
   width: 375px;
@@ -26,6 +31,7 @@ const ButtonWrapper = styled(Flex)`
 `;
 
 const Category = styled(Flex)``;
+
 const CategoryWrapper = styled.div`
   overflow: auto;
   display: grid;
@@ -41,7 +47,62 @@ const CategoryWrapper = styled.div`
   }
 `;
 
+const Dimmer = styled(Flex)`
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  ${(props) =>
+    props.selected
+      ? `
+  background-color: rgba(0, 0, 0, 0.5);
+  
+  `
+      : `
+  background-color: none
+  
+  `}
+`;
+
+const CategoryPhoto = styled.div`
+  overflow: hidden;
+  background-image: url(${cat});
+  background-size: contain;
+  height: 72px;
+  width: 72px;
+  border-radius: 50px;
+`;
+
+const Dimmer2 = styled(Flex)`
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
 const CategoryPopUp = (props) => {
+  console.log(categoryData);
+  const [categories, setCategories] = useState(
+    _.map(categoryData, (category) => ({
+      ...category,
+      selected: false,
+    }))
+  );
+
+  const onCategoryClick = (e) => {
+    setCategories(
+      _.map(categories, (category) => {
+        if (category.id == e.currentTarget.id) {
+          if (category.selected) return { ...category, selected: false };
+          return { ...category, selected: true };
+        }
+        return { ...category };
+      })
+    );
+  };
+
   const onPopUpCategory = () => {
     if (props.popSave == true) {
       props.setPopSave(!props.popSave);
@@ -71,6 +132,7 @@ const CategoryPopUp = (props) => {
           <ButtonWrapper justify="space-between" align="center">
             <Margin width="26px" />
             <Typography bold20>{props.title}</Typography>
+
             <Typography
               style={{ cursor: "pointer" }}
               onClick={() => onPopUpCategory()}
@@ -82,56 +144,32 @@ const CategoryPopUp = (props) => {
           </ButtonWrapper>
           <Margin height="23px" />
           <CategoryWrapper>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
-            <Category direction="column" align="center">
-              <ProfileIcon size72 />
-              <Margin height="10px" />
-              <Typography regular12>보관함1</Typography>
-            </Category>
+            {_.map(categories, (category) => (
+              <Category
+                key={category.id}
+                title={category.title}
+                id={category.id}
+                onClick={onCategoryClick}
+                direction="column"
+                align="center"
+              >
+                <CategoryPhoto>
+                  <Dimmer justify="center" align="center">
+                    {category.selected ? (
+                      <Dimmer2 justify="center" align="center">
+                        <BsCheck2 size={35} color={theme.colors.main} />
+                      </Dimmer2>
+                    ) : (
+                      <></>
+                    )}
+                  </Dimmer>
+                </CategoryPhoto>
+                <Margin height="10px" />
+                <Typography regular12 center>
+                  {category.title}
+                </Typography>
+              </Category>
+            ))}
           </CategoryWrapper>
         </Container>
       </Wrapper>
