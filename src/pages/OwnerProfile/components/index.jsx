@@ -39,24 +39,31 @@ const InfoWrapper = styled(Flex)`
 const NameWrapper = styled(Flex)``;
 
 const ClassificationWrapper = styled(Flex)`
-  height: 60px;
-  width: 80%;
+  height: 20px;
+  width: 90%;
 `;
 
 const Classification = styled(Flex)`
-  height: 40px;
+  height: 20px;
   cursor: pointer;
 `;
 
+const PopContainer = styled(Flex)``;
 const PopWrapper = styled(Flex)`
-  width: 304px;
-  height: 500px;
-  padding-left: 25px;
-  padding-top: 50px;
+  width: 100%;
+  height: 758px;
+  overflow: auto;
+  padding-top: 15px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 const ProfileDetail = (props) => {
   const [clickMore, setClickMore] = useState(false);
   const [popSave, setPopSave] = useState(false);
+  const [classify, setClassify] = useState(false);
+
   const navigate = useNavigate();
 
   const onClickFollower = () => {
@@ -67,16 +74,19 @@ const ProfileDetail = (props) => {
   };
   return (
     <>
-      {clickMore ? (
+      {classify ? (
         <Modal
-          first="최신 순"
+          first="시간 순"
           second="좋아요 순"
           third="댓글 순"
-          size="medium"
+          size="large"
+          title="분류"
           clickMore={clickMore}
           setClickMore={setClickMore}
           popSave={popSave}
           setPopSave={setPopSave}
+          classify={classify}
+          setClassify={setClassify}
           type="selectPopUp"
         />
       ) : (
@@ -108,9 +118,14 @@ const ProfileDetail = (props) => {
         </InfoWrapper>
         <MdOutlineModeEdit size="20px" onClick={props.onClickEvent} />
       </ProfileWrapper>
+
       <ClassificationWrapper align="flex-end" justify="flex-end">
-        <Classification align="flex-end" onClick={onMoreClick}>
-          <Typography regular12 color="middlegray">
+        <Classification align="flex-end">
+          <Typography
+            regular12
+            color="middlegray"
+            onClick={() => setClassify(!classify)}
+          >
             분류
           </Typography>
           <Margin width="4px" />
@@ -118,18 +133,49 @@ const ProfileDetail = (props) => {
         </Classification>
       </ClassificationWrapper>
 
-      <PopWrapper direction="column">
-        <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
-          블라블라
-        </Pop>
-        <Margin height="20px" />
-        <Pop src={B2} small>
-          블라블라
-        </Pop>
-        <Margin height="20px" />
-        <Pop src={B3} small>
-          블라블라
-        </Pop>
+      <PopWrapper direction="column" align="center">
+        <PopContainer direction="column" align="center" justify="center">
+          <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
+            블라블라랄라블라
+          </Pop>
+          <Margin height="20px" />
+        </PopContainer>
+        <PopContainer direction="column" align="center" justify="center">
+          <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
+            블라블라랄라블라
+          </Pop>
+          <Margin height="20px" />
+        </PopContainer>
+        <PopContainer direction="column" align="center" justify="center">
+          <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
+            블라블라랄라블라
+          </Pop>
+          <Margin height="20px" />
+        </PopContainer>
+        <PopContainer direction="column" align="center" justify="center">
+          <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
+            블라블라랄라블라
+          </Pop>
+          <Margin height="20px" />
+        </PopContainer>
+        <PopContainer direction="column" align="center" justify="center">
+          <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
+            블라블라랄라블라
+          </Pop>
+          <Margin height="20px" />
+        </PopContainer>
+        <PopContainer direction="column" align="center" justify="center">
+          <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
+            블라블라랄라블라
+          </Pop>
+          <Margin height="20px" />
+        </PopContainer>
+        <PopContainer direction="column" align="center" justify="center">
+          <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
+            블라블라랄라블라
+          </Pop>
+          <Margin height="20px" />
+        </PopContainer>
       </PopWrapper>
     </>
   );

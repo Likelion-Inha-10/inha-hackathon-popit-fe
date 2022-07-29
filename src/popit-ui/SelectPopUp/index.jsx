@@ -69,15 +69,15 @@ const ButtonWrapper = styled(Flex)`
 const SelectPopUp = (props) => {
   const time = () => {
     props.setClassify(!props.classify);
-    Alert(props.firstMessage);
+    Alert("시간 순으로 정렬되었습니다.");
   };
   const like = () => {
     props.setClassify(!props.classify);
-    Alert(props.secondMessage);
+    Alert("좋아요 순으로 정렬되었습니다.");
   };
   const repl = () => {
     props.setClassify(!props.classify);
-    Alert(props.thirdMessage);
+    Alert("댓글 순으로 정렬되었습니다.");
   };
 
   if (props.size == "medium") {
