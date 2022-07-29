@@ -8,7 +8,7 @@ const ProfileIcon = styled.div`
       : "https://i.pinimg.com/564x/d0/cc/8d/d0cc8d1c3ed3493cb76b139249571cd0.jpg"});
 
   background-size: 100% 100%;
-
+  overflow: hidden;
   ${(props) =>
     props.size90 &&
     `

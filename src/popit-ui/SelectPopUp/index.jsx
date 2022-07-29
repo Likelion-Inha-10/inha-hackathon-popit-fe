@@ -132,11 +132,11 @@ const SelectPopUp = (props) => {
   }
   const firstButton = () => {
     props.setClickMore(!props.clickMore);
-    Alert("언팔로우 되었습니다.");
+    Alert("언팔로우 되었습니당 쩔수.");
   };
   const secondButton = () => {
     props.setClickMore(!props.clickMore);
-    Alert("보관함에서 삭제하였습니다.");
+    Alert("보관함에서 삭제하였습니당 저런 so sad.");
   };
   if (props.size == "small") {
     return (
