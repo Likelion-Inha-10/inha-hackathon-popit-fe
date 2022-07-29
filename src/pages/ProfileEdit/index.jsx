@@ -24,7 +24,7 @@ const StyledInput = styled.input`
     color: ${(props) => (props.fontcolor ? props.fontcolor : "black")};
   }
 `;
-const ProfileEdit = () => {
+const ProfileEdit = ({ api }) => {
   return (
     <>
       <Layout white>

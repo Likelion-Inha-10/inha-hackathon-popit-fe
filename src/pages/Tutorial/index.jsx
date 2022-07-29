@@ -45,7 +45,7 @@ const StyledSlider = styled(Slider)`
   }
 `;
 
-const Tutorial = () => {
+const Tutorial = ({ api }) => {
   return (
     <>
       <Layout white>

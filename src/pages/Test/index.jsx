@@ -8,7 +8,7 @@ import Margin from "../../popit-ui/Margin";
 import InputPopUp from "../../popit-ui/InputPopUp";
 import CategoryPopUp from "../../popit-ui/CategoryPopUp";
 
-const Test = (props) => {
+const Test = ({ api }) => {
   return (
     <Layout gradation>
       <CategoryPopUp title="보관함 목록" buttonContent="선택"></CategoryPopUp>

@@ -19,7 +19,7 @@ const SignUp = () => {
   const [isPopup, setIsPopup] = useState(false);
   const navigate = useNavigate();
 
-  const onButtonClick = () => {
+  const onButtonClick = ({ api }) => {
     if (!userName || !userEmail || !userPassword || !userPasswordCheck) {
       Alert("모든 항목을 입력해주세요.");
     } else if (userPassword !== userPasswordCheck) {

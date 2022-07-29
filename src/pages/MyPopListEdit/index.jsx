@@ -29,7 +29,7 @@ const PopWrapper = styled.div`
   padding: 40px 30px 40px 30px;
 `;
 
-const MyPopList = () => {
+const MyPopList = ({ api }) => {
   //const [isClick, setIsClick] = useState(false);
   return (
     <Layout white>

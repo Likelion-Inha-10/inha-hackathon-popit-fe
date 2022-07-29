@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const SubWrapper = styled.div``;
-const Main = () => {
+const Main = ({ api }) => {
   const [createNewPop, setCreateNewPop] = useState(false);
   const [clickMore, setClickMore] = useState(false);
   const [popSave, setPopSave] = useState(false);

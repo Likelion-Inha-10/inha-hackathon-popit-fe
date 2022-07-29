@@ -29,7 +29,7 @@ const MorePop = () => {
   const [isSelect, setIsSelect] = useState(false);
   const [classify, setClassify] = useState(false);
 
-  const onMoreClick = () => {
+  const onMoreClick = ({ api }) => {
     setClassify(true);
   };
 

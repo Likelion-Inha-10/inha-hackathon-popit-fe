@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "./../../popit-ui/Layout/index";
 import MainHeader from "../../popit-ui/MainHeader";
 
-const OwnerProfile = () => {
+const OwnerProfile = ({ api }) => {
   const onClickEvent = () => {
     navigate("/profile-edit");
   };
