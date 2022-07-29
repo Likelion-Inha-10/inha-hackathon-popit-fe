@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Flex from "../Flex";
 import Button from "../Button/index";
 import Typography from "../Typography/index";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled(Flex)`
   background-color: white;
@@ -13,10 +14,9 @@ const Container = styled(Flex)`
   margin-right: ${(props) => (props.marginright ? props.marginright : "none")};
   margin-bottom: ${(props) =>
     props.marginbottom ? props.marginbottom : "none"};
+  box-shadow: 2px 2px 0px 0px rgb(0, 0, 0, 0.2);
 `;
 const Wrapper = styled(Flex)`
-  box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.2);
-
   width: 280px;
   height: 150px;
   margin-top: 50px;
@@ -26,6 +26,10 @@ const ButtonWrapper = styled(Flex)`
   padding-bottom: 20px;
 `;
 const NoticePopUp = (props) => {
+  const navigate = useNavigate();
+  const onButtonClick = () => {
+    navigate(0);
+  };
   return (
     <Container
       direction="column"
@@ -43,10 +47,12 @@ const NoticePopUp = (props) => {
           {props.subcontent}
         </Typography>
         <ButtonWrapper justify="space-around">
-          <Button white medium>
+          <Button white medium onClick={onButtonClick}>
             {props.leftButton}
           </Button>
-          <Button medium>{props.rightButton}</Button>
+          <Button medium onClick={onButtonClick}>
+            {props.rightButton}
+          </Button>
         </ButtonWrapper>
       </Wrapper>
     </Container>
