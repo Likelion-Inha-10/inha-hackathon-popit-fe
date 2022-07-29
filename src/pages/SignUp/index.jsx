@@ -27,7 +27,7 @@ const SignUp = ({ api }) => {
       Alert("모든 항목을 입력해주세요.");
     } else {
       console.log(`${api}signup`);
-      axios(`${api}signup`, {
+      axios(`${api}/signup`, {
         method: "POST",
         header: {
           "content-type": "application/json",
