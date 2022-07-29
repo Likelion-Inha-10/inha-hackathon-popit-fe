@@ -27,24 +27,15 @@ const SignUp = ({ api }) => {
       Alert("모든 항목을 입력해주세요.");
     } else {
       console.log(`${api}signup`);
-      axios(`${api}signup`, {
-        method: "POST",
-        header: {
-          "content-type": "application/json",
-        },
-        data: {
+      axios
+        .post(`${process.env.REACT_APP_API}/signup`, {
           nickname: nickname,
-          login_id: login_id,
           email: email,
+          login_id: login_id,
           re_password: re_password,
-        },
-      })
-        .then(() => {
-          setIsPopup(true);
         })
-        .catch((e) => {
-          console.log(e);
-          console.log("실패");
+        .then(() => {
+          navigate("/first-choice");
         });
     }
   };

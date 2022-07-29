@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavigationType, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Flex from "../../../popit-ui/Flex";
 import Margin from "./../../../popit-ui/Margin/index";
@@ -63,23 +63,13 @@ const LoginList = () => {
       Alert("모든 항목을 입력해주세요.");
     } else {
       console.log(`${process.env.REACT_APP_API}login`);
-      axios(`${process.env.REACT_APP_API}login`, {
-        method: "POST",
-        header: {
-          "content-type": "application/json",
-        },
-        data: {
+      axios
+        .post(`${process.env.REACT_APP_API}/login`, {
           login_id: login_id,
           re_password: re_password,
-        },
-      })
-        .then(() => {
-          console.log("로그인 성공");
-          navigate("/first-choice");
         })
-        .catch((e) => {
-          console.log(e);
-          console.log("실패");
+        .then(() => {
+          navigate("/first-choice");
         });
     }
   };
