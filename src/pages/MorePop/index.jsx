@@ -8,6 +8,7 @@ import Typography from "../../popit-ui/Typography";
 import Margin from "../../popit-ui/Margin";
 import { IoChevronDownSharp } from "react-icons/io5";
 import theme from "../../assets/theme";
+import Modal from "../../popit-ui/Modal";
 
 const Wrapper = styled(Flex)`
   height: 793px;
@@ -26,18 +27,37 @@ const Classification = styled(Flex)`
 
 const MorePop = () => {
   const [isSelect, setIsSelect] = useState(false);
+  const [classify, setClassify] = useState(false);
+
+  const onMoreClick = () => {
+    setClassify(true);
+  };
 
   return (
     <div>
       <Layout white>
+        {classify ? (
+          <Modal
+            first="오늘의 팝"
+            firstMessage="오늘의 팝이 표시됩니다."
+            second="오늘 뜨는 팝"
+            secondMessage="오늘 뜨는 팝이 표시됩니다."
+            third="나에게 맞는 팝"
+            thirdMessage="나에게 맞는 팝이 표시됩니다."
+            size="large"
+            title="분류"
+            classify={classify}
+            setClassify={setClassify}
+            type="selectPopUp"
+          />
+        ) : (
+          <></>
+        )}
         <MainHeader page="others" title="팝 더보기" />
 
         <Wrapper direction="column" align="center">
           <ClassificationWrapper align="flex-end" justify="flex-end">
-            <Classification
-              align="flex-end"
-              onClick={() => setIsSelect(!isSelect)}
-            >
+            <Classification align="flex-end" onClick={onMoreClick}>
               <Typography regular12 color="middlegray">
                 분류
               </Typography>

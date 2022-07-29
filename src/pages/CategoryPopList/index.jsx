@@ -33,8 +33,11 @@ const CategoryPopList = () => {
       {classify ? (
         <Modal
           first="시간 순"
+          firstMessage="시간 순으로 정렬되었습니다."
           second="좋아요 순"
+          secondMessage="좋아요 순으로 정렬되었습니다."
           third="댓글 순"
+          thirdMessage="댓글 순으로 정렬되었습니다."
           size="large"
           title="분류"
           classify={classify}

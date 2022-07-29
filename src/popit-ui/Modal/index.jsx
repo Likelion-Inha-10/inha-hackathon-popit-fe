@@ -46,12 +46,15 @@ const Modal = (props) => {
           }}
         >
           <SelectPopUp
-            red
+            red={props.red}
             size={props.size}
             title={props.title}
             first={props.first}
+            firstMessage={props.firstMessage}
             second={props.second}
+            secondMessage={props.secondMessage}
             third={props.third}
+            thirdMessage={props.thirdMessage}
             classify={props.classify}
             setClassify={props.setClassify}
             popSave={props.popSave}
