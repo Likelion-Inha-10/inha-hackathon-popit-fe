@@ -4,6 +4,7 @@ import MainHeader from "../../popit-ui/MainHeader/index";
 import List from "./components/index";
 import FollowList from "./../../popit-ui/FollowList/index";
 import Modal from "../../popit-ui/Modal";
+import { useParams, useNavigate } from "react-router-dom";
 
 const FollowerList = ({ api }) => {
   const [isPopup, setIsPopup] = useState(false);
