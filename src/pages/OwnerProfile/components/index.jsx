@@ -13,6 +13,7 @@ import { MdOutlineModeEdit } from "react-icons/md";
 import Modal from "../../../popit-ui/Modal";
 import { IoChevronDownSharp } from "react-icons/io5";
 import theme from "../../../assets/theme";
+import { useEffect } from "react";
 
 const ProfileWrapper = styled(Flex)`
   width: 100%;
@@ -57,7 +58,10 @@ const PopWrapper = styled(Flex)`
 const ProfileDetail = (props) => {
   const [clickMore, setClickMore] = useState(false);
   const [popSave, setPopSave] = useState(false);
+  const [classify, setClassify] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {}, []);
 
   const onClickFollower = () => {
     navigate("/follower-list");

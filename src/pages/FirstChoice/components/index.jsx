@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Flex from "../../../popit-ui/Flex";
 import Typography from "../../../popit-ui/Typography";
@@ -12,6 +12,8 @@ import cat from "./babo-cat.png";
 import CircleButton from "../../../popit-ui/CircleButton";
 import { useNavigate } from "react-router-dom";
 import Alert from "../../../popit-ui/Alert";
+import axios from "axios";
+import { GiConsoleController } from "react-icons/gi";
 
 const Wrapper = styled.div`
   position: relative;
@@ -35,7 +37,7 @@ const Category = styled(Flex)``;
 
 const CategoryPhoto = styled.div`
   overflow: hidden;
-  background-image: url(${cat});
+  background-image: url(${(props) => props.src || cat});
   background-size: contain;
   height: 96px;
   width: 96px;
@@ -63,22 +65,37 @@ const Dimmer = styled(Flex)`
   `}
 `;
 
-const CategoryList = (props) => {
+const CategoryList = (props, { api }) => {
+  const [selectedCategory, setSelectedCategory] = useState([]);
+  const [allCategory, setAllCategory] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API}/view_all_category`)
+      .then((response) => {
+        console.log(response.data);
+        setAllCategory(response.data);
+      });
+  }, []);
+
   const navigate = useNavigate();
 
-  const [categories, setCategories] = useState(
-    _.map(categoryData, (category) => ({
-      ...category,
-      selected: false,
-    }))
-  );
+  // const [categories, setCategories] = useState(
+  //   _.map(allCategory, (category) => ({
+  //     ...category,
+  //     selected: false,
+  //   }))
+  // );
 
   const onCategoryClick = (e) => {
-    setCategories(
-      _.map(categories, (category) => {
+    setAllCategory(
+      _.map(allCategory, (category) => {
         if (category.id == e.currentTarget.id) {
-          if (category.selected) return { ...category, selected: false };
-          return { ...category, selected: true };
+          if (category.selected) {
+            return { ...category, selected: false };
+          } else {
+            return { ...category, selected: true };
+          }
         }
         return { ...category };
       })
@@ -88,7 +105,7 @@ const CategoryList = (props) => {
   const onClick = () => {
     var numberOfSelected = 0;
 
-    _.map(categories, (category) => {
+    _.map(allCategory, (category) => {
       if (category.selected) {
         numberOfSelected++;
       }
@@ -96,25 +113,49 @@ const CategoryList = (props) => {
     if (numberOfSelected < 3) {
       Alert("3개 이상 선택해주세요.");
     } else {
-      navigate("/main");
+      let temp = [];
+      _.map(allCategory, (category) => {
+        if (category.selected === true) {
+          const idObject = {
+            category_id: category.id,
+          };
+          temp.push(idObject);
+        }
+      });
+      setSelectedCategory([...temp]);
+      console.log(temp);
+
+      // navigate("/main");
     }
   };
+
+  useEffect(() => {
+    if (selectedCategory.length > 0) {
+      axios.post(`${process.env.REACT_APP_API}/set_category`, {
+        selectedCategory,
+      });
+      console.log("성공");
+
+      navigate("/main");
+    }
+  }, [selectedCategory]);
 
   return (
     <>
       <Wrapper>
-        <CircleButton right="270px" down="530px" onClick={onClick} />
+        <CircleButton right="270px" down="525px" onClick={onClick} />
+
         <Container>
-          {_.map(categories, (category) => (
+          {_.map(allCategory, (category) => (
             <Category
               key={category.id}
-              title={category.title}
+              title={category.category_name}
               id={category.id}
               onClick={onCategoryClick}
               direction="column"
               justify="center"
             >
-              <CategoryPhoto>
+              <CategoryPhoto src={category.category_image}>
                 <Dimmer
                   justify="center"
                   align="center"
@@ -129,7 +170,7 @@ const CategoryList = (props) => {
               </CategoryPhoto>
               <Margin height="8px" />
               <Typography small center>
-                {category.title}
+                {category.category_name}
               </Typography>
             </Category>
           ))}
@@ -139,5 +180,4 @@ const CategoryList = (props) => {
     </>
   );
 };
-
 export default CategoryList;
