@@ -10,10 +10,7 @@ const PopChestWrapper = styled.div`
   width: 140px;
   height: 130px;
   border-radius: 20px;
-  background-image: url(${(props) =>
-    props.backImage
-      ? props.backImage
-      : " https://i.pinimg.com/564x/cd/95/26/cd952679dcf7915ba1d285b55e970dac.jpg"});
+  background-image: url(${(props) => props.backImage});
 
   background-size: 100% 100%;
   box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.2);

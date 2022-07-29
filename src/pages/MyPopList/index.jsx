@@ -36,10 +36,22 @@ const MyPopList = ({ api }) => {
       <AnimationBox>
         <MainHeader page="poplist" title="팝 보관함" />
         <PopWrapper>
-          <PopChest title="화학" type="list" />
-          <PopChest title="개발" type="list" />
-          <PopChest title="토익" type="list" />
-          <PopChest title="씨언어" type="list" />
+          <PopChest
+            title="IT"
+            type="list"
+            backImage="https://i.pinimg.com/736x/de/51/29/de51292da99f262ff15232f75a0096fc.jpg"
+          />
+          <PopChest
+            title="스포츠"
+            type="list"
+            backImage="https://i.pinimg.com/564x/e9/d4/b8/e9d4b8de421f7470a4fb7f4ab6036909.jpg"
+          />
+          <PopChest
+            title="헬스"
+            type="list"
+            backImage="https://i.pinimg.com/564x/9e/eb/8b/9eeb8b456790f135c7b64c4edeef27ff.jpg"
+          />
+          <PopChest />
         </PopWrapper>
       </AnimationBox>
     </Layout>

@@ -6,14 +6,20 @@ import styled from "styled-components";
 import Flex from "../../../popit-ui/Flex";
 import Typography from "../../../popit-ui/Typography";
 import Pop from "../../../popit-ui/Pop";
-import B1 from "./B1.png";
-import B2 from "./B2.png";
-import B3 from "./B3.png";
 import { MdOutlineModeEdit } from "react-icons/md";
 import Modal from "../../../popit-ui/Modal";
-import { IoChevronDownSharp } from "react-icons/io5";
 import theme from "../../../assets/theme";
-import { useEffect } from "react";
+import { IoChevronForwardSharp } from "react-icons/io5";
+
+const PopContainer = styled(Flex)`
+  margin-top: 10px;
+`;
+
+const MoreContainer = styled(Flex)`
+  margin-left: 300px;
+  margin-top: 30px;
+  cursor: pointer;
+`;
 
 const ProfileWrapper = styled(Flex)`
   width: 100%;
@@ -39,29 +45,15 @@ const InfoWrapper = styled(Flex)`
 
 const NameWrapper = styled(Flex)``;
 
-const ClassificationWrapper = styled(Flex)`
-  height: 60px;
-  width: 80%;
-`;
-
-const Classification = styled(Flex)`
-  height: 40px;
-  cursor: pointer;
-`;
-
-const PopWrapper = styled(Flex)`
-  width: 304px;
-  height: 500px;
-  padding-left: 25px;
-  padding-top: 50px;
-`;
 const ProfileDetail = (props) => {
   const [clickMore, setClickMore] = useState(false);
   const [popSave, setPopSave] = useState(false);
   const [classify, setClassify] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {}, []);
+  const onMoreClick = () => {
+    setClassify(true);
+  };
 
   const onClickFollower = () => {
     navigate("/follower-list");
@@ -71,16 +63,18 @@ const ProfileDetail = (props) => {
   };
   return (
     <>
-      {clickMore ? (
+      {classify ? (
         <Modal
-          first="최신 순"
+          first="시간 순"
+          firstMessage="시간 순으로 정렬되었습니다."
           second="좋아요 순"
+          secondMessage="좋아요 순으로 정렬되었습니다."
           third="댓글 순"
-          size="medium"
-          clickMore={clickMore}
-          setClickMore={setClickMore}
-          popSave={popSave}
-          setPopSave={setPopSave}
+          thirdMessage="댓글 순으로 정렬되었습니다."
+          size="large"
+          title="분류"
+          classify={classify}
+          setClassify={setClassify}
           type="selectPopUp"
         />
       ) : (
@@ -108,33 +102,41 @@ const ProfileDetail = (props) => {
             <Typography bold12>615</Typography>
             <Typography bold12>324</Typography>
             <Typography bold12>124</Typography>
-          </ContentWrapper>{" "}
+          </ContentWrapper>
         </InfoWrapper>
         <MdOutlineModeEdit size="20px" onClick={props.onClickEvent} />
       </ProfileWrapper>
-      <ClassificationWrapper align="flex-end" justify="flex-end">
-        <Classification align="flex-end">
-          <Typography regular12 color="middlegray">
-            분류
-          </Typography>
-          <Margin width="4px" />
-          <IoChevronDownSharp size={14} color={theme.colors.middlegray} />
-        </Classification>
-      </ClassificationWrapper>
-
-      <PopWrapper direction="column">
-        <Pop src={B1} small clickMore={clickMore} setClickMore={setClickMore}>
-          블라블라
+      <MoreContainer onClick={onMoreClick} direction="row">
+        <Typography
+          onClick={() => setClassify(!classify)}
+          regular12
+          color="middlegray"
+        >
+          분류
+        </Typography>
+        <Margin width="0px" />
+        <IoChevronForwardSharp size={12} color={theme.colors.middlegray} />
+      </MoreContainer>
+      <PopContainer direction="column" align="center">
+        {/* 나중에 axios로 카테고리에 속하는 pop get 해와서 map으로 연결.. */}
+        <Pop
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+          small
+          src="https://i.pinimg.com/564x/93/4a/c4/934ac4da0339aa7531d080e713ea211c.jpg"
+        >
+          수소의 원소기호는 1번입니다.
         </Pop>
-        <Margin height="20px" />
-        <Pop src={B2} small>
-          블라블라
+        <Margin height="20px" width="100%" />
+        <Pop
+          clickMore={clickMore}
+          setClickMore={setClickMore}
+          small
+          src="https://i.pinimg.com/564x/ea/98/d9/ea98d92347f8fe73673024915bc10107.jpg"
+        >
+          운전자에게 엔진 과열 상태를 알려주는 경고등은 수온경고등이다.
         </Pop>
-        <Margin height="20px" />
-        <Pop src={B3} small>
-          블라블라
-        </Pop>
-      </PopWrapper>
+      </PopContainer>
     </>
   );
 };

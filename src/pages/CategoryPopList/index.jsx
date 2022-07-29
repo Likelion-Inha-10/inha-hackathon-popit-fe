@@ -80,7 +80,7 @@ const CategoryPopList = ({ api }) => {
           small
           src="https://i.pinimg.com/564x/93/4a/c4/934ac4da0339aa7531d080e713ea211c.jpg"
         >
-          수소의 원소기호는 1번입니다.
+          {"아이폰 <<< 갤럭시"}
         </Pop>
         <Margin height="20px" width="100%" />
         <Pop
@@ -89,7 +89,7 @@ const CategoryPopList = ({ api }) => {
           small
           src="https://i.pinimg.com/564x/ea/98/d9/ea98d92347f8fe73673024915bc10107.jpg"
         >
-          토익은 어려워
+          GIT은 분산관리시스템의 한 종류이다.
         </Pop>
       </PopContainer>
     </Layout>

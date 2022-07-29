@@ -70,7 +70,7 @@ const MorePop = () => {
 
             <Pop small />
             <Margin height="10px" />
-          </PopContainer>{" "}
+          </PopContainer>
           <PopContainer direction="column" align="center">
             <Margin height="10px" />
 
