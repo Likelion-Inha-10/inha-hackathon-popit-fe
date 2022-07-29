@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Margin from "../../../popit-ui/Margin";
 import Flex from "../../../popit-ui/Flex/index";
 import { BiSearchAlt2 } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const MenuWrapper = styled(Flex)`
   width: 100%;
@@ -41,11 +42,18 @@ const StyledCircle = styled(Flex)`
 `;
 
 const List = (props) => {
+  const navigate = useNavigate();
+  const onFollowingClick = () => {
+    navigate("/following-list");
+  };
+
   return (
     <>
       <MenuWrapper>
         <TextBox borderbottom={props.borderbottom1}>팔로워</TextBox>
-        <TextBox borderbottom={props.borderbottom2}>팔로잉</TextBox>
+        <TextBox borderbottom={props.borderbottom2} onClick={onFollowingClick}>
+          팔로잉
+        </TextBox>
       </MenuWrapper>
       <Margin height="20px" fontcolor="#C1C1C1" />
       <StyledInput placeholder="검색" />
