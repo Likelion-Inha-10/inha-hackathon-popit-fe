@@ -29,7 +29,6 @@ const ProfileEdit = ({ api }) => {
     <>
       <Layout white>
         <PhotoEdit />
-
         <MenuWrapper align="center">
           <Margin width="30px" height="100%" />
           <Typography bold16>이름</Typography>
