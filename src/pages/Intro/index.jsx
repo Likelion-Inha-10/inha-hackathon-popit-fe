@@ -50,7 +50,7 @@ const TextWrapper = styled.div`
   top: -25px;
 `;
 
-const Intro = () => {
+const Intro = ({ api }) => {
   const navigate = useNavigate();
 
   useEffect(() => {

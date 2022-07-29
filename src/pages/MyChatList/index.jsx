@@ -23,7 +23,7 @@ const AnimationBox = styled.div`
 `;
 
 // api 연동시 map으로 구현해야됨
-const MyChatList = () => {
+const MyChatList = ({ api }) => {
   const [isPopup, setIsPopup] = useState(false);
   const onDelete = () => {
     setIsPopup(true);

@@ -21,7 +21,7 @@ const MoreContainer = styled(Flex)`
   cursor: pointer;
 `;
 
-const CategoryPopList = () => {
+const CategoryPopList = ({ api }) => {
   const [classify, setClassify] = useState(false);
   const { title } = useParams();
   const [clickMore, setClickMore] = useState(false);

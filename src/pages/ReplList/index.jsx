@@ -43,7 +43,7 @@ const ReplInput = styled.input`
 
 const ButtonWrapper = styled.div``;
 
-const ReplList = () => {
+const ReplList = ({ api }) => {
   const [repl, setRepl] = useState("");
   const onSubmit = () => {
     Alert("작성되었습니다");

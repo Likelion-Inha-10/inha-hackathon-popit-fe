@@ -5,7 +5,7 @@ import List from "./components/index";
 import FollowList from "./../../popit-ui/FollowList/index";
 import Modal from "../../popit-ui/Modal";
 
-const FollowingList = () => {
+const FollowingList = ({ api }) => {
   const [isPopup, setIsPopup] = useState(false);
 
   const onDelete = () => {

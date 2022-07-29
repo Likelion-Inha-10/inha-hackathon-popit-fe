@@ -15,7 +15,7 @@ const MenuWrapper = styled(Flex)`
   cursor: pointer;
 `;
 
-const Hamburger = () => {
+const Hamburger = ({ api }) => {
   const [isPopup, setIsPopup] = useState(false);
   const navigate = useNavigate();
 
