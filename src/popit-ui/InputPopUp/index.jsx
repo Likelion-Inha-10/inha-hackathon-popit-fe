@@ -10,6 +10,7 @@ import { FaCamera } from "react-icons/fa";
 import Typography from "../Typography";
 import theme from "../../assets/theme";
 import { IoCloseOutline } from "react-icons/io5";
+import Alert from "../Alert";
 
 const Wrapper = styled(Flex)`
   background-color: white;
@@ -77,6 +78,10 @@ const StyledCircle = styled(Flex)`
 `;
 
 const InputPopUp = (props) => {
+  const submitNewPop = () => {
+    props.setCreateNewPop(!props.createNewPop);
+    Alert("제출되었습니다.");
+  };
   return (
     <>
       <StyledCircle
@@ -89,18 +94,37 @@ const InputPopUp = (props) => {
       >
         <FaCamera color={theme.colors.middlegray} />
       </StyledCircle>
-      <Wrapper justify="center" align="center">
+      <Wrapper
+        selectCategory={props.selectCategory}
+        setSelectCategory={props.setSelectCategory}
+        onClick={(e) => e.stopPropagation()}
+        justify="center"
+        align="center"
+      >
         <Container direction="column" justify="space-between">
           <ButtonWrapper align="left">
-            <IoCloseOutline size={30} color="black" />
+            <IoCloseOutline
+              style={{ cursor: "pointer" }}
+              onClick={() => props.setCreateNewPop(!props.createNewPop)}
+              size={30}
+              color="black"
+            />
             <Margin width="14px" />
             <ChestWrapper align="center">
-              <Typography align="center" underline regular12 color="main">
+              <Typography
+                onClick={() => props.setSelectCategory(!props.selectCategory)}
+                align="center"
+                underline
+                regular12
+                color="main"
+              >
                 보관함
               </Typography>
             </ChestWrapper>
             <Margin width="182px" />
-            <Button small>완료</Button>
+            <Button small onClick={submitNewPop}>
+              완료
+            </Button>
           </ButtonWrapper>
           <InputWrapper justify="center" align="center">
             <StyledInput />
