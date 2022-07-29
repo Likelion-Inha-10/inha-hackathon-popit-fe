@@ -8,6 +8,7 @@ import Button from "./../../../popit-ui/Button/index";
 import RoundBox from "./../../../popit-ui/RoundBox/index";
 import Alert from "../../../popit-ui/Alert";
 import Input from "../../../popit-ui/Input";
+import axios from "axios";
 
 const LogoContainer = styled.div`
   position: relative;
@@ -38,11 +39,11 @@ const ViewWrapper = styled.div`
 
 const LoginList = () => {
   const navigate = useNavigate();
-  const [userId, setId] = useState("");
-  const [userPassword, setPassword] = useState("");
+  const [login_id, setUserId] = useState("");
+  const [re_password, setPassword] = useState("");
 
   const onChangeId = (e) => {
-    setId(e.target.value);
+    setUserId(e.target.value);
   };
 
   const onChangePassword = (e) => {
@@ -50,15 +51,36 @@ const LoginList = () => {
   };
 
   const onClickNew = () => {
-    navigate("/sign-up");
+    navigate("/signup");
   };
 
   const onClickSubmit = () => {
-    if (!userId || !userPassword) {
+    console.log(`${process.env.REACT_APP_API}login`);
+    console.log(login_id);
+    console.log(re_password);
+
+    if (!login_id || !re_password) {
       Alert("모든 항목을 입력해주세요.");
     } else {
-      //api 연동 필요 // Signup과 같음
-      navigate("/first-choice");
+      console.log(`${process.env.REACT_APP_API}login`);
+      axios(`${process.env.REACT_APP_API}login`, {
+        method: "POST",
+        header: {
+          "content-type": "application/json",
+        },
+        data: {
+          login_id: login_id,
+          re_password: re_password,
+        },
+      })
+        .then(() => {
+          console.log("로그인 성공");
+          navigate("/first-choice");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("실패");
+        });
     }
   };
 
@@ -79,12 +101,14 @@ const LoginList = () => {
           <ButtonWrapper direction="column" align="center">
             <Input
               onChange={onChangeId}
+              value={login_id}
               type="text"
               placeholder="아이디를 입력해주세요."
             />
             <Margin height="10px" />
             <Input
               onChange={onChangePassword}
+              value={re_password}
               type="password"
               placeholder="비밀번호를 입력해주세요."
             />
