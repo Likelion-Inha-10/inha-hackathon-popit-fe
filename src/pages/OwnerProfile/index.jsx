@@ -5,11 +5,10 @@ import Layout from "./../../popit-ui/Layout/index";
 import MainHeader from "../../popit-ui/MainHeader";
 
 const OwnerProfile = () => {
-  const navigate = useNavigate();
-
   const onClickEvent = () => {
     navigate("/profile-edit");
   };
+  const navigate = useNavigate();
 
   return (
     <Layout white>
