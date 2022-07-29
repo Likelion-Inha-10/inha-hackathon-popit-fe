@@ -136,13 +136,7 @@ const CategoryList = (props, { api }) => {
       });
       console.log("성공");
 
-      axios
-        .get(`${process.env.REACT_APP_API}/view_category`)
-        .then((response) => {
-          console.log(response.data);
-        });
-
-      // navigate("/main");
+      navigate("/main");
     }
   }, [selectedCategory]);
 
