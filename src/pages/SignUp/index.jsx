@@ -10,28 +10,51 @@ import Margin from "../../popit-ui/Margin";
 import Flex from "../../popit-ui/Flex";
 import Input from "../../popit-ui/Input";
 import Alert from "../../popit-ui/Alert";
+import axios from "axios";
+import { TbRecordMailOff } from "react-icons/tb";
 
-const SignUp = () => {
-  const [userName, setName] = useState("");
-  const [userEmail, setEmail] = useState("");
-  const [userPassword, setPassword] = useState("");
-  const [userPasswordCheck, setPasswordCheck] = useState("");
+const SignUp = ({ api }) => {
+  const [login_id, setUserId] = useState("");
+  const [nickname, setName] = useState("");
+  const [email, setEmail] = useState("");
+  //const [password, setPassword] = useState("");
+  const [re_password, setPasswordCheck] = useState("");
   const [isPopup, setIsPopup] = useState(false);
   const navigate = useNavigate();
 
-  const onButtonClick = ({ api }) => {
-    if (!userName || !userEmail || !userPassword || !userPasswordCheck) {
+  const onButtonClick = () => {
+    if (!nickname || !login_id || !email || !re_password) {
       Alert("모든 항목을 입력해주세요.");
-    } else if (userPassword !== userPasswordCheck) {
-      Alert("비밀번호를 확인해주세요.");
     } else {
-      //api 연동 필요
-      setIsPopup(!isPopup);
+      console.log(`${api}signup`);
+      axios(`${api}signup`, {
+        method: "POST",
+        header: {
+          "content-type": "application/json",
+        },
+        data: {
+          nickname: nickname,
+          login_id: login_id,
+          email: email,
+          re_password: re_password,
+        },
+      })
+        .then(() => {
+          setIsPopup(true);
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("실패");
+        });
     }
   };
 
   const onClickBack = () => {
     navigate("/login");
+  };
+
+  const onChangeId = (e) => {
+    setUserId(e.target.value);
   };
 
   const onChangeName = (e) => {
@@ -43,10 +66,6 @@ const SignUp = () => {
   };
 
   const onChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const onChangePasswordCheck = (e) => {
     setPasswordCheck(e.target.value);
   };
 
@@ -74,27 +93,32 @@ const SignUp = () => {
             <Margin height="40px" />
             <Input
               onChange={onChangeName}
+              value={nickname}
               type="text"
               placeholder="이름을 입력해주세요."
+            />
+            <Margin height="20px" />{" "}
+            <Input
+              onChange={onChangeId}
+              value={login_id}
+              type="text"
+              placeholder="사용하실 아이디를 입력해주세요."
             />
             <Margin height="20px" />
             <Input
               onChange={onChangeEmail}
+              value={email}
               type="email"
-              placeholder="사용하실 이메일(아이디)을 입력해주세요."
+              placeholder="사용하실 이메일을 입력해주세요."
             />
             <Margin height="20px" />
             <Input
               onChange={onChangePassword}
+              value={re_password}
               type="password"
               placeholder="사용하실 비밀번호를 입력해주세요."
             />
             <Margin height="20px" />
-            <Input
-              onChange={onChangePasswordCheck}
-              type="password"
-              placeholder="비밀번호를 한 번 더 입력해주세요."
-            />
             <Margin height="20px" />
             <Button onClick={onButtonClick}>가입하기</Button>
           </Flex>

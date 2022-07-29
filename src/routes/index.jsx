@@ -41,7 +41,7 @@ const Router = () => (
       />
       <Route
         exact
-        path="/sign-up"
+        path="/signup"
         element={<SignUp api={process.env.REACT_APP_API} />}
       />
       <Route
