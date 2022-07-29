@@ -113,6 +113,21 @@ const CategoryPopUp = (props) => {
     }
   };
 
+  const onClick = () => {
+    var numberOfSelected = 0;
+
+    _.map(categories, (category) => {
+      if (category.selected) {
+        numberOfSelected++;
+      }
+    });
+    if (numberOfSelected >= 2) {
+      Alert("1개만 선택해주세요.");
+    } else {
+      onPopUpCategory();
+    }
+  };
+
   return (
     <div>
       <Wrapper
@@ -134,8 +149,8 @@ const CategoryPopUp = (props) => {
             <Typography bold20>{props.title}</Typography>
 
             <Typography
+              onClick={onClick}
               style={{ cursor: "pointer" }}
-              onClick={() => onPopUpCategory()}
               regular16
               color="orange"
             >
